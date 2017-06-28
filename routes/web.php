@@ -17,4 +17,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+/*
+|--------------------------------------------------------------------------
+| 2017-06-28 新增權限群組
+|--------------------------------------------------------------------------
+| 1) / home -> 一開始的面板放個人資訊
+| 
+| 2) / 
+| 
+|
+*/
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/home', 'HomeController@index');
+
+});

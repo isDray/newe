@@ -12,17 +12,6 @@
 
     <!-- Styles -->
     <link href="{{url('/css/app.css')}}" rel="stylesheet">
-    <!-- SB2 style -->
-    <link href="{{url('/admin/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="{{url('/admin/vendor/metisMenu/metisMenu.min.css')}}" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="{{url('/admin/dist/css/sb-admin-2.css')}}" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="{{url('/admin/vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
     <!-- Scripts -->
     <script>
@@ -91,19 +80,8 @@
 
         @yield('content')
     </div>
+
     <!-- Scripts -->
-    <!--<script src="{{url('/js/app.js')}}"></script>-->
-
-    <!-- jQuery -->
-    <script src="{{url('/admin/vendor/jquery/jquery.min.js')}}"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{url('/admin/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="{{url('/admin/vendor/metisMenu/metisMenu.min.js')}}"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="{{url('/admin/dist/js/sb-admin-2.js')}}"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>
