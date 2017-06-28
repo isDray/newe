@@ -23,12 +23,13 @@ Auth::routes();
 |--------------------------------------------------------------------------
 | 1) / home -> 一開始的面板放個人資訊
 | 
-| 2) / 
+| 2) / account -> 會員列表
 | 
 |
 */
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/home', 'HomeController@index');
+    Route::get('/account', 'AccountController@lists');
 
 });

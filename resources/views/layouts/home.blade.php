@@ -55,7 +55,17 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li>
+                        <!--<a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>-->
+                            <a href="{{ url('/logout') }}"
+                               onclick="event.preventDefault();
+                               document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+
+                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                               {{ csrf_field() }}
+                            </form>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -79,7 +89,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="{{url('/account')}}"><i class="fa fa-dashboard fa-fw"></i> 帳號管理 </a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
