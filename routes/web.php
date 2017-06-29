@@ -30,6 +30,11 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/home', 'HomeController@index');
-    Route::get('/account', 'AccountController@lists');
 
+    Route::get('/account','AccountController@lists');
+    Route::get('/account/account_new','AccountController@account_new');
+    Route::post('account/account_new_do','AccountController@account_new_do');
+    Route::get('/account/account_edit/{id}','AccountController@account_edit');
+    Route::post('account/account_edit_do','AccountController@account_edit_do');
+    Route::get('/account/account_del/{id}','AccountController@account_del');
 });

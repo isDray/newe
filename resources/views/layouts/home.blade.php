@@ -30,7 +30,16 @@
     <![endif]-->
 
 </head>
-
+<style type="text/css">
+    .slf_topac{
+        height: auto;;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    a:hover{
+        text-decoration: none;
+    }
+</style>
 <body>
 
     <div id="wrapper">
@@ -89,7 +98,12 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="{{url('/account')}}"><i class="fa fa-dashboard fa-fw"></i> 帳號管理 </a>
+                            <a href="#"><i class="fa fa-gear"></i>權限管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                <a href="{{url('/account')}}"><i class="fa fa-dashboard fa-fw"></i> 帳號管理 </a>
+                                </li>
+                            </ul>   
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
@@ -210,6 +224,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="{{url('admin/dist/js/sb-admin-2.js')}}"></script>
+
 
 </body>
 
