@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2017-06-29 12:41:54
+-- 產生時間： 2017-06-30 12:35:54
 -- 伺服器版本: 10.1.21-MariaDB
 -- PHP 版本： 5.6.30
 
@@ -29,17 +29,47 @@ SET time_zone = "+00:00";
 CREATE TABLE `features_list` (
   `id` int(11) NOT NULL,
   `features` text NOT NULL,
-  `admin` text NOT NULL,
-  `advanced` text NOT NULL,
-  `general` text NOT NULL
+  `name` varchar(50) CHARACTER SET utf8mb4 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- 資料表的匯出資料 `features_list`
 --
 
-INSERT INTO `features_list` (`id`, `features`, `admin`, `advanced`, `general`) VALUES
-(1, 'AccountController', '1,1,1,1,1', '1,0,1,1,0', '1,0,0,1,0');
+INSERT INTO `features_list` (`id`, `features`, `name`) VALUES
+(1, 'AccountController', '帳號管理'),
+(2, 'FeaturesController', '功能管理'),
+(3, 'GrppowerController', '權限管理');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `features_role`
+--
+
+CREATE TABLE `features_role` (
+  `id` int(11) NOT NULL,
+  `features_id` int(11) NOT NULL,
+  `role_id` int(11) DEFAULT NULL,
+  `power` text,
+  `create_date` datetime DEFAULT NULL,
+  `upload_date` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `features_role`
+--
+
+INSERT INTO `features_role` (`id`, `features_id`, `role_id`, `power`, `create_date`, `upload_date`) VALUES
+(1, 1, 1, '1,1,1,1,1', '2017-06-30 00:00:00', '2017-06-30 09:40:42'),
+(2, 1, 2, '1,0,1,1,0', '2017-06-30 09:41:40', '2017-06-30 09:41:40'),
+(3, 1, 3, '1,0,0,1,0', '2017-06-30 09:41:40', '2017-06-30 09:41:40'),
+(4, 2, 1, '1,1,1,1,1', '2017-06-30 10:39:08', '2017-06-30 10:39:08'),
+(5, 2, 2, '1,0,1,1,0', '2017-06-30 10:39:38', '2017-06-30 10:39:38'),
+(6, 2, 3, '1,0,0,1,0', '2017-06-30 10:40:26', '2017-06-30 10:40:26'),
+(7, 3, 1, '1,1,1,1,1', '2017-06-30 14:43:49', '2017-06-30 14:43:49'),
+(8, 3, 2, '1,0,1,1,0', '2017-06-30 14:44:35', '2017-06-30 14:44:35'),
+(9, 3, 3, '1,0,0,1,0', '2017-06-30 14:45:12', '2017-06-30 14:45:12');
 
 -- --------------------------------------------------------
 
@@ -121,7 +151,8 @@ CREATE TABLE `role_user` (
 INSERT INTO `role_user` (`id`, `role_id`, `user_id`, `created_at`, `updated_at`) VALUES
 (5, 1, 1, '2017-06-28 18:28:40', '2017-06-28 18:28:40'),
 (9, 2, 2, '2017-06-29 02:05:40', '2017-06-29 02:05:40'),
-(10, 3, 4, '2017-06-29 02:34:30', '2017-06-29 02:34:30');
+(12, 3, 4, '2017-06-29 18:09:17', '2017-06-29 18:09:17'),
+(14, 3, 6, '2017-06-30 02:11:44', '2017-06-30 02:11:44');
 
 -- --------------------------------------------------------
 
@@ -146,7 +177,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Ray', 'isdray1319@gmail.com', '$2y$10$KxwCdHGf.PUL7Ra7hBPnQ.sUakapqCRkNAVz/MvmvCHIoPoZGGAcO', 'wQoXiDOj8ZTxmt9DoPD3Ee5UgaYycBxYUHn2hlB7PiaZqfvrfIzjupY4NbS5', '2017-06-27 18:47:24', '2017-06-28 18:21:50'),
 (2, '進階會員', 'advanced@email.com', '$2y$10$sMCvPgseVTV7dnXf7c7rTuw4YPoSRJIsz1ZKjEZ6erJ/KJMlA5EnW', 'ZwRj70rn1PRDAwvLkCEb7ZuYjzuxZv0O9kzirEXdEk1sVJm5KATApBdXZnay', '2017-06-28 19:57:42', '2017-06-29 02:06:41'),
-(4, '一般會員', 'general@isgoodtime.com.tw', '$2y$10$4rYLTGIcuuK6LtWTXcTNqeEl9kKEA3iF5dS6nLgVaAGGZX7IW5St2', NULL, '2017-06-29 02:34:30', '2017-06-29 02:34:30');
+(4, '一般會員', 'general@isgoodtime.com.tw', '$2y$10$4rYLTGIcuuK6LtWTXcTNqeEl9kKEA3iF5dS6nLgVaAGGZX7IW5St2', NULL, '2017-06-29 02:34:30', '2017-06-29 02:34:30'),
+(6, '新會員', 'newmember@gmail.com', '$2y$10$cRkm6ssLYC8GMFUxf7t1VuRHOEnbMrgk0qy9crRjObGpW9YRJsUjS', NULL, '2017-06-30 02:11:44', '2017-06-30 02:11:44');
 
 --
 -- 已匯出資料表的索引
@@ -156,6 +188,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `creat
 -- 資料表索引 `features_list`
 --
 ALTER TABLE `features_list`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `features_role`
+--
+ALTER TABLE `features_role`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -201,7 +239,12 @@ ALTER TABLE `users`
 -- 使用資料表 AUTO_INCREMENT `features_list`
 --
 ALTER TABLE `features_list`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- 使用資料表 AUTO_INCREMENT `features_role`
+--
+ALTER TABLE `features_role`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- 使用資料表 AUTO_INCREMENT `migrations`
 --
@@ -211,17 +254,17 @@ ALTER TABLE `migrations`
 -- 使用資料表 AUTO_INCREMENT `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- 使用資料表 AUTO_INCREMENT `role_user`
 --
 ALTER TABLE `role_user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- 使用資料表 AUTO_INCREMENT `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- 已匯出資料表的限制(Constraint)
 --

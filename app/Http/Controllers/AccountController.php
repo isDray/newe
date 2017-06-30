@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 ## 相關Eloquent
 use App\Features_list;
+use App\Features_role;
 use App\User;
 
 /*------------------------------------------------------------------------
@@ -41,16 +42,23 @@ class AccountController extends Controller
     }
     ## 檢測權限
     public function chk_power($wp){
-
+        
+        ## 取得現在權限
         if ($this->user->isRole('admin')) {
-            $which_role = 'admin';
+            $which_role = '1';
         }else if($this->user->isRole('advanced')){
-            $which_role = 'advanced';
+            $which_role = '2';
         }else{
-            $which_role = 'general';
+            $which_role = '3';
         }
+
+        ## 取得現在功能
         $nowrole = Features_list::where('features',$this->nowcontroller)->get();
-        $mrole   = $nowrole[0] ->$which_role;
+        ## 取得功能id
+        $f_id    = $nowrole[0] ->id;
+        $f_power = Features_role::where('features_id',$f_id)->where('role_id',$which_role)->get();
+        
+        $mrole   = $f_power[0] ->power;
         $mrole   = explode(',', $mrole)[$wp];
         
         return $mrole;
@@ -66,49 +74,23 @@ class AccountController extends Controller
 
     public function lists(){
 
-        $this->user    = Auth::user();
-        $nowcontroller = $this->index();
-        
-        if ($this->user->isRole('admin')) {
-            $which_role = 'admin';
-        }else if($this->user->isRole('advanced')){
-            $which_role = 'advanced';
-        }else{
-            $which_role = 'general';
-        }
+        $this->user = Auth::user();
+        $mrole = $this->chk_power(3);
 
-        ## 如果全權限為admin時,去後台功能列表中找出屬於自己的權限,並且確認列表功能是否開啟
-        $nowrole = Features_list::where('features',$nowcontroller)->get();
-        $mrole   = $nowrole[0] ->$which_role;
-        $mrole   = explode(',', $mrole)[3];
-        
         ## mrole 為列表功能
         if( $mrole == 1){
             $data = User::all();
             return view('account',['data' => $data]);
         }else{
-            //return view('home',['user' => 'SSSS']);
+            echo '無權限';
         }
 
         
     }// lists end 
 
     public function account_new(){
-        $this->user    = Auth::user();
-        $nowcontroller = $this->index();
-
-        if ($this->user->isRole('admin')) {
-            $which_role = 'admin';
-        }else if($this->user->isRole('advanced')){
-            $which_role = 'advanced';
-        }else{
-            $which_role = 'general';
-        }
-
-        ## 如果全權限為admin時,去後台功能列表中找出屬於自己的權限,並且確認列表功能是否開啟
-        $nowrole = Features_list::where('features',$nowcontroller)->get();
-        $mrole   = $nowrole[0] ->$which_role;
-        $mrole   = explode(',', $mrole)[1];
+        $this->user = Auth::user();
+        $mrole = $this->chk_power(1);
         
         ## mrole 為列表功能
         if( $mrole == 1){
@@ -116,25 +98,12 @@ class AccountController extends Controller
             return view('account_new');
         }else{
             echo '你沒有該頁面權限';
-            //return view('home',['user' => 'SSSS']);
         }
     }
 
     public function account_new_do(){
-        $this->user    = Auth::user();
-        $nowcontroller = $this->index();
-
-        if ($this->user->isRole('admin')) {
-            $which_role = 'admin';
-        }else if($this->user->isRole('advanced')){
-            $which_role = 'advanced';
-        }else{
-            $which_role = 'general';
-        }
-
-        $nowrole = Features_list::where('features',$nowcontroller)->get();
-        $mrole   = $nowrole[0] ->$which_role;
-        $mrole   = explode(',', $mrole)[1];
+        $this->user = Auth::user();
+        $mrole = $this->chk_power(1);
         
         if( $mrole == 1){
                                                             

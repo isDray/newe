@@ -86,6 +86,7 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
+                        <!--搜尋框
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
@@ -95,16 +96,28 @@
                                     </button>
                                 </span>
                             </div>
-                            <!-- /input-group -->
-                        </li>
+                        </li>-->
                         <li>
-                            <a href="#"><i class="fa fa-gear"></i>權限管理<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-gear"></i>權限模組<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                <a href="{{url('/account')}}"><i class="fa fa-dashboard fa-fw"></i> 帳號管理 </a>
+                                <a href="{{url('/account')}}"><i class="fa fa-user"></i> 帳號管理 </a>
                                 </li>
-                            </ul>   
+
+
+                                <li>
+                                <a href="{{url('/features')}}"><i class="fa fa-dashboard "></i> 功能管理 </a>
+                                </li>
+
+
+
+                                <li>
+                                <a href="{{url('/grppower')}}"><i class="fa fa-sitemap "></i> 群組管理 </a>
+                                </li>
+                            </ul>     
                         </li>
+
+                        <!--
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -115,7 +128,7 @@
                                     <a href="morris.html">Morris.js Charts</a>
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
+
                         </li>
                         <li>
                             <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
@@ -145,7 +158,6 @@
                                     <a href="grid.html">Grid</a>
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
@@ -172,10 +184,8 @@
                                             <a href="#">Third Level Item</a>
                                         </li>
                                     </ul>
-                                    <!-- /.nav-third-level -->
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
                         </li>
                         <li class="active">
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
@@ -187,8 +197,8 @@
                                     <a href="login.html">Login Page</a>
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
                         </li>
+                        -->
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
