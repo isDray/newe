@@ -52,7 +52,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/grppower/grppower_new','GrppowerController@grppower_new');
     Route::post('/grppower/grppower_new_do','GrppowerController@grppower_new_do');
     Route::get('/grppower/grppower_edit/{id}','GrppowerController@grppower_edit');
-    Route::post('/grppower/grppower_edit_do','GrppowerController@grppower_edit_do');
+    Route::post('/grppower/grppower_edit_do/{id}','GrppowerController@grppower_edit_do');
     Route::get('/grppower/grppower_del/{id}','GrppowerController@grppower_del');
+
+    ## 模組管理
+    Route::get('/mod','ModController@lists');
+    Route::get('/mod/mod_edit/{id}','ModController@mod_edit');
+    Route::post('/mod/mod_edit_do/{id}','ModController@mod_edit_do');
 
 });

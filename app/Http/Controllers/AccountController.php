@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\DB;
 ## 相關Eloquent
 use App\Features_list;
 use App\Features_role;
@@ -63,6 +63,21 @@ class AccountController extends Controller
         
         return $mrole;
     }
+
+    public function chk_can(){
+
+        if ($this->user->isRole('admin')) {
+            $which_role = '1';
+        }else if($this->user->isRole('advanced')){
+            $which_role = '2';
+        }else{
+            $which_role = '3';
+        }
+
+        return $can = DB::table('features_role')
+                    ->where('role_id',$which_role)
+                    ->get();
+    }
     public function index()
     {
         $currentAction = \Route::currentRouteAction();
@@ -76,11 +91,11 @@ class AccountController extends Controller
 
         $this->user = Auth::user();
         $mrole = $this->chk_power(3);
-
+        $can   = $this->chk_can();
         ## mrole 為列表功能
         if( $mrole == 1){
             $data = User::all();
-            return view('account',['data' => $data]);
+            return view('account',['data' => $data, 'can'=>$can]);
         }else{
             echo '無權限';
         }
@@ -91,11 +106,11 @@ class AccountController extends Controller
     public function account_new(){
         $this->user = Auth::user();
         $mrole = $this->chk_power(1);
-        
+        $can   = $this->chk_can();
         ## mrole 為列表功能
         if( $mrole == 1){
             
-            return view('account_new');
+            return view('account_new',['can'=>$can]);
         }else{
             echo '你沒有該頁面權限';
         }
@@ -104,6 +119,7 @@ class AccountController extends Controller
     public function account_new_do(){
         $this->user = Auth::user();
         $mrole = $this->chk_power(1);
+        $can   = $this->chk_can();
         
         if( $mrole == 1){
                                                             
@@ -124,6 +140,8 @@ class AccountController extends Controller
     public function account_edit($id){
         $this->user = Auth::user();
         $mrole = $this->chk_power(2);
+        $can   = $this->chk_can();
+        
         if( $mrole == 1){
 
             $data = User::where('id', $id)->get();
@@ -134,7 +152,7 @@ class AccountController extends Controller
             }else{
                 $which_role = 'general';
             }
-            return view('account_edit',['data' => $data,'which_role' => $which_role]);
+            return view('account_edit',['data' => $data,'which_role' => $which_role,'can'=>$can]);
         }else{
             echo '無權限';
         }
@@ -144,6 +162,7 @@ class AccountController extends Controller
     public function account_edit_do(){
         $this->user = Auth::user();
         $mrole = $this->chk_power(2);
+        $can   = $this->chk_can();
         if( $mrole == 1){
             ## 首先先取出加密的密碼
             $data = User::where('name', $_POST['acc_name'])->get();
@@ -207,6 +226,7 @@ class AccountController extends Controller
     public function account_del($id){
         $this->user = Auth::user();
         $mrole = $this->chk_power(4);
+        $can   = $this->chk_can();
         if( $mrole == 1){
             $data = User::where('id', $id)->get();
             $data[0]->detachAllRoles();

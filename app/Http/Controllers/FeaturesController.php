@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 ## 相關Eloquent
 use App\Features_list;
@@ -46,17 +47,31 @@ class FeaturesController extends Controller
         
         return $mrole;
     }
+    public function chk_can(){
 
+        if ($this->user->isRole('admin')) {
+            $which_role = '1';
+        }else if($this->user->isRole('advanced')){
+            $which_role = '2';
+        }else{
+            $which_role = '3';
+        }
+
+        return $can = DB::table('features_role')
+                    ->where('role_id',$which_role)
+                    ->get();
+    }
     ## lists 條列所有功能
     public function lists(){
 
         $this->user = Auth::user();
         $mrole = $this->chk_power(3);
+        $can   = $this->chk_can();
         ## mrole 為列表功能
         if( $mrole == 1){
 
             $data = Features_list::all();
-            return view('features.features',['data' => $data]);
+            return view('features.features',['data' => $data,'can'=>$can]);
         }else{
             echo '無權限';
         }
@@ -67,11 +82,11 @@ class FeaturesController extends Controller
         
         $this->user = Auth::user();
         $mrole = $this->chk_power(1);
-        
+        $can   = $this->chk_can();
         ## mrole 為列表功能
         if( $mrole == 1){
             
-            return view('features.features_new');
+            return view('features.features_new',['can'=>$can]);
         }else{
             echo '你沒有該頁面權限';
         }
@@ -80,7 +95,7 @@ class FeaturesController extends Controller
     public function features_new_do(){
         $this->user = Auth::user();
         $mrole = $this->chk_power(1);
-        
+        $can   = $this->chk_can();
         if( $mrole == 1){
                                              
             
@@ -88,15 +103,21 @@ class FeaturesController extends Controller
 
             $Features_list->name = $_POST['f_name'];
             $Features_list->features = $_POST['f_controller'];
-            $Features_list->save();   
+            $Features_list->save();
+            
+            $all_role = DB::table('roles')->get();
+            
+            foreach ($all_role as $key => $nrole) {
 
-           /* $adminRole = \HttpOz\Roles\Models\Role::whereSlug($_POST['acc_role'])->first();
-            $admin = \App\User::create([
-                'name' => $_POST['acc_name'],
-                'email' => $_POST['acc_email'],
-                'password' => bcrypt($_POST['acc_passwd'])
-            ]);
-            $admin->attachRole($adminRole);*/
+                DB::table('features_role')->insert(
+                    ['features_id' => $Features_list->id,
+                     'role_id' => $nrole->id,
+                     'power' => '0,0,0,0,0',
+                     'create_date' =>date("Y-m-d H:i:s"),
+                     'upload_date' =>date("Y-m-d H:i:s") ]
+                );
+
+            }
 
         }else{
 
@@ -107,11 +128,11 @@ class FeaturesController extends Controller
     public function features_edit($id){
         $this->user = Auth::user();
         $mrole = $this->chk_power(2);
-
+        $can   = $this->chk_can();
         if( $mrole == 1){
 
             $data = Features_list::where('id',$id)->get();
-            return view('features.features_edit',['data' => $data]);
+            return view('features.features_edit',['data' => $data,'can'=>$can]);
         }else{
             echo '無權限';
         }
@@ -120,13 +141,13 @@ class FeaturesController extends Controller
     public function features_edit_do( Request $request ){
         $this->user = Auth::user();
         $mrole = $this->chk_power(2);
- 
+        $can   = $this->chk_can();
 
         if( $mrole == 1){
         
             Features_list::where('id',$request->input('f_id'))
-                         ->update([ 'name' => $request->input('f_name'),
-                                    'features' => $request->input('f_controller') ]);
+            ->update([ 'name' => $request->input('f_name'),
+                       'features' => $request->input('f_controller') ]);
            
             
         }else{
@@ -139,9 +160,11 @@ class FeaturesController extends Controller
 
         $this->user = Auth::user();
         $mrole = $this->chk_power(4);
-
+        $can   = $this->chk_can();
+        
         if( $mrole == 1){
             Features_list::where('id', $id)->delete();
+            Features_role::where('features_id', $id)->delete();
         }else{
             echo '無權限';
         }

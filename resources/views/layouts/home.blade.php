@@ -100,20 +100,29 @@
                         <li>
                             <a href="#"><i class="fa fa-gear"></i>權限模組<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
+                                @if( explode(",",$can[0]->power)[3] == 1 )
                                 <li>
                                 <a href="{{url('/account')}}"><i class="fa fa-user"></i> 帳號管理 </a>
                                 </li>
-
-
+                                @endif()
+                                
+                                @if( explode(",",$can[1]->power)[3] == 1 )
                                 <li>
                                 <a href="{{url('/features')}}"><i class="fa fa-dashboard "></i> 功能管理 </a>
                                 </li>
-
-
-
+                                @endif()
+                                
+                                @if( explode(",",$can[2]->power)[3] == 1 )
                                 <li>
                                 <a href="{{url('/grppower')}}"><i class="fa fa-sitemap "></i> 群組管理 </a>
                                 </li>
+                                @endif()
+
+                                @if( explode(",",$can[3]->power)[3] == 1 )
+                                <li>
+                                <a href="{{url('/mod')}}"><i class="fa fa-th-large  "></i> 模組管理 </a>
+                                </li>
+                                @endif()
                             </ul>     
                         </li>
 
@@ -234,7 +243,8 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="{{url('admin/dist/js/sb-admin-2.js')}}"></script>
-
+    
+    @yield('selfjs')
 
 </body>
 
