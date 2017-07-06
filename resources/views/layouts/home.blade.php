@@ -21,6 +21,9 @@
 
     <!-- Custom Fonts -->
     <link href="{{url('admin/vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+    <!-- swalert -->
+    <script src="{{url('sweetalert-master/dist/sweetalert.min.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{url('sweetalert-master/dist/sweetalert.css')}}">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,6 +41,9 @@
     }
     a:hover{
         text-decoration: none;
+    }
+    .error{
+        color:#ff4f4f;
     }
 </style>
 <body>
@@ -243,7 +249,9 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="{{url('admin/dist/js/sb-admin-2.js')}}"></script>
-    
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.js"></script>
+    >
+
     @yield('selfjs')
 
 </body>

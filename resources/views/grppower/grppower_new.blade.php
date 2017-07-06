@@ -15,16 +15,15 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-lg-12">
-                    <form role="form" method="POST" action="{{ url('/grppower/grppower_new_do')}}">
-                    {{ csrf_field() }}
+                    <form id='grpform' onsubmit='return false' role="form" method="POST" action="{{ url('/grppower/grppower_new_do')}}">
                         <div class="form-group" >
                             <label>群組名稱</label>
-                            <input class="form-control" placeholder="群組名稱" name='grp_name'>
+                            <input class="form-control required" placeholder="群組名稱" name='grp_name'>
                         </div>
                         
                         <div class="form-group" >
                             <label>群組描述</label>
-                            <input class="form-control" placeholder="群組描述" name='grp_des'>
+                            <input class="form-control required" placeholder="群組描述" name='grp_des'>
                         </div>
 
                         <button type="submit" class="btn btn-default">新增</button>
@@ -37,4 +36,63 @@
 </div>    
 
 
+@endsection
+
+@section('selfjs')
+<script type="text/javascript">
+
+// 表單驗證
+$(function(){
+    $('button[type=submit]').click(function(){
+        $("#grpform").validate();
+
+        if( $("#grpform").valid() ){
+
+            $.ajax({
+                method: "POST",
+                url: "{{ url('/grppower/grppower_new_do')}}",
+                data: { 
+                    
+                    _token: "{{ csrf_token() }}",
+                    grp_name:   $('input[name=grp_name]').val(),
+                    grp_des:  $('input[name=grp_des]').val(),
+
+                      
+                },
+                statusCode: {
+                    422: function(errmsg) {
+                        //console.log(errmsg.responseJSON);
+                        swal("新增錯誤!", "請檢查輸入是否正確", "error");
+                    },
+                    500: function(errmsg) {
+                        //console.log(errmsg.responseJSON);
+                        swal("新增錯誤!", "請檢查輸入是否正確", "error");
+                    }
+                }
+            })
+            .done(function( msg ) {
+                if(msg =='"success"'){
+
+                    swal({
+                          title: "新增成功!",
+                          text: "成功新增權限群組!",
+                          type: "success",
+                          //showCancelButton: true,
+                          //confirmButtonColor: "#DD6B55",
+                          confirmButtonText: "OK",
+                          closeOnConfirm: false
+                        },
+                    function(){
+                        document.location.href="/arole/public/grppower";
+                    });
+                }
+                
+            });
+
+        }
+
+    })
+})
+
+</script>
 @endsection

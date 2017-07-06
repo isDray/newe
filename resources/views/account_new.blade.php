@@ -15,20 +15,19 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-lg-12">
-                    <form role="form" method="POST" action="{{ url('/account/account_new_do')}}">
-                    {{ csrf_field() }}
+                    <form  id='accform' onsubmit='return false' role="form" method="POST" action="{{ url('/account/account_new_do')}}">
                         <div class="form-group" >
                             <label>姓名</label>
-                            <input class="form-control" placeholder="姓名" name='acc_name'>
+                            <input class="form-control required" placeholder="姓名" name='acc_name' type="text" >
                         </div>
                         <div class="form-group">
                             <label>email</label>
-                            <input class="form-control" placeholder="email" name='acc_email'>
+                            <input class="form-control email required " placeholder="email" name='acc_email'  >
                         </div>
 
                         <div class="form-group">
                             <label>密碼</label>
-                            <input class="form-control" type="password" name='acc_passwd'>
+                            <input class="form-control required" type="password" name='acc_passwd' >
                         </div>
 
                         <div class="form-group">
@@ -50,4 +49,64 @@
 </div>    
 
 
+@endsection
+
+@section('selfjs')
+<script type="text/javascript">
+
+// 表單驗證
+$(function(){
+    $('button[type=submit]').click(function(){
+        $("#accform").validate();
+
+        if( $("#accform").valid() ){
+
+            $.ajax({
+                method: "POST",
+                url: "{{ url('/account/account_new_do')}}",
+                data: { 
+                    
+                    _token: "{{ csrf_token() }}",
+                    acc_name:   $('input[name=acc_name]').val(),
+                    acc_email:  $('input[name=acc_email]').val(),
+                    acc_passwd: $('input[name=acc_passwd]').val(),
+                    acc_role:   $('select option:selected').val(), 
+                      
+                },
+                statusCode: {
+                    422: function(errmsg) {
+                        //console.log(errmsg.responseJSON);
+                        swal("新增錯誤!", "請檢查輸入是否正確", "error");
+                    },
+                    500: function(errmsg) {
+                        //console.log(errmsg.responseJSON);
+                        swal("新增錯誤!", "請檢查輸入是否正確", "error");
+                    }
+                }
+            })
+            .done(function( msg ) {
+                if(msg =='"success"'){
+
+                    swal({
+                          title: "新增成功!",
+                          text: "成功新增會員!",
+                          type: "success",
+                          //showCancelButton: true,
+                          //confirmButtonColor: "#DD6B55",
+                          confirmButtonText: "OK",
+                          closeOnConfirm: false
+                        },
+                    function(){
+                        document.location.href="/arole/public/account";
+                    });
+                }
+                
+            });
+
+        }
+
+    })
+})
+
+</script>
 @endsection

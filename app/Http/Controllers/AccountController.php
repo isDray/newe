@@ -102,34 +102,46 @@ class AccountController extends Controller
 
         
     }// lists end 
+   
 
     public function account_new(){
         $this->user = Auth::user();
         $mrole = $this->chk_power(1);
         $can   = $this->chk_can();
         ## mrole 為列表功能
-        if( $mrole == 1){
-            
+        if( $mrole == 1){  
             return view('account_new',['can'=>$can]);
         }else{
             echo '你沒有該頁面權限';
         }
     }
 
-    public function account_new_do(){
+    public function account_new_do(request $request){
         $this->user = Auth::user();
         $mrole = $this->chk_power(1);
         $can   = $this->chk_can();
         
         if( $mrole == 1){
-                                                            
+
+            $ajax_err = $this->validate($request, [
+                'acc_name'   => 'required',
+                'acc_email'  => 'email|required',
+                'acc_passwd' => 'required',
+                'acc_role'   => 'required'
+            ]);
+
             $adminRole = \HttpOz\Roles\Models\Role::whereSlug($_POST['acc_role'])->first();
+            
             $admin = \App\User::create([
                 'name' => $_POST['acc_name'],
                 'email' => $_POST['acc_email'],
                 'password' => bcrypt($_POST['acc_passwd'])
             ]);
+
             $admin->attachRole($adminRole);
+ 
+            echo json_encode('success');
+            //var_dump($_POST);
 
         }else{
 
@@ -152,20 +164,31 @@ class AccountController extends Controller
             }else{
                 $which_role = 'general';
             }
-            return view('account_edit',['data' => $data,'which_role' => $which_role,'can'=>$can]);
+            return view('account_edit',['data' => $data,'which_role' => $which_role,'id'=>$id,'can'=>$can]);
         }else{
             echo '無權限';
         }
     }
 
     ## 修改會員實作
-    public function account_edit_do(){
+    public function account_edit_do(request $request){
         $this->user = Auth::user();
         $mrole = $this->chk_power(2);
         $can   = $this->chk_can();
         if( $mrole == 1){
+
+
+            $ajax_err = $this->validate($request, [
+                'acc_id'   => 'required',
+                'acc_name'   => 'required',
+                'acc_email'  => 'email|required',
+                'acc_passwd' => 'required',
+                'acc_role'   => 'required'
+            ]);
+
+
             ## 首先先取出加密的密碼
-            $data = User::where('name', $_POST['acc_name'])->get();
+            $data = User::where('id', $_POST['acc_id'])->get();
 
             if( $_POST['acc_passwd'] == $data[0]->password ){
                 ## 不改密碼
@@ -182,6 +205,7 @@ class AccountController extends Controller
                     $data[0]->update(['name' => $_POST['acc_name'],
                                       'email' => $_POST['acc_email']
                                      ]);
+                    echo json_encode('success');
                 }else{
                     $data[0]->update(['name' => $_POST['acc_name'],
                                      'email' => $_POST['acc_email']
@@ -189,6 +213,7 @@ class AccountController extends Controller
                     $data[0]->detachAllRoles();
                     $adminRole = \HttpOz\Roles\Models\Role::whereSlug($_POST['acc_role'])->first();
                     $data[0]->attachRole($adminRole);
+                    echo json_encode('success');
                 }
             }else{
 
@@ -206,6 +231,7 @@ class AccountController extends Controller
                                       'email' => $_POST['acc_email'],
                                       'password' =>bcrypt($_POST['acc_passwd'])
                                      ]);
+                    echo json_encode('success');
                 }else{
                     $data[0]->update(['name' => $_POST['acc_name'],
                                      'email' => $_POST['acc_email'],
@@ -214,6 +240,7 @@ class AccountController extends Controller
                     $data[0]->detachAllRoles();
                     $adminRole = \HttpOz\Roles\Models\Role::whereSlug($_POST['acc_role'])->first();
                     $data[0]->attachRole($adminRole);
+                    echo json_encode('success');
                 }
             }
 
@@ -223,14 +250,16 @@ class AccountController extends Controller
     }
 
     ## 會員刪除 
-    public function account_del($id){
+    public function account_del(request $request,$id){
         $this->user = Auth::user();
         $mrole = $this->chk_power(4);
         $can   = $this->chk_can();
+
         if( $mrole == 1){
             $data = User::where('id', $id)->get();
             $data[0]->detachAllRoles();
             $data[0]->delete();
+            echo json_encode("success");
         }else{
             echo '無權限';
         }

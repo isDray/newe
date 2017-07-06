@@ -92,12 +92,18 @@ class FeaturesController extends Controller
         }
     }
 
-    public function features_new_do(){
+    public function features_new_do(request $request){
         $this->user = Auth::user();
         $mrole = $this->chk_power(1);
         $can   = $this->chk_can();
+
+        $ajax_err = $this->validate($request, [
+                'f_controller'   => 'required',
+                'f_name'  => 'required',
+
+        ]);
         if( $mrole == 1){
-                                             
+                               
             
             $Features_list = new Features_list;
 
@@ -118,7 +124,8 @@ class FeaturesController extends Controller
                 );
 
             }
-
+            echo json_encode('success');
+            
         }else{
 
         }
@@ -138,18 +145,25 @@ class FeaturesController extends Controller
         }
     }
 
-    public function features_edit_do( Request $request ){
+    public function features_edit_do(Request $request){
         $this->user = Auth::user();
         $mrole = $this->chk_power(2);
         $can   = $this->chk_can();
+
+        $ajax_err = $this->validate($request, [
+                'f_id'   => 'required',
+                'f_controller'   => 'required',
+                'f_name'  => 'required',
+
+        ]);
 
         if( $mrole == 1){
         
             Features_list::where('id',$request->input('f_id'))
             ->update([ 'name' => $request->input('f_name'),
-                       'features' => $request->input('f_controller') ]);
-           
+                       'features' => $request->input('f_controller') ]);           
             
+            echo json_encode('success');
         }else{
             echo '無權限';
         }
@@ -165,6 +179,7 @@ class FeaturesController extends Controller
         if( $mrole == 1){
             Features_list::where('id', $id)->delete();
             Features_role::where('features_id', $id)->delete();
+            echo json_encode("success");
         }else{
             echo '無權限';
         }

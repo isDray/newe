@@ -103,15 +103,25 @@ class ModController extends Controller
 
         if( $mrole == 1){
             ##　取出所有功能
+
+/*
+
+            if( in_array("AccountController",$request->input('f_arr') ) ) {
+                echo '有';
+            }else{
+                echo '沒有';
+            }*/
+            
             $data = DB::table('features_list')
                   ->leftJoin('features_role', 'features_role.features_id', '=', 'features_list.id')
                   ->where('features_role.role_id','=',$id)
                   ->get();
+            
 
-            //var_dump($data);
             $temparr;
+
             foreach ($data  as $key => $value) {
-                if( $request->has($value->features) ){
+                if( in_array("$value->features",$request->input('f_arr')) ){
 
                     $temparr = explode(",",$value->power);
                     $temparr[3] = '1';
@@ -149,6 +159,7 @@ class ModController extends Controller
                 }
                
             }
+            echo json_encode("success");
         }else{
             echo '無權限';
         }

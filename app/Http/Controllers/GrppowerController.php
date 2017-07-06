@@ -92,6 +92,13 @@ class GrppowerController extends Controller
         $this->user = Auth::user();
         $mrole = $this->chk_power(1);
         $can   = $this->chk_can();
+
+        $ajax_err = $this->validate($request, [
+            'grp_name'   => 'required',
+            'grp_des'   => 'required',
+
+        ]);
+
         if( $mrole == 1){
 
             \HttpOz\Roles\Models\Role::create([
@@ -114,7 +121,7 @@ class GrppowerController extends Controller
                 ]);
                 
             }
-
+            echo json_encode('success');
         }else{
             echo '沒有權限';
         }
@@ -139,19 +146,17 @@ class GrppowerController extends Controller
         $mrole = $this->chk_power(2);
         $can   = $this->chk_can();
         if( $mrole == 1){
-             
+
             $all_features = DB::table('features_list')->get();
             
-            foreach( $all_features as $nowf){
-                echo $request->input($nowf->features);
-                echo '<br/>';
-
+            foreach( $all_features as $key => $nowf){
+                
                 DB::table('features_role')
                 ->where('role_id',$id)
                 ->where('features_id',$nowf->id)
-                ->update(['power' => $request->input($nowf->features)]);
+                ->update(['power' => $request->input( "name_arr.$key") ]);
             }
-            
+            echo json_encode('success');
         }else{
             echo '沒有權限';
         }
@@ -161,8 +166,11 @@ class GrppowerController extends Controller
         $mrole = $this->chk_power(4);
         $can   = $this->chk_can();
         if( $mrole == 1){
+
             DB::table('roles')->where('id',$id)->delete();
             DB::table('features_role')->where('role_id',$id)->delete();
+           
+            echo json_encode("success");
         }else{
             echo '沒有權限';
         }

@@ -37,11 +37,12 @@
                                 <a href="{{url('/features/features_edit/'.$account -> id)}}">
 	                            <button type="button" class="btn btn-primary fa fa-edit"></button>
 	                            </a>
+                                <!--
 	                            <a href="{{url('/features/features_del/'.$account -> id)}}" 
                                 onclick="return confirm('確定刪除該功能?')"
-	                            >
-	                            <button type="button" class="btn btn-danger fa fa-times"></button>
-	                            </a>
+	                            >-->
+	                            <button  value='{{$account -> id}}' type="button" class="btn btn-danger fa fa-times del"></button>
+	                            <!--</a>-->
 	                        </td>
                         </tr>
                         @endforeach
@@ -56,4 +57,67 @@
 </div>    
 
 
+@endsection
+
+@section('selfjs')
+
+<script type="text/javascript">
+$(function(){
+
+    $(".del").click(function(){
+        var nid = $(this).val();
+        swal({
+          title: "確定刪除功能?",
+          text: "注意!一經刪除後資料無法回復",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#DD6B55",
+          confirmButtonText: "確定",
+          cancelButtonText: "否",
+          closeOnConfirm: false,
+          closeOnCancel: true
+        },
+        function(isConfirm){
+          if (isConfirm) {
+            $.ajax({
+                method: "GET",
+                url: "{{ url('/features/features_del/')}}/"+nid,
+                statusCode: {
+                    422: function(errmsg) {
+                        //console.log(errmsg.responseJSON);
+                        swal("錯誤!", "過程錯誤", "error");
+                    },
+                    500: function(errmsg) {
+                        //console.log(errmsg.responseJSON);
+                        swal("錯誤!", "過程錯誤", "error");
+                    }
+                }
+            })
+            .done(function( msg ) {
+                if(msg =='"success"'){
+
+                    swal({
+                          title: "刪除成功!",
+                          text: "成功刪除功能!",
+                          type: "success",
+                          //showCancelButton: true,
+                          //confirmButtonColor: "#DD6B55",
+                          confirmButtonText: "OK",
+                          closeOnConfirm: false
+                        },
+                    function(){
+                        document.location.href="/arole/public/features";
+                    });
+                }
+                
+            });           
+          } else {
+           
+          }
+        });
+
+    })
+
+});
+</script>
 @endsection
