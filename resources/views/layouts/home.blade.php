@@ -131,7 +131,10 @@
                                 @endif()
                             </ul>     
                         </li>
-
+                        
+                        <li>
+                            <a href="#"><i class="fa fa-edit"></i>紀錄模組<span class="fa arrow"></span></a>
+                        </li>
                         <!--
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
