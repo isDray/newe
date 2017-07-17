@@ -12,6 +12,7 @@
 */
 
 Route::get('/', function () {
+    
     return view('welcome'); 
 });
 
@@ -59,5 +60,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/mod','ModController@lists');
     Route::get('/mod/mod_edit/{id}','ModController@mod_edit');
     Route::post('/mod/mod_edit_do/{id}','ModController@mod_edit_do');
-
+    
+    ## 操作紀錄
+    Route::get('/act_log/{act?}','ActlogController@act_assign');
 });

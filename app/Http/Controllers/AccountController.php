@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use App\Features_list;
 use App\Features_role;
 use App\User;
+use App\Act_log;
 
 /*------------------------------------------------------------------------
 | 2017-06-29 會員管理功能
@@ -88,7 +89,7 @@ class AccountController extends Controller
 
 
     public function lists(){
-
+        
         $this->user = Auth::user();
         $mrole = $this->chk_power(3);
         $can   = $this->chk_can();

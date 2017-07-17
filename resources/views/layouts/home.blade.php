@@ -31,7 +31,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    @yield('selfcss')
 </head>
 <style type="text/css">
     .slf_topac{
@@ -133,7 +133,7 @@
                         </li>
                         
                         <li>
-                            <a href="#"><i class="fa fa-edit"></i>紀錄模組<span class="fa arrow"></span></a>
+                            <a href="{{url('/act_log')}}"><i class="fa fa-edit"></i>紀錄模組<span class="fa arrow"></span></a>
                         </li>
                         <!--
                         <li>
