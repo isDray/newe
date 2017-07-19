@@ -1,21 +1,7 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::get('/', function () {
-    
-    return view('welcome'); 
-});
-
+// 這一行不可以移除,不然使用者權限會全部失效 
 Auth::routes();
 
 /*
@@ -64,3 +50,19 @@ Route::group(['middleware' => 'auth'], function () {
     ## 操作紀錄
     Route::get('/act_log/{act?}','ActlogController@act_assign');
 });
+
+/*-------------------------------------------------------------------------
+| 2017-0-7-17 基礎前台路由
+|--------------------------------------------------------------------------
+| 
+|
+|
+|
+*/
+
+Route::match(['get', 'post'],'/{act?}','Front\FrontwebController@index');
+/*
+Route::get('/', function () {
+    return view('welcome'); 
+});
+*/

@@ -252,8 +252,8 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="{{url('admin/dist/js/sb-admin-2.js')}}"></script>
-        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.js"></script>
-    >
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.js"></script>
+    
 
     @yield('selfjs')
 
