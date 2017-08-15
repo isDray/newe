@@ -135,6 +135,17 @@
                         <li>
                             <a href="{{url('/act_log')}}"><i class="fa fa-edit"></i>紀錄模組<span class="fa arrow"></span></a>
                         </li>
+                        
+                        <li>
+                            <a href="#"><i class="fa fa-gear"></i>修改首頁<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                @if( explode(",",$can[0]->power)[3] == 1 )
+                                <li>
+                                <a href="{{url('/edit')}}"><i class="fa fa-user"></i> 關於我們 </a>
+                                </li>
+                                @endif()
+                            </ul>     
+                        </li>
                         <!--
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>

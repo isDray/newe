@@ -1,0 +1,114 @@
+/* 由於只有首頁的menu需要半透明,所以除了首頁之外的css都要先解除該設定 */
+#row_content{
+	position: static;
+}/*
+@media (max-width: 768px){
+}*/
+@media (min-width: 0px) and (max-width: 992px) {
+
+    #contact_area{
+        padding: 0px;
+        height:auto;
+        overflow: hidden;
+    }
+    #contact_map_area{
+        position: absolute;
+        top:0px;
+        height: 470px;
+        padding: 0px;
+    }
+    #map{
+        height: 471px;
+        width: 100%;
+    }
+    #pmap_info{
+        margin-top: 470px;
+        height: 270px;
+        background-color:#752761;
+    }
+    #pmap_info_txt{
+        margin-top: 40px;
+        height: 180px;
+        color: white;
+    }
+    #pformtitle{
+        height: 115px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    #pformpic{
+        margin-top: 25px;
+        height: 90px;
+        background-image: url('../image/contacts/contactusword_RWD_phone_grid.png');
+        background-repeat: no-repeat;
+        background-size: auto 90px;
+        padding-left: 0px;
+        padding-right: 0px;        
+    }
+    #contact_form_area{
+        height: auto;
+        padding-right: 0px;
+        padding-left: 0px;
+        padding-bottom: 50px;
+    }
+    #fildall{
+        background-color: #752761;
+        padding: 20px;
+    }
+    button{
+        margin-top: 10px;
+        position: absolute;
+        left: 16px;
+        border:0px!important;
+        background-color: #752761!important;
+        color:white!important;
+        border-radius: 0px!important;
+    }
+
+}
+@media (min-width: 992px) {
+    #pmap_info,
+    #pmap_info_txt,
+    #pformtitle,
+    #pformpic{
+        display: none;
+    }
+    #map {
+        height: 630px;
+        width: 100%;
+    }
+	#contact_area{
+		height: 630px;
+		padding: 0px!important;
+	}
+    #contact_form_area{
+    	height: 100%;
+        background-image: url('../image/contacts/words_contactus_webside_grid-04.png');
+        background-repeat: no-repeat;
+        background-position: 75px 20px;
+        background-color:#fdfbf1; 
+    }
+    #contact_form{
+    	height: 425px;
+    	margin-top: 125px;
+    	background-color: #752761;
+    }
+    #contact_form>form{
+    	width: 100%;
+    	height: 100%;
+    }
+    #fildall{
+    	width: 100%;
+    	height: 100%;
+    	background-color: #752761;
+    }
+    button{
+    	margin-top: 10px;
+    	position: absolute;
+    	left: 0px;
+    	border:0px!important;
+    	background-color: #752761!important;
+    	color:white!important;
+    	border-radius: 0px!important;
+    }
+}

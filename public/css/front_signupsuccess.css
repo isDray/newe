@@ -1,0 +1,75 @@
+/* 由於只有首頁的menu需要半透明,所以除了首頁之外的css都要先解除該設定 */
+#row_content{
+	position: static;
+}
+/*
+@media (max-width: 768px){
+}*/
+@media (min-width: 0px) and (max-width: 992px) {
+    /* 手機板登入成功 */
+    body{
+        font-family: '微軟正黑體';
+    }
+    #signup_success{
+        overflow: hidden;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-right: 0px;
+        padding-left: 0px;
+        height: auto;
+        background-image: url('../image/signup/BG_signup_RWD_phone_grid.jpg');
+        background-size:cover;
+        background-position:center -1px;
+        background-repeat: no-repeat!important;
+        background-color: #752761;
+    }
+    #success_box{
+        height: 974px;
+        background-image: url('../image/signup/signupsucceebg_RWD_phone_grid.png');
+        background-size:cover;
+        background-position:center -1px;
+        background-repeat: no-repeat!important;        
+    }
+    #login_pic{
+        height:56px;
+        margin-top: 600px;
+        background-image: url('../image/signup/winebutton_signup_webside.png');
+        background-repeat: no-repeat;
+        background-position:center center; 
+    }
+    #login_txt{
+        font-size: 18px;
+    }
+}
+@media (min-width: 992px) {
+    #signup_success{
+        padding-top: 180px;
+        padding-bottom: 180px;
+        background-image: url('../image/signup/BG_signup_webside_grid.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #success_box{
+        height: 450px;
+        background-image: url('../image/signup/signupsuccess_webside.png');
+        background-size: cover;
+    }
+    #login_area{
+        height: 70px;
+        
+    }
+    #login_pic{
+       position: absolute;
+       top:280px;
+       background-image: url('../image/signup/winebutton_signup_webside.png');
+       width:39px;
+       height:56px;  
+    }
+    #login_txt{
+       position:absolute;
+       top:336px;
+    }
+    #login_txt a{
+        color:white;
+    }
+}

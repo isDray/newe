@@ -1,0 +1,227 @@
+/* 由於只有首頁的menu需要半透明,所以除了首頁之外的css都要先解除該設定 */
+#row_content{
+	position: static;
+}/*
+@media (max-width: 768px){
+}*/
+@media (min-width: 0px) and (max-width: 992px) {
+    body{
+        font-family: '微軟正黑體';
+    }
+    #goods_menu{
+        height: 76px;
+    }
+    #goods_item1{
+        text-align: right;
+    }
+    #goods_item2{
+        text-align: center;
+    }
+    #goods_item3{
+        text-align: left;  
+    }
+    #goods_item1>a,
+    #goods_item2>a,
+    #goods_item3>a{
+        color:#752761;
+        font-size: 20px;
+        font-weight: 900;
+        line-height: 76px;
+    }
+    #goods_list{
+        padding-right: 0px;
+        padding-left: 0px;
+        overflow: hidden;
+    }
+    .goods_list_item,.goods_list_item2{
+        margin-bottom: 60px; 
+        background-color: #dadada;
+        height: 160px;
+        padding-right: 0px;
+        padding-left: 0px;
+        /*background-color: red;*/
+    }
+    .goods_list_item2{
+        background-color: white;
+    }
+    .goods_list_item::after{
+        content: "";
+        margin-left: 0 auto;
+        position: absolute;
+        bottom:-60px;
+        left: 0;
+        z-index: 0;
+        border-top:60px solid gray;
+        border-left:50% solid gray;
+        /*border-color: #FF0000 transparent transparent transparent;*/
+        border-color: #dadada white transparent transparent;
+        border-style: solid solid solid solid;
+        /* 設定邊框大小可拼湊出任意形狀的三角形 */
+        border-width: 60px 992px 0px 0px;
+        /* 設定 width、height 可更好理解原理 */
+        height: 0px;
+        width: 0px;
+    }
+    .goods_list_item2::after{
+        content: "";
+        margin-left: 0 auto;
+        position: absolute;
+        bottom:-60px;
+        left: 0;
+        z-index: 0;
+        border-top:60px solid gray;
+        border-left:50% solid gray;
+        /*border-color: #FF0000 transparent transparent transparent;*/
+        border-color: white transparent transparent #dadada;
+        border-style: solid solid solid solid;
+        /* 設定邊框大小可拼湊出任意形狀的三角形 */
+        border-width: 60px 0px 0px 992px;
+        /* 設定 width、height 可更好理解原理 */
+        height: 0px;
+        width: 0px;
+    }    
+    .goodspic{
+        position: absolute;
+        top:-30px;
+        left:-40px;
+        transform: rotate(45deg);
+    }
+    .winpic{
+        height: 100%;
+    }
+    .ppic{
+        width: 100px;
+        height: 250px;
+    }
+    .wpic{
+        display: none;
+    }
+    .goods_txt_area{
+        height: 100%;
+    }
+    .goods_txt{
+        height: 120px;
+        position: absolute;
+        bottom: 0px;
+        font-size: 12px;
+        color:#752761;
+    }
+    .wmore{
+        display: none;
+    }
+    .pmore{
+        line-height: 160px;
+        color:#752761!important;
+    }
+}
+@media (min-width: 992px) {
+    
+    .ppic,
+    .pmore{
+        display: none;
+    }
+	#goods_menu{
+		background-color:rgba(204,204,204,0.5);
+		margin-top: 14px;
+		height:40px;
+	}
+	#goods_item1,
+	#goods_item2,
+	#goods_item3{
+		margin-top: 6px;
+        font-size: 14pt;
+        font-weight: 900;
+        font-family: '微軟正黑體';
+        color: #350335;
+	}
+    .allitem p{
+    	width: auto;
+    }
+	.allitem a:hover{
+		border-bottom:2px solid #350335;
+	}
+	#glhead{
+		height: 65px;
+	}
+	#goods_list{
+		background-color: #fdfbf1;
+
+		height: auto;
+		padding: 0px;
+	}
+	.goods_list_item,.goods_list_item2{
+		height: 306px;
+		padding: 0px;
+	}
+	.test{
+		height: 100%;
+	}
+	.goodspic{
+		position: absolute;
+		top:-90px;
+		left:-80px;
+		transform: rotate(45deg);
+	}
+	.goodspic:hover{
+		animation:mymove 1s infinite;
+		animation-iteration-count:1;
+		animation-fill-mode: forwards;
+	}
+	@keyframes mymove{
+        from {left:-80px;top:-90px;}
+        to {left:-30px;top:-140px;}
+    }
+    .goods_mdline_area{
+    	height: 100%;
+    }
+    .goods_mdline{
+    	height: 100%;
+    	border-top: 2px solid #752761;
+    	bottom: 0px;
+    	position: absolute;
+    }
+    .goods_txt_area{
+    	height: 100%;
+    	padding:0px;
+    }
+    .goods_txt{
+    	height: 40%;
+    	color:#752761;
+    	font-size: 18px;
+    	font-weight: 900;
+    	font-family: '微軟正黑體';
+    	position: absolute;
+
+    }
+    .goods_subtxt{
+    	height: 20%;
+    	font-size: 14px;
+    	color: gray;
+    	position: absolute;
+    	bottom: 0px;
+    	padding-bottom: 0px;
+    	margin: 0px;
+    }
+    .goods_btn_area{
+    	height: 100%;
+    }
+    .goods_btn{
+    	height: 40%;
+    	position: absolute;
+    }
+    .goods_btn a{
+        color: #752761;
+    	position: absolute;
+    	bottom: 10%;    	
+    	font-size: 14px;
+    	border-radius:5px;
+    	border:2px solid #752761;
+    	padding:2px;
+    	padding-right: 5px;
+    	padding-left: 5px;
+    	font-family: '微軟正黑體';
+    	position: absolute;
+    	bottom: 0px;
+
+    }
+}

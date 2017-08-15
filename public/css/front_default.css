@@ -1,0 +1,489 @@
+/*
+ * a 標籤不要底線跟顏色變換
+ */
+a:hover   {color:#752761; text-decoration:none;} 
+a:link    {color:#752761; text-decoration:none;} 
+a:visited {color:#752761; text-decoration:none;} 
+a:active  {color:#752761; text-decoration:none;}
+/*
+@media (max-width: 768px){
+}*/
+@media (min-width: 0px) and (max-width: 992px) {
+    a:hover   {color:white; text-decoration:none;} 
+    a:link    {color:white; text-decoration:none;} 
+    a:visited {color:white; text-decoration:none;} 
+    a:active  {color:white; text-decoration:none;}
+    #m_menu{
+        height: 60px;
+        background-color:#752761;
+        padding-right: 0px;
+        padding-left: 0px; 
+    }
+    #row_content{
+        display: none;
+    }
+
+    #m_member{
+        height: 100%;
+        background-image:url('../image/home/membericon_hp_RWD_phone_grid.png');
+        background-size: 39px 51px;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    #m_logo{
+        height: 100%;
+        background-image: url('../image/home/logo_hp_RWD_phone_grid.png');
+        background-size: 195px 41px;
+        background-repeat: no-repeat;
+        background-position: left center;
+    }
+    #m_list{
+        padding-right: 0px;
+        padding-left: 0px; 
+    }
+    #nav-icon3{
+        margin:20px auto; 
+        width: 30px;
+        height: 45px;
+        position: relative;
+        /*margin: 50px auto;*/
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        cursor: pointer;
+    }
+    #nav-icon3 span{
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background: white;
+      /*border-radius: 9px;*/
+      opacity: 1;
+      left: 0;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: .25s ease-in-out;
+      -moz-transition: .25s ease-in-out;
+      -o-transition: .25s ease-in-out;
+      transition: .25s ease-in-out;
+    }
+    #nav-icon3 span:nth-child(1) {
+      top: 0px;
+    }
+    
+    #nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
+      top: 12px;
+    }
+    
+    #nav-icon3 span:nth-child(4) {
+      top: 24px;
+    }
+    
+    #nav-icon3.open span:nth-child(1) {
+      top: 12px;
+      width: 0%;
+      left: 50%;
+    }
+    
+    #nav-icon3.open span:nth-child(2) {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    
+    #nav-icon3.open span:nth-child(3) {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+
+    #nav-icon3.open span:nth-child(4) {
+      top: 18px;
+      width: 0%;
+      left: 50%;
+    }
+
+    #m_menu_body{
+        position: absolute;
+        top:60px;
+        z-index: 3;
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: rgba(117,39,97,0.8);
+        display: none;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    /*手機板menu中移除padding*/
+    #m_menu_body>ul{
+      padding: 0px;
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+    #m_menu_body>ul>li{
+      text-align: left;
+      list-style: none;
+      color:white;
+      padding-top: 10px;
+      padding-left: 10px;
+      font-size: 18px;
+      font-weight: 500;
+      font-family: '微軟正黑體';
+      width: 100%;
+      border-bottom:1px solid white;
+    }
+    #m_menu_body>ul>li>span{
+      height: 10px;
+      width: 10px;
+    }
+    #m_menu_body>ul>li>ul>li{
+      list-style: none;
+      font-size: 14px;
+    }
+    /*menu開合區塊*/
+    #gooditm{
+      display: none;
+    }
+    #knowledgeitm{
+      display: none;
+    }
+    #mmbritm{
+      display: none;
+    }
+    /*footer*/
+    #footer_area{
+      height: auto;
+      background-color: #752761;
+      padding-top: 35px;
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+    #footer_icon_area{
+      height: auto;
+    }
+    #footer_icon_area>div{
+      height: 30px;
+    }
+    #ig{
+        background-image: url('../image/home/iocn_hp_RWD_phone_grid.png');
+        background-repeat: no-repeat;
+    }
+    #fb{
+        background-image: url('../image/home/icon2_hp_RWD_phone_grid.png');
+        background-repeat: no-repeat;
+    }
+    #yt{
+        background-image: url('../image/home/icon3_hp_RWD_phone.png');
+        background-repeat: no-repeat;
+    }
+    #footer_right_area{
+        color: white;
+        font-size: 12px;
+        text-align: center;
+        padding-top: 10px;
+    }
+    /*手機板首頁大圖*/
+    #home_banner{
+      overflow: hidden;
+      height: 400px;
+      background-image: url('../image/home/BN_we_hp_RWD_phone_grid.jpg');
+      background-size: 770px 401px;
+      background-repeat: no-repeat;
+      background-position:center -1px;
+    }
+    #home_ifo_area{
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+    #minfo{
+      min-height: auto;
+      background-image: url('../image/home/BN2_we_hp_RWD_phone_grid.jpg');
+      background-size: 769px 211px;
+      background-repeat: no-repeat;
+      background-position: center -1px; 
+    }
+    #minfotxt{
+      min-height: auto;
+      background-color: #350335;
+      background-image: url('../image/home/aboutus_we_hp_RWD_phone_grid.png');
+      background-position: center 10px;
+      background-repeat: no-repeat;
+      padding-bottom: 10px;
+    }
+    #minfotxt>div{
+      height: auto;
+      color:white;
+      margin-top: 85px;
+      
+    }
+    #home_slider{
+      height: 520px;
+    }
+    .slider_pic{
+      width: 100%;
+      height: 400px;
+      background-image: url('../image/home/wine_we_hp_RWD_phone_grid.png');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .slider_txt{
+      color: #752761;
+      text-align: center;
+    }
+    .slider_txt>div{
+      display: none;
+    }
+    #ifo_pic_area{
+      display: none;
+    } 
+    #partner{
+      display: none;
+    }
+    #mnews{
+      padding-right: 0px;
+      padding-left: 0px;
+      height: auto;
+    }
+    #mnewstxt{
+      height: auto;
+      padding-right: 10%;
+      padding-left: 10%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background-color:#aa779d;
+      color: white;
+      font-family: '微軟正黑體'; 
+    }   
+}
+@media (min-width: 992px) {
+  /*禁止手機板區塊*/
+  #minfo,#minfotxt,#mnews,#mnewstxt{
+    display: none;
+  }
+  #m_menu,#m_menu_body{
+        display: none;
+  }
+	#row_content{
+		height: 88px;
+		background-color: rgba(204,204,204,0.5);
+		z-index: 2;
+		position: absolute;
+		padding-left: 60px;
+	}
+	#home_banner{
+		height:600px;
+		background-image: url('../image/home/bn.jpg');
+		background-repeat: no-repeat;
+		background-size:cover;
+	}
+  #home_banner{
+    padding: 0px;
+    height: 600px;
+  }
+  #home_banner>div{
+    height: 100%;
+  }
+	#logo_area{
+		height: 88px;
+	}
+	#logo{
+		height: 88px;
+		width: 230px;
+		background-image: url('../image/home/logo.jpg');
+	}
+	.topmenu{
+		height: 88px;
+		padding-top: 20px;
+		/*display:table;*/
+	}
+	.topmenu2{
+		height: 88px;
+	}
+	.topmenu a{
+		font-size: 11pt;
+		font-family: '微軟正黑體';
+		font-weight: 900;
+		/*display:table-cell; 
+		vertical-align:middle;*/
+		color:#752761;
+		text-align: center;
+	}
+
+    .topmenu a:hover:after{
+		content: '';
+		display: block;
+		width:100%;
+		height: 2px;
+		border-bottom: 4px solid #752761;
+	}
+    #login{
+    	width: 73px;
+    	height: 41px;
+    	background-image: url('../image/home/login.jpg');
+    }
+    #join{
+    	width: 73px;
+    	height: 41px;
+    	background-image: url('../image/home/join.jpg');
+    }    
+    #home_ifo_area{
+    	height: 546px;
+    	background-color: #fdfbf1;
+    	padding: 0px;
+    }
+    #ifo_pic_area{
+    	height: 306px;
+    	/*background-color: red;*/
+    }
+    #ifo_pic{
+    	width: 645px;
+    	height: 342px;
+    	background-image: url('../image/home/aboutus.jpg');
+    	position: absolute;
+    	z-index: 2;
+    	top:-35px;
+    }
+    #ifo_pic>p{
+        
+    	border-bottom: 0px;
+    	position: absolute;
+        bottom: 50px;
+        padding-left: 5%;
+        padding-right: 5%;
+        color: white;
+    }
+    #partner{
+    	margin-top: 76px;
+    	height: 90px;
+    	/*border-top: 2px solid #d4d4d4;
+    	border-bottom: 2px solid #d4d4d4;*/
+    }
+    .partner_pic{
+    	margin-top: 13px;
+    	height: 64px;
+    	background-image: url('../image/home/partner.png');
+    }
+    #footer_area{
+    	height: 141px;
+    	background-color: #752761;
+    	padding: 0px;
+    }
+    #footer_logo_area{
+    	padding: 0px;
+    }
+    #footer_pic{
+      height: 80px;
+    	width: 250px;
+
+    	margin-top: 50px;
+    	background-image: url('../image/home/fooder.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .icon{
+    	width:30px;
+    	height: 30px;
+    	margin-top: 55px;
+    	float: left;
+
+    }
+    #ig{
+        background-image: url('../image/home/ig.png');
+    }
+
+    #fb{
+        background-image: url('../image/home/fb.png');
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #yt{
+        background-image: url('../image/home/youtube.png');
+    }
+    #footer_right_area{
+    	height: 141px;
+        display:table;
+    }
+    #footer_right_area p {
+    	color:white;
+    	display:table-cell; 
+		vertical-align:middle;
+    }
+    #home_slider{
+        height: 355px;
+    }
+    .slider_class{
+        height:431px;
+        position:absolute;
+        z-index: 2;
+        top:-76px;
+    }
+    .slider_pic{
+        float: left;
+        width: 136px;
+        height: 431px;
+        margin: 0px;
+        background-image:url('../image/home/wine.png');
+    }
+    .slider_pic2{
+        float: left;
+        width: 136px;
+        height: 431px;
+        margin: 0px;
+        background-image:url('../image/home/wine2.png');      
+    }
+    .slider_pic3{        
+        float: left;
+        width: 136px;
+        height: 431px;
+        margin: 0px;
+        background-image:url('../image/home/wine3.png');    
+      }
+    .slider_txt{
+        float: left;
+        width: calc(100% - 136px);
+        height: auto;
+        position: absolute;
+        bottom: 2px;
+        right: 0px;
+        padding-left: 10%;
+    }
+    .slider_txt p{
+        color:#752761;
+        font-family: '微軟正黑體';
+        font-size: 12pt;
+        font-weight: 900;
+    }
+
+    .slider_txt div{
+        text-align: center;
+        padding: 10px 0px 10px 0px;
+        width:50%;
+        border:2px solid #752761;
+        border-radius: 10px;
+        color:#752761;
+        font-family: '微軟正黑體';
+        font-size: 12pt;
+        font-weight: 900;
+    }
+    .partner_slide{
+        height: 100% ;
+    }
+    .partner_item{
+        margin-top:3px; 
+        height: 80px !important;
+        margin-right: 10px;
+        
+    }
+}

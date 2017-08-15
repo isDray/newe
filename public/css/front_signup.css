@@ -1,0 +1,155 @@
+/* 由於只有首頁的menu需要半透明,所以除了首頁之外的css都要先解除該設定 */
+#row_content{
+	position: static;
+}/*
+@media (max-width: 768px){
+}*/
+@media (min-width: 0px) and (max-width: 992px) {
+    body{
+        font-family: '微軟正黑體';
+    }
+    #signup_area{
+        overflow: hidden;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-right: 0px;
+        padding-left: 0px;
+        height: auto;
+        background-image: url('../image/signup/BG_signup_RWD_phone_grid.jpg');
+        background-size:cover;
+        background-position:center -1px;
+        background-repeat: no-repeat!important;
+        background-color: #752761;
+    }
+    #signup_form_area{
+        margin-top: 40px;
+        height: 974px;
+        background-image: url('../image/signup/signupBG_RWD_phone_grid.png');
+        background-repeat: no-repeat;
+        background-size:cover;
+    }
+    #signup_form{
+        margin-top: 200px;
+    }
+    form>div>label{
+        color:#752761!important;
+    }
+    .form-control{
+        box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0);
+        background-color: rgba(0,0,0,0)!important;
+        border:0px !important;
+        border-radius: 0px;
+        border-bottom: 1px solid white!important;
+    }
+    button{
+        margin-left: 0 auto;
+        width: 96px;
+        height: 30px;
+        border-radius: 4px!important;
+        border:none!important;
+        background-image: url('../image/signup/signupnowbutton_web.png')!important;
+        background-position: -1px -1px;
+        background-size: 98px 30px;
+        background-color: rgba(0,0,0,0);
+        border: none;
+        background-color: transparent;
+    }    
+}
+@media (min-width: 992px) {
+    #signup_area{
+        padding: 0px;
+        padding-top: 109px;
+        padding-bottom: 109px;
+        background-image: url('../image/signup/BG_signup_webside_grid.jpg');
+        background-size: cover;
+    }
+    #signup_form_area{
+        height: 600px;
+        background-image: url('../image/signup/signup_webside.png');
+        background-size: calc(100% + 1px) 600px;
+        box-shadow: 5px 10px 20px rgba(88,54,73,0.6);
+    }
+    #signup_form{
+        height: 100%;
+    }
+    form>div>label{
+        color:#752761!important;
+    }
+    .form-control{
+        box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0);
+        background-color: rgba(0,0,0,0)!important;
+        border:0px !important;
+        border-radius: 0px;
+        border-bottom: 1px solid white!important;
+    }
+
+    .form-control:focus {
+        border-color: rgba(0,0,0,0)!important;
+        box-shadow: none;
+        border-bottom: 1px solid white!important;
+    }
+
+    input[type='radio'] {
+      -webkit-appearance:none;
+      width:14px;
+      height:14px;
+      border:2px solid #752761;
+      border-radius:50%;
+      outline:none;
+      /*box-shadow:0 0 5px 0px #752761 inset!important;*/
+    }
+    input[type='radio']:hover {
+        /*box-shadow:0 0 5px 0px orange inset!important;*/
+    }
+    input[type='radio']:before {
+        content:'';
+        display:block;
+        width:8px;
+        height:8px;
+        margin:1px auto;    
+        border-radius:50%;    
+    }
+    input[type='radio']:checked:before {
+      background:#752761;
+    }
+    button{
+        width: 98px;
+        height: 30px;
+        background-image: url('../image/signup/signupnowbutton_web.png')!important;
+        background-size: 98px 30px;
+        background-color: rgba(0,0,0,0);
+
+    }
+/*
+    input[type=checkbox] {
+        visibility: hidden;
+    }
+    .checkbox{
+        height: 20px;
+        background: rgba(0,0,0,0);
+        margin: 20px 90px;
+        border-radius: 100%;
+        position: relative;
+        box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+    }
+
+    .checkbox label {
+        border:2px solid #752761;
+        display: block;
+        width: 12px!important;
+        height: 12px!important;
+        border-radius: 2px; 
+        transition: all .5s ease;
+        cursor: pointer;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+        background: white;
+        box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+     .checkbox input[type=checkbox]:checked + label {
+    background: #350335;
+}*/
+
+}

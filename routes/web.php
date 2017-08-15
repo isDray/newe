@@ -49,6 +49,9 @@ Route::group(['middleware' => 'auth'], function () {
     
     ## 操作紀錄
     Route::get('/act_log/{act?}','ActlogController@act_assign');
+
+    ## 首頁操作,將頁面變數傳給控制器,以達到相對應需求
+    Route::get('/edit/{page?}','EditController@page_assign');
 });
 
 /*-------------------------------------------------------------------------
@@ -60,7 +63,7 @@ Route::group(['middleware' => 'auth'], function () {
 |
 */
 
-Route::match(['get', 'post'],'/{act?}','Front\FrontwebController@index');
+Route::match(['get', 'post'],'/{act?}/{type?}/{num?}','Front\FrontwebController@index');
 /*
 Route::get('/', function () {
     return view('welcome'); 

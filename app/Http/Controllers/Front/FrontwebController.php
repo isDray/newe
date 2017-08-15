@@ -15,26 +15,62 @@ class FrontwebController extends Controller
     | 2. 假設act不存在則應該採取404回應
     |
     */
-    public function index( Request $request , $act = 'home')
+    public function index( Request $request , $act = 'home' ,$type=1,$num=1)
     {   
         
         // 如果act 有對應的funciton,繼續往下做,如果沒有回應404錯誤
         if( method_exists(get_called_class(), $act) ){
             
-            return $this->$act( $request );
-        
+            return $this->$act( $request , $type ,$num);
+
         }else{
   
             abort(404);
         }
 
     }
-    
-    public function home(){
-        
-        return view('front.app');
+    // 首頁
+    public function home($request, $type ,$num){
+
+        return view('index');
     }
-    
+    // 關於緯昶
+    public function about(){
+        
+        return view('index');
+    }
+    // 最新消息
+    public function news(){
+        
+        return view('index');
+    }
+    // 商品
+    public function goods( $request , $type ,$num ){
+      
+        return view("goods$type");
+    }
+    // 商品
+    public function detail($request , $type ,$num){
+
+        return view("detail.$type.detail$num");
+        //return view("detail.$type.detail$num");
+    }
+    // 知識專區
+    public function knowledge(){
+        
+        return view('index');
+    }    
+    // 聯絡我們
+    public function contacts(){
+        
+        return view('index');
+    }
+    // 登入會員
+    // 加入我們
+    public function join(){
+        
+        return view('index');
+    }
     public function join_account(){
 
         return view('front.join_account');
