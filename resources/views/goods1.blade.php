@@ -40,7 +40,7 @@
 				BRICCO MAIOLICA LANGHE NEBBIOLO DOC
                 <br/>
 				"瑪若利卡山莊(藍)"朗格內比奧羅紅葡萄酒
-				<p class='goods_subtxt'>酒體醇厚、結構極佳且後韻悠長</p>
+				<p class='goods_subtxt'>口感柔順、清新且纖細，帶有輕微的丹寧</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -72,7 +72,7 @@
 				BRICCO MAIOLICA BARBERA D' ALBA DOC  
                 <br/>
 				"瑪若利卡山莊(紅)"巴貝拉紅葡萄酒
-				<p class='goods_subtxt'>味道濃郁 、 口感滑順且清新</p>
+				<p class='goods_subtxt'>果香十足，口感醇和，微酸愉悅</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -105,7 +105,7 @@
 				FATTORIA DI GRIGNANO "GRIGNANO" CHIANTI RUFINA DOCG
                 <br/>
 		        "格里納羅"奇安提露菲娜紅葡萄酒
-				<p class='goods_subtxt'>酒體濃郁 、 單寧圓潤且後韻持久</p>
+				<p class='goods_subtxt'>清新紅莓果的香味，與圓潤的丹寧，帶出絕佳的結構與口感</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -141,7 +141,7 @@
 				FATTORIA DI GRIGNANO "POGGIO GUALTIERI" CHIANTI RUFINA RISERVA DOCG
                 <br/>
 		        "露菲娜山丘"奇安提露菲娜陳釀紅葡萄酒
-				<p class='goods_subtxt'>酒體濃郁 、 單寧圓潤且後韻持久</p>
+				<p class='goods_subtxt'>酒體醇厚、結構極佳且後韻悠長</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -176,7 +176,7 @@
 				FATTORIA DI GRIGNANO "SALICARIA" TOSCANA IGT
                 <br/>
 		        "千禧花"超級托斯卡尼紅葡萄酒
-				<p class='goods_subtxt'>酒體濃郁 、 單寧圓潤且後韻持久</p>
+				<p class='goods_subtxt'>口感相當的柔順高雅，味覺結構良好，尾韻圓潤亙久</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -211,7 +211,7 @@
 				GALASSO VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC
                 <br/>
 		        "葛拉索山莊"蒙特普爾恰諾紅葡萄酒
-				<p class='goods_subtxt'>酒體濃郁 、 單寧圓潤且後韻持久</p>
+				<p class='goods_subtxt'>濃郁的莓果香氣，單寧纖細、口感柔順且細緻</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -246,7 +246,7 @@
 				GALASSO CORNO GRANDE PREMIUM MONTEPULCIANO D’ABRUZZO DOC
                 <br/>
 		        "大角山羊"蒙特普爾恰諾紅葡萄酒
-				<p class='goods_subtxt'>酒體濃郁 、 單寧圓潤且後韻持久</p>
+				<p class='goods_subtxt'>梅子與黑莓酸的味痕；口感柔順且精緻、單寧纖細且持久</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -281,7 +281,7 @@
 				GALASSO CORNO GRANDE RISERVA MONTEPULCIANO D’ABRUZZO DOC
                 <br/>
 		        "大角山羊"陳釀蒙特普爾恰諾紅葡萄酒
-				<p class='goods_subtxt'>酒體濃郁 、 單寧圓潤且後韻持久</p>
+				<p class='goods_subtxt'>酒體醇厚、單寧纖細、尾韻頗佳</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -316,7 +316,7 @@
 				NEGROAMARO PUGLIA IGT
                 <br/>
 		        "魅紫"尼古阿馬羅紅葡萄酒
-				<p class='goods_subtxt'>酒體濃郁 、 單寧圓潤且後韻持久</p>
+				<p class='goods_subtxt'>氣味圓潤如紅醋栗果醬與覆盆子般，味道濃郁、平衡且清新</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -351,7 +351,7 @@
 				!!!PRIMITIVO SALENTO IGP
                 <br/>
 		        "曜黑"普里米蒂沃紅葡萄酒
-				<p class='goods_subtxt'>酒體濃郁 、 單寧圓潤且後韻持久</p>
+				<p class='goods_subtxt'>櫻桃與紅色漿果的香味；口感柔順溫醇、尾韻悠長。</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -386,7 +386,7 @@
 				PASSO DEL CARDINALE PRIMITIVO DI MANDURIA DOP
                 <br/>
 		        "紅衣主教"普里米蒂沃紅葡萄酒
-				<p class='goods_subtxt'>酒體濃郁 、 單寧圓潤且後韻持久</p>
+				<p class='goods_subtxt'>整體口感平衡令人印象深刻，結構良好並尾韻持久</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -421,7 +421,7 @@
 				ORFEO NEGROAMARO PUGLIA IGT
                 <br/>
 		        "奧菲歐"尼古阿馬羅紅葡萄酒
-				<p class='goods_subtxt'>酒體濃郁 、 單寧圓潤且後韻持久</p>
+				<p class='goods_subtxt'>口感圓潤豐厚、溫順且平衡，具有持久綿長且樸實的後韻</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -456,7 +456,7 @@
 				FIORE DI VIGNA PRIMITIVO SALENTO IGT
                 <br/>
 		        "葡萄花精靈"普里米蒂沃紅葡萄酒
-				<p class='goods_subtxt'>酒體濃郁 、 單寧圓潤且後韻持久</p>
+				<p class='goods_subtxt'>單寧結構相當良好，尾韻非常持久，並留下梅子與香料餘味</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -491,7 +491,7 @@
 				NERIMATTI RISERVA SALICE SALENTINO DOC
                 <br/>
 		        "内瑞馬提"薩利切薩倫帝諾陳釀紅葡萄酒
-				<p class='goods_subtxt'>酒體濃郁 、 單寧圓潤且後韻持久</p>
+				<p class='goods_subtxt'>持久綿長的果乾甜和酒體本身的甘味在味覺上達到完美的平衡</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -526,7 +526,7 @@
 				TACCOROSSO NEGROAMARO PUGLIA IGP 
                 <br/>
 		        "塔克羅素"尼古阿馬羅紅葡萄酒
-				<p class='goods_subtxt'>酒體濃郁 、 單寧圓潤且後韻持久</p>
+				<p class='goods_subtxt'>濃郁的深色水果、莓果、洋甘草及咖啡的香氣</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>

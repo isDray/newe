@@ -1,6 +1,9 @@
 /* 由於只有首頁的menu需要半透明,所以除了首頁之外的css都要先解除該設定 */
 #row_content{
 	position: static;
+}
+.error{
+    color:red!important;
 }/*
 @media (max-width: 768px){
 }*/
@@ -64,13 +67,13 @@
         background-size: cover;
     }
     #signup_form_area{
-        height: 600px;
+        height: auto;
         background-image: url('../image/signup/signup_webside.png');
         background-size: calc(100% + 1px) 600px;
         box-shadow: 5px 10px 20px rgba(88,54,73,0.6);
     }
     #signup_form{
-        height: 100%;
+        height:auto;
     }
     form>div>label{
         color:#752761!important;
@@ -112,7 +115,7 @@
     input[type='radio']:checked:before {
       background:#752761;
     }
-    button{
+    #signbtn{
         width: 98px;
         height: 30px;
         background-image: url('../image/signup/signupnowbutton_web.png')!important;

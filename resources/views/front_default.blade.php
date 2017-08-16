@@ -131,14 +131,14 @@
     <div id='m_menu_body' class='col-md-12 col-sm-12 col-xs-12'>
     <ul>
         <li>
-            <a href="{{url('/index')}}">首頁</a>
+            <a href="{{url('/hindex')}}">首頁</a>
         </li>
         <li>
             <a href="{{url('/about')}}">關於緯昶</a>
         </li>
         <li>
-            <!--<a href="{{url('/news')}}">-->
-             <a href="{{ url('image/home/comingsoon-01.png') }}" data-lightbox="image-1" data-title="hau_jiou_chen_wong_di">最新消息</a>
+             <a href="{{url('/news')}}"><!--
+             <a href="{{ url('image/home/comingsoon-01.png') }}" data-lightbox="image-1" data-title="hau_jiou_chen_wong_di">-->最新消息</a>
         </li>
         <li>
             <span class='mgood'>商品</span><span class='mgood glyphicon glyphicon-chevron-down'></span>
@@ -183,7 +183,7 @@
      	        	        	        	
         </div>
             <div class='col-md-1 col-md-offset-1 col-sm-1 col-xs-1 topmenu '>
-                <a href="{{url('/index')}}" rel="external">
+                <a href="{{url('/hindex')}}" rel="external">
                     首頁
                     <br/>
                     Home
@@ -198,7 +198,7 @@
             </div>
             <div class='col-md-1 col-sm-1 col-xs-1 topmenu'>
                 <!--<a href="{{url('/news')}}">-->
-                <a href="{{ url('image/home/comingsoon-01.png') }}" data-lightbox="image-1" data-title="hau_jiou_chen_wong_di" rel="external">
+                <a href="{{url('/news')}}" rel="external">
                     最新消息
                     <br/>
                     News
@@ -212,7 +212,7 @@
                 </a>
             </div>
             <div class='col-md-1 col-sm-1 col-xs-1 topmenu'>
-                <a href="{{ url('image/home/comingsoon-01.png') }}" data-lightbox="image-1" data-title="hau_jiou_chen_wong_di" rel="external">
+                <a href="" rel="external">
                     知識專區
                     <br/>
                     Knowledge
@@ -234,7 +234,7 @@
                 </a>
             </div>
             <div class='col-md-1 col-sm-1 col-xs-1 topmenu2'>
-                <a href="{{ url('image/home/comingsoon-01.png') }}" data-lightbox="image-1" data-title="hau_jiou_chen_wong_di" rel="external">
+                <a href="{{url('/join')}}" rel="external">
                 <div id='join'>
                     
                 </div>

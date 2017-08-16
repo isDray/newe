@@ -24,10 +24,11 @@
     }
 	$(function(){
         $.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+        });
+
         jQuery.extend(jQuery.validator.messages, {
             required: "此欄位為必填",
             remote: "Please fix this field.",
@@ -145,10 +146,10 @@
                 <label for="inputphone" class="col-sm-2 control-label">性別</label>
                 <div class="col-sm-8">
                     <label class="radio-inline ">
-                        <input type="radio" name="borg" id="inlineRadio1" value="1" checked="checked"> 男
+                        <input type="radio" name="borg" id="inlineRadio1" value='1' checked="checked"> 男
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="borg"  id="inlineRadio2" value="2"> 女
+                        <input type="radio" name="borg"  id="inlineRadio2" value='0'> 女
                     </label>
                 </div>
             </div>

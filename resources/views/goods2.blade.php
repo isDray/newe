@@ -40,7 +40,7 @@
 BATTIGIA
 CHARDONNAY SALENTO IGT <br>
 "薩蘭多海灘"夏多內白酒
-				<p class='goods_subtxt'>酒體醇厚、結構極佳且後韻悠長</p>
+				<p class='goods_subtxt'>濃烈的水果芳香，酒體飽滿熱情</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -72,7 +72,7 @@ CHARDONNAY SALENTO IGT <br>
 STURM
 FRIULANO COLLIO DOC <br>
 "史騰一號"弗留利白葡萄酒
-				<p class='goods_subtxt'>味道濃郁 、 口感滑順且清新</p>
+				<p class='goods_subtxt'>含有些許洋槐、梨子、百里香及杏仁味；口感優雅嫻淑</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -105,7 +105,7 @@ FRIULANO COLLIO DOC <br>
 STURM
 RIBOLLA GIALLA COLLIO DOC <br>
 "史騰二號"麗波拉姬亞拉白葡萄酒
-				<p class='goods_subtxt'>酒體濃郁 、 單寧圓潤且後韻持久</p>
+				<p class='goods_subtxt'>有野花、青蘋果及檸檬葉等令人舒適的香味；口感年輕、清新且優雅</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -140,7 +140,7 @@ RIBOLLA GIALLA COLLIO DOC <br>
 			<div class='goods_txt col-md-12 col-sm-12 col-xs-12'>
 PINOT BIANCO DOC FRIULI GRAVE <br>
 "雷蒙帝一號"白皮諾白葡萄酒
-				<p class='goods_subtxt'>酒體濃郁 、 單寧圓潤且後韻持久</p>
+				<p class='goods_subtxt'>成熟熱帶水果香氣、與黃桃甜香； 味道平衡且富有香氣</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -174,7 +174,7 @@ PINOT BIANCO DOC FRIULI GRAVE <br>
 			<div class='goods_txt col-md-12 col-sm-12 col-xs-12'>
 PINOT GRIGIO DOC FRIULI GRAVE <br>
 "雷蒙帝二號"灰皮諾白葡萄酒
-				<p class='goods_subtxt'>酒體濃郁 、 單寧圓潤且後韻持久</p>
+				<p class='goods_subtxt'>精緻典雅的花香與白色水果香氣，帶來明顯的清爽口感</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>

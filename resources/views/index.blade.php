@@ -66,20 +66,32 @@
     <div id='mnews' class='col-md-0 col-sm-12 col-xs-12'>
     <img src="{{ url('image/home/newpicwe_hp_RWD_phone_grid.jpg') }}" width='100%'>
     </div>
+
+    <!-- 手機版使用 -->
     <div id='mnewstxt' class='col-md-0 col-sm-12 col-xs-12'>
         <div>
           Wine & Gourmet Taipei (WGT)
-
-國內唯一整合產業供應鏈的專業級酒品交易會。展會中匯集眾多國內外知名酒品代理商、國內外酒莊、專業酒櫃和各國頂級飲酒器皿，更有多項特色佐酒美食共同展出，同時結合專業產業論壇、重量級大師講座課程與豐富活動等，是台灣所有酒品相關廠商、大量採購買主、及酒品專業人士薈萃一堂的大型採購平台。
+          國內唯一整合產業供應鏈的專業級酒品交易會。展會中匯集眾多國內外知名酒品代理商、國內外酒莊、專業酒櫃和各國頂級飲酒器皿，更有多項特色佐酒美食共同展出，同時結合專業產業論壇、重量級大師講座課程與豐富活動等，是台灣所有酒品相關廠商、大量採購買主、及酒品專業人士薈萃一堂的大型採購平台。
         </div>
     </div>
-	<div id='ifo_pic_area' class='col-md-7 col-md-offset-0 col-sm-12 col-xs-12'>
-		<div id='ifo_pic' class='text-center'>
-			<p>
-				放眼未來，我們將持續引薦當地高品質佳釀予國人，藉以推廣葡萄酒品飲文化與提升飲食品質 為消費者提供更美好的生活體驗！
-			</p>
-		</div>
-	</div>
+
+	  <div id='ifo_pic_area' class='col-md-7 col-md-offset-0 col-sm-12 col-xs-12'>
+		    <div id='ifo_pic' class='text-center'>
+			  <p  class='text-center'>
+				2017 台北精緻酒展
+			  </p>
+        <p  class='text-center'>
+        8/25 - 8/28 台北世貿一館 
+        </p>
+
+        <a href="{{url('/newsd/1')}}">
+          <div id='hnmore'>
+            看更多 >
+          </div>
+        </a> 
+		    </div>
+	  </div>
+
 	<div id='partner' class='col-md-10 col-md-offset-1 col-sm-12 col-xs-12'>
 		<!--
 		<div class='col-md-1 col-md-offset-0 col-sm-12 col-xs-12 partner_pic'>

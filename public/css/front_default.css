@@ -349,19 +349,35 @@ a:active  {color:#752761; text-decoration:none;}
     #ifo_pic{
     	width: 645px;
     	height: 342px;
-    	background-image: url('../image/home/aboutus.jpg');
+    	background-image: url('../image/home/aboutus.png');
     	position: absolute;
     	z-index: 2;
     	top:-35px;
     }
-    #ifo_pic>p{
-        
-    	border-bottom: 0px;
-    	position: absolute;
-        bottom: 50px;
-        padding-left: 5%;
-        padding-right: 5%;
-        color: white;
+    #ifo_pic>p{ 
+      width: 100%; 
+      color: #752761;
+      position: absolute;
+      bottom: 20px;
+      font-size: 14px;
+    }
+    #ifo_pic>p:first-child{
+      font-size: 20px;
+      font-family: '微軟正黑體';
+      font-weight: 900;
+      bottom: 40px;
+    }
+    /* 8/16 新增 */
+    #hnmore{
+      width:100px;
+      background-color: white;
+      padding-left: 10px;
+      padding-left: 10px;
+      border: 1px solid #752761;
+      border-radius: 10px;
+      position: absolute;
+      bottom: 40px;
+      right: 100px;
     }
     #partner{
     	margin-top: 76px;

@@ -40,7 +40,7 @@
 FEDERICO FERRERO SORI GALA 
 MOSCATO D’ASTI DOCG <br>
 "陽光慶典"莫斯卡托微氣泡甜白酒
-				<p class='goods_subtxt'>酒體醇厚、結構極佳且後韻悠長</p>
+				<p class='goods_subtxt'>精緻典雅的花香與白色水果香氣，帶來明顯的清爽口感</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -72,7 +72,7 @@ MOSCATO D’ASTI DOCG <br>
 MONTEVERDI
 MOSCATO OLTREPO PAVESE DOC <br>
 "蒙特羅帝"莫斯卡托微氣泡甜白酒
-				<p class='goods_subtxt'>味道濃郁 、 口感滑順且清新</p>
+				<p class='goods_subtxt'>有著獨特的水果香氣，甜蜜且愉悅的口感</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -105,7 +105,7 @@ MOSCATO OLTREPO PAVESE DOC <br>
 MILLESIMATO EXTRA DRY
 VINO SPUMANTE BIANCO <br>
 "2014年份"特甘型氣泡酒
-				<p class='goods_subtxt'>酒體濃郁 、 單寧圓潤且後韻持久</p>
+				<p class='goods_subtxt'>花果香混合而成的口感不但清新舒爽、雅緻芳醇且氣泡細緻長久</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -141,7 +141,7 @@ VINO SPUMANTE BIANCO <br>
 MARANELLO GOLD
 MOSCATO SPUMANTE DOLCE <br>
 "瑪拉內洛一號(金)"莫斯卡托甜氣泡酒
-				<p class='goods_subtxt'>酒體濃郁 、 單寧圓潤且後韻持久</p>
+				<p class='goods_subtxt'>濃郁而精緻的花香、白色水果與香草香氣</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
@@ -176,7 +176,7 @@ MOSCATO SPUMANTE DOLCE <br>
 MARANELLO GOLD
 PROSECCO DOC SPUMANTE EXTRADRY <br>
 "瑪拉內洛二號(金)"特甘型普錫科氣泡酒
-				<p class='goods_subtxt'>酒體濃郁 、 單寧圓潤且後韻持久</p>
+				<p class='goods_subtxt'>香醇濃郁的蘋果果香與花香，入口後清新且均衡</p>
 			</div>
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>

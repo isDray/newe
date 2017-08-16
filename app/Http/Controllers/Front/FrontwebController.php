@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-
+use App\J_member;
 class FrontwebController extends Controller
 {
     
@@ -15,7 +15,7 @@ class FrontwebController extends Controller
     | 2. 假設act不存在則應該採取404回應
     |
     */
-    public function index( Request $request , $act = 'home' ,$type=1,$num=1)
+    public function index( Request $request , $act = 'hindex' ,$type=1,$num=1)
     {   
         
         // 如果act 有對應的funciton,繼續往下做,如果沒有回應404錯誤
@@ -30,7 +30,7 @@ class FrontwebController extends Controller
 
     }
     // 首頁
-    public function home($request, $type ,$num){
+    public function hindex($request, $type ,$num){
 
         return view('index');
     }
@@ -42,7 +42,11 @@ class FrontwebController extends Controller
     // 最新消息
     public function news(){
         
-        return view('index');
+        return view('news');
+    }
+    public function newsd($request , $type){
+        
+        return view("newsd.newsd$type");
     }
     // 商品
     public function goods( $request , $type ,$num ){
@@ -68,8 +72,62 @@ class FrontwebController extends Controller
     // 登入會員
     // 加入我們
     public function join(){
+        return view('signup');
+    }
+    public function joindo($request){
         
-        return view('index');
+        if( $request->isMethod('post') ){
+            //var_dump(  $request->all() );
+            
+            // 開始檢驗
+            $this->validate($request, [
+                    'account'   => 'required|min:6|max:12',
+                    'password'  => 'required|min:6|max:12',
+                    'password2' => 'required|min:6|max:12',
+                    'sex'       => 'required|in:b,g',
+                    'birthday'  => 'required|date',
+                    'name'      => 'required',
+                    'phone'     => 'required|digits:10',
+                    'address'   => 'required',
+                    'email'     => 'required|email',
+            ]);
+
+            if( $request->input('password') !=  $request->input('password2') ){
+                echo json_encode("輸入密碼不一致");
+                exit;
+            }
+
+            if( $request->sex =='b'){
+                $request->sex = 0;
+            }else{
+                $request->sex = 0;
+            }
+
+            $count = J_member::where('account',$request->account)->count();
+
+            if( $count  < 1){
+
+                $J_member = new J_member;
+                
+                $J_member->account  = $request->account;
+                $J_member->password = md5($request->password);
+                $J_member->sex      = $request->sex;
+                $J_member->birthday = $request->birthday;
+                $J_member->name     = $request->name;
+                $J_member->phone    = $request->phone;
+                $J_member->address  = $request->address;
+                $J_member->email    = $request->email;
+    
+                $J_member->save();
+                
+                echo json_encode("會員新增成功");
+            
+            }else{
+
+                echo json_encode("此帳號已經存在"); 
+            }
+            
+        }
     }
     public function join_account(){
 
