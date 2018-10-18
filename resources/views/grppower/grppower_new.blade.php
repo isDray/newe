@@ -83,7 +83,7 @@ $(function(){
                           closeOnConfirm: false
                         },
                     function(){
-                        document.location.href="/arole/public/grppower";
+                        document.location.href="/grppower";
                     });
                 }
                 

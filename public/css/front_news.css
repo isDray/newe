@@ -3,6 +3,7 @@
 }/*
 @media (max-width: 768px){
 }*/
+
 @media (min-width: 0px) and (max-width: 992px) {
     #news_area{
     	padding-right: 0px;
@@ -43,6 +44,7 @@
     	height: 310px;
     	margin-top:20px;
     	color:white;
+        font-family: '微軟正黑體';
     }
     .nimgw{
     	display: none;
@@ -55,7 +57,7 @@
         font-size: 16px;
     }
 }
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1500px) {
 	#news_area{
 		/*margin-top: 55px;*/
 		padding-left:0px;
@@ -109,6 +111,7 @@
 		margin: 0 auto;
 		margin-top: 38px;
 		color:white;
+        font-family: '微軟正黑體';
 	}
     .carousel{
         margin-bottom: 40px;
@@ -119,5 +122,76 @@
         bottom: 0px;
         right: 20px;
         font-size: 20px;
+    }
+}
+@media (min-width: 1500px){
+    #news_area{
+        /*margin-top: 55px;*/
+        padding-left:0px;
+        padding-right: 0px; 
+    }
+    .news_box{
+        overflow-x: hidden;
+        height: 365px;
+        padding-left:0px;
+        padding-right: 0px;
+    }
+    .time_line{
+        height: 100%;
+        border-right: 2px solid #350335;
+    }
+    .time_line:after{
+        content:'';
+        width:20px;
+        height:20px;
+        border-radius: 50%;
+        background-color: #350335;
+        position:absolute;
+        top:0px;
+        right: -11px;
+        z-index: 3;
+    }
+    .time_txt{
+        padding-left:0px;
+        padding-right: 0px; 
+        height: 100%;
+        font-size: 40px;
+        color:#350335;
+    }
+    .news_img{
+        padding-left:0px;
+        padding-right: 0px; 
+        height: 320px;
+    }
+    .nimgp{
+        display: none;
+    }
+    .news_text{
+        padding-left:0px;
+        padding-right: 0px; 
+        height: 320px;
+        background-color: #752761;
+    }
+    .text_box{
+        width:40%;
+        height: 144px;
+        margin: 0 auto;
+        margin-top: 58px;
+        color:white;
+        font-size: 24px;
+        font-family: '微軟正黑體';
+    }
+    .carousel{
+        margin-bottom: 40px;
+    }
+    .more{
+        color: white;
+        position: absolute;
+        bottom: 0px;
+        right: 20px;
+        font-size: 20px;
+    }
+    #footer_area{
+        margin-top: 0px;
     }
 }

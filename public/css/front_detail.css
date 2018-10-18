@@ -5,6 +5,7 @@
 .ui-loader{
     display:none!important;
 }
+
 /*
 @media (max-width: 768px){
 }*/
@@ -96,14 +97,17 @@
         color: gray;
     }
     .ppanel>span{
-        color: #752761;
+        color: white;
     }
     .ppanel>span>a{
         font-size: 18px;
         font-weight: 900;
         font-family: '微軟正黑體';
-        color:#752761;
+        color:white!important;
 
+    }
+    .ppanel>ul>li>a{
+        color:white!important;
     }
     ul,li{
         list-style: none;
@@ -168,8 +172,11 @@
         vertical-align : middle!important;
 
     }
+    .ui-link{
+    color: whitle!important;
+    }
 }
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1500px) {
     /*手機板取消區塊*/
     #pwine_title,
     #pwine_pic,
@@ -182,6 +189,9 @@
     }
     body{
         font-family:'微軟正黑體';
+    }
+    .ui-link{
+        color: #752761!important;
     }
     #pm_main{
         display: none;
@@ -272,7 +282,7 @@
     	margin-top: 65px;
         color:#752761;
         overflow-y: auto;
-        font-size: 11px;
+        /*font-size: 11px;*/
     }
     #txt_des::-webkit-scrollbar-track{
         -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
@@ -340,3 +350,174 @@
     }
 
 }
+@media (min-width: 1500px){
+    /*手機板取消區塊*/
+    #pwine_title,
+    #pwine_pic,
+    #pmore,
+    .picon{
+        display: none;
+    }
+    .pnav{
+        display: none;
+    }
+    body{
+        font-family:'微軟正黑體';
+    }
+    #pm_main{
+        display: none;
+    }
+    #firstLink>li,#secondLink>li,#thirdLink>li{
+        margin-bottom: 10px;
+    }
+    #detail_area{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    #detail_top{
+        margin-top: 60px;
+        height: 550px;
+
+    }
+    #detail_menu{
+        overflow-y: auto;
+        height: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    #detail_menu::-webkit-scrollbar-track{
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #ffffff;
+    }
+
+    #detail_menu::-webkit-scrollbar{
+        width:6px;
+        background-color: #F5F5F5;
+    }
+    #detail_menu::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: rgba(0,0,0,0);
+    }
+    #detail_pic{
+        text-align:center; 
+        height: 100%;
+
+    }
+    #detail_txt{
+        height: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .nav>li>a:hover, .nav>li>a:focus{
+        background-color: rgba(0,0,0,0);
+    }
+    .nav>span{
+        width: 100%;
+        font-size: 18px;
+        font-weight:900;
+    }
+    .panel{
+        cursor: pointer;
+    }
+    .panel>ul>li{
+        font-size: 12px;
+        color: gray;
+    }
+    .panel>span{
+        color: #752761;
+    }
+    .panel>span>a{
+        font-size: 18px;
+        font-weight: 900;
+        font-family: '微軟正黑體';
+        color:#752761;
+
+    }
+    ul,li{
+        list-style: none;
+    }
+    /*文字部分*/
+    #txt_name{
+        height: 90px;
+        color:#350335;
+        font-size: 20px;
+        font-weight: 900;
+        font-family: '微軟正黑體';
+
+    }
+    #txt_des{
+        height: 110px;
+        margin-top: 65px;
+        color:#752761;
+        overflow-y: auto;
+        /*font-size: 11px;*/
+    }
+    #txt_des::-webkit-scrollbar-track{
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #ffffff;
+    }
+
+    #txt_des::-webkit-scrollbar{
+        width:6px;
+        background-color: #F5F5F5;
+    }
+    #txt_des::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: rgba(0,0,0,0);
+    }   
+    #txt_ifo{
+        height: 220px;
+        margin-top: 20px;
+        color:#752761;
+    }
+    #more{
+        padding-left: 10px;
+        padding-right: 10px;
+        color:#752761;
+        border:1px solid #752761;
+        border-radius: 5px;
+        position: absolute;
+        bottom:0px;
+    }
+    #detail_mid{
+        margin-top: 40px;
+        height: 300px;
+        margin-bottom: 40px;
+    }
+    #mid_pic{
+        height: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    #mid_txt{
+        height: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+        color:#752761;
+    }
+    #detail_btm{
+        margin-top: 20px;
+        background-color:#350335;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .btmtxt{
+        padding-right: 0px;
+        padding-left: 0px;
+        padding-top:40px;   
+    }
+    .btmtxt p{
+        height: 20px;
+        margin: 0px;
+        font-size: 16px;
+        font-family: '微軟正黑體';
+        font-weight: 900;
+        color: white;
+    }    
+} 

@@ -11,8 +11,8 @@
 <script src='https://www.google.com/recaptcha/api.js'></script>
 
 <script type="text/javascript">
-$(function(){
 
+$(function(){
     jQuery.extend(jQuery.validator.messages, {
         required: "此欄位為必填",
         remote: "Please fix this field.",
@@ -32,7 +32,7 @@ $(function(){
         max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
         min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
     });
-    $('button[type=submit]').click(function(){
+    $('#signbtn').click(function(){
         
         $("#joinform").validate({
             
@@ -55,9 +55,15 @@ $(function(){
                         sex:{
                             required: true,
                         },
-                        birthday:{
+                        year:{
                             required: true,
-                        },                       
+                        },
+                        mon:{
+                             required: true,
+                        },
+                        day:{
+                             required: true,
+                        },                             
                         name:{ 
                             required: true,
                             maxlength:20,
@@ -90,7 +96,9 @@ $(function(){
                           "password": $("#password").val(),
                           "password2": $("#password2").val(),
                           "sex":  $(".sexg:checked").val(),
-                          "birthday":$("#birthday").val(),
+                          "year":$("#year").val(),
+                          "mon":$("#mon").val(),
+                          "day":$("#day").val(),
                           "name":$("#name").val(),
                           "phone":$("#phone").val(),
                           "address":$("#address").val(),
@@ -151,11 +159,11 @@ $(function(){
 
 @section('main')
 
-<div id='signup_area' class='col-md-12 col-sm-12 col-xs-12' onsubmit="return false">
+<div id='signup_area' class='col-md-12 col-sm-12 col-xs-12'>
     <div id='signup_form_area' class='col-md-10 col-md-offset-1 ccol-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1'>
         <div id='signup_form' class='col-md-6 col-md-offset-5 ccol-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1'>
         
-        <form action="{{url('/joindo')}}" method="post" id='joinform'>
+        <form action="{{url('/joindo')}}" method="post" id='joinform'  onsubmit="return false">
             
             {{ csrf_field() }}
             
@@ -185,9 +193,27 @@ $(function(){
             </label>
             </div>
 
-            <div class="form-group">
+            <div class="form-inline">
+
             <label for="exampleInputBirth">生日</label>
-            <input type="date" class="form-control" placeholder="" name='birthday' id='birthday'>
+            <select class="form-control" id='year' name='year'>
+                <option value="">年</option>
+                @for ($year; $year >1900 ; $year--)
+                <option value="{{$year}}">{{$year}}</option>
+                @endfor
+            </select>
+            <select class="form-control" id='mon' name='mon'>
+                <option value="">月</option>
+                @for ($mon=1; $mon <=12 ; $mon++)
+                <option value="{{$mon}}">{{$mon}}月</option>
+                @endfor
+            </select>
+            <select class="form-control" id='day' name='day'>
+                <option value="">日</option>
+                @for ($day=1; $day <=31 ; $day++)
+                <option value="{{$day}}">{{$day}}日</option>
+                @endfor
+            </select>
             </div>
 
             <div class="form-group">
@@ -213,14 +239,13 @@ $(function(){
             <div class="checkbox">
               <label>
                 <input type="checkbox" value="" name='fchk' id='fchk'>
-                我已詳細閱讀並且同意會員條款同意書
+                我已詳細閱讀並且同意 <a href="{{url('rule')}}" rel="external" target="_blank">會員條款同意書</a> 
               </label>
             </div>
 
             <div class="form-group">
-            <div class="col-md-4 col-md-offset-4 ccol-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4">  
+            <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-0 col-xs-8 col-xs-offset-4">  
                 <button  type="submit" class="btn btn-default" id='signbtn' ></button>
-
             </div>      
             
             </div>

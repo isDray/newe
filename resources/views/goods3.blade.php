@@ -35,7 +35,7 @@
 				
 			</div>
 		</div>
-		<div class='goods_txt_area col-md-4 col-md-offset-1 col-sm-8 col-sm-offset-0 col-xs-8 col-xs-offset-0'>
+		<div class='goods_txt_area col-md-4 col-md-offset-1 col-sm-7 col-sm-offset-0 col-xs-7 col-xs-offset-0'>
 			<div class='goods_txt col-md-12 col-sm-12 col-xs-12'>
 FEDERICO FERRERO SORI GALA 
 MOSCATO D’ASTI DOCG <br>
@@ -43,12 +43,12 @@ MOSCATO D’ASTI DOCG <br>
 				<p class='goods_subtxt'>精緻典雅的花香與白色水果香氣，帶來明顯的清爽口感</p>
 			</div>
 		</div>
-		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
-		    <div class='goods_btn col-md-12 col-sm-1 col-xs-1'>
+		<div class='goods_btn_area col-md-1 col-sm-2 col-xs-2'>
+		    <div class='goods_btn col-md-12 col-sm-12 col-xs-12'>
 		    	<a class='wmore' href="{{url('/detail/3/1')}}" rel="external">
 		    		看更多
 		    	</a>
-		        <a class='pmore glyphicon glyphicon-chevron-right' href="">
+		        <a class='pmore glyphicon glyphicon-chevron-right' href="{{url('/detail/3/1')}}" rel="external">
 		    		
 		    	</a>
 		    </div>
@@ -67,7 +67,7 @@ MOSCATO D’ASTI DOCG <br>
 				
 			</div>
 		</div>
-		<div class='goods_txt_area col-md-4 col-md-offset-1 col-sm-8 col-xs-8'>
+		<div class='goods_txt_area col-md-4 col-md-offset-1 col-sm-7 col-xs-7'>
 			<div class='goods_txt col-md-12 col-sm-12 col-xs-12'>
 MONTEVERDI
 MOSCATO OLTREPO PAVESE DOC <br>
@@ -75,13 +75,13 @@ MOSCATO OLTREPO PAVESE DOC <br>
 				<p class='goods_subtxt'>有著獨特的水果香氣，甜蜜且愉悅的口感</p>
 			</div>
 		</div>
-		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
+		<div class='goods_btn_area col-md-1 col-sm-2 col-xs-2'>
 		    <div class='goods_btn col-md-12 col-sm-12 col-xs-12'>
 		    	<!--<a class='wmore' href="">-->
 		    	<a href="{{url('/detail/3/2')}}" rel="external">
 		    		看更多
 		    	</a>
-		        <a class='pmore glyphicon glyphicon-chevron-right' href="">
+		        <a class='pmore glyphicon glyphicon-chevron-right' href="{{url('/detail/3/2')}}" rel="external">
 		    		
 		    	</a>
 		    </div>
@@ -100,7 +100,7 @@ MOSCATO OLTREPO PAVESE DOC <br>
 				
 			</div>
 		</div>
-		<div class='goods_txt_area col-md-4  col-md-offset-1 col-sm-8 col-xs-8'>
+		<div class='goods_txt_area col-md-4  col-md-offset-1 col-sm-7 col-xs-7'>
 			<div class='goods_txt col-md-12 col-sm-12 col-xs-12'>
 MILLESIMATO EXTRA DRY
 VINO SPUMANTE BIANCO <br>
@@ -108,7 +108,7 @@ VINO SPUMANTE BIANCO <br>
 				<p class='goods_subtxt'>花果香混合而成的口感不但清新舒爽、雅緻芳醇且氣泡細緻長久</p>
 			</div>
 		</div>
-		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
+		<div class='goods_btn_area col-md-1 col-sm-2 col-xs-2'>
 		    <div class='goods_btn col-md-12 col-sm-12 col-xs-12'>
 		    	<!--<a class='wmore' href="">
 		    		看更多
@@ -116,7 +116,7 @@ VINO SPUMANTE BIANCO <br>
 		    	<a href="{{url('/detail/3/3')}}" rel="external">
 		    		看更多
 		    	</a>
-		        <a class='pmore glyphicon glyphicon-chevron-right' href="">
+		        <a class='pmore glyphicon glyphicon-chevron-right' href="{{url('/detail/3/3')}}" rel="external">
 		    		
 		    	</a>
 		    </div>
@@ -136,7 +136,7 @@ VINO SPUMANTE BIANCO <br>
 				
 			</div>
 		</div>
-		<div class='goods_txt_area col-md-4  col-md-offset-1 col-sm-8 col-xs-8'>
+		<div class='goods_txt_area col-md-4  col-md-offset-1 col-sm-7 col-xs-7'>
 			<div class='goods_txt col-md-12 col-sm-12 col-xs-12'>
 MARANELLO GOLD
 MOSCATO SPUMANTE DOLCE <br>
@@ -144,7 +144,7 @@ MOSCATO SPUMANTE DOLCE <br>
 				<p class='goods_subtxt'>濃郁而精緻的花香、白色水果與香草香氣</p>
 			</div>
 		</div>
-		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
+		<div class='goods_btn_area col-md-1 col-sm-2 col-xs-2'>
 		    <div class='goods_btn col-md-12 col-sm-12 col-xs-12'>
 		    	<!--<a class='wmore' href="">
 		    		看更多
@@ -152,7 +152,7 @@ MOSCATO SPUMANTE DOLCE <br>
 		    	<a href="{{url('/detail/3/4')}}" rel="external">
 		    		看更多
 		    	</a>
-		        <a class='pmore glyphicon glyphicon-chevron-right' href="">
+		        <a class='pmore glyphicon glyphicon-chevron-right' href="{{url('/detail/3/4')}}" rel="external">
 		    		
 		    	</a>
 		    </div>
@@ -171,7 +171,7 @@ MOSCATO SPUMANTE DOLCE <br>
 				
 			</div>
 		</div>
-		<div class='goods_txt_area col-md-4  col-md-offset-1 col-sm-8 col-xs-8'>
+		<div class='goods_txt_area col-md-4  col-md-offset-1 col-sm-7 col-xs-7'>
 			<div class='goods_txt col-md-12 col-sm-12 col-xs-12'>
 MARANELLO GOLD
 PROSECCO DOC SPUMANTE EXTRADRY <br>
@@ -179,7 +179,7 @@ PROSECCO DOC SPUMANTE EXTRADRY <br>
 				<p class='goods_subtxt'>香醇濃郁的蘋果果香與花香，入口後清新且均衡</p>
 			</div>
 		</div>
-		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
+		<div class='goods_btn_area col-md-1 col-sm-2 col-xs-2'>
 		    <div class='goods_btn col-md-12 col-sm-12 col-xs-12'>
 		    	<!--<a class='wmore' href="">
 		    		看更多
@@ -187,7 +187,7 @@ PROSECCO DOC SPUMANTE EXTRADRY <br>
 		    	<a href="{{url('/detail/3/5')}}" rel="external">
 		    		看更多
 		    	</a>
-		        <a class='pmore glyphicon glyphicon-chevron-right' href="">
+		        <a class='pmore glyphicon glyphicon-chevron-right' href="{{url('/detail/3/5')}}" rel="external">
 		    		
 		    	</a>
 		    </div>

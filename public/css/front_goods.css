@@ -12,7 +12,7 @@
         height: 76px;
     }
     #goods_item1{
-        text-align: right;
+        text-align: center;
     }
     #goods_item2{
         text-align: center;
@@ -24,7 +24,7 @@
     #goods_item2>a,
     #goods_item3>a{
         color:#752761;
-        font-size: 20px;
+        font-size: 14px;
         font-weight: 900;
         line-height: 76px;
     }
@@ -34,9 +34,9 @@
         overflow: hidden;
     }
     .goods_list_item,.goods_list_item2{
-        margin-bottom: 60px; 
+        /*margin-bottom: 60px; */
         background-color: #dadada;
-        height: 160px;
+        height: 300px;
         padding-right: 0px;
         padding-left: 0px;
         /*background-color: red;*/
@@ -44,6 +44,7 @@
     .goods_list_item2{
         background-color: white;
     }
+    /*
     .goods_list_item::after{
         content: "";
         margin-left: 0 auto;
@@ -53,12 +54,9 @@
         z-index: 0;
         border-top:60px solid gray;
         border-left:50% solid gray;
-        /*border-color: #FF0000 transparent transparent transparent;*/
         border-color: #dadada white transparent transparent;
         border-style: solid solid solid solid;
-        /* 設定邊框大小可拼湊出任意形狀的三角形 */
         border-width: 60px 992px 0px 0px;
-        /* 設定 width、height 可更好理解原理 */
         height: 0px;
         width: 0px;
     }
@@ -71,19 +69,17 @@
         z-index: 0;
         border-top:60px solid gray;
         border-left:50% solid gray;
-        /*border-color: #FF0000 transparent transparent transparent;*/
         border-color: white transparent transparent #dadada;
         border-style: solid solid solid solid;
-        /* 設定邊框大小可拼湊出任意形狀的三角形 */
         border-width: 60px 0px 0px 992px;
-        /* 設定 width、height 可更好理解原理 */
         height: 0px;
         width: 0px;
     }    
+    */
     .goodspic{
         position: absolute;
-        top:-30px;
-        left:-40px;
+        top:0px;
+        left:10px;
         transform: rotate(45deg);
     }
     .winpic{
@@ -109,13 +105,25 @@
     .wmore{
         display: none;
     }
+    .goods_btn a:first-child{
+        display: none;
+    }
     .pmore{
+        display: block;
         line-height: 160px;
         color:#752761!important;
     }
+    .wwl{
+        display: none;
+    }
+    .tab-pane{
+        padding: 0px!important;
+    }    
 }
 @media (min-width: 992px) {
-    
+    .pwl{
+        display: none;
+    }
     .ppic,
     .pmore{
         display: none;
@@ -141,14 +149,17 @@
 		border-bottom:2px solid #350335;
 	}
 	#glhead{
-		height: 65px;
+		height: 165px;
 	}
-	#goods_list{
+	#tab0,#tab1,#tab2{
 		background-color: #fdfbf1;
 
 		height: auto;
 		padding: 0px;
 	}
+    .tab-pane{
+        padding: 0px!important;
+    }
 	.goods_list_item,.goods_list_item2{
 		height: 306px;
 		padding: 0px;
@@ -169,7 +180,7 @@
 	}
 	@keyframes mymove{
         from {left:-80px;top:-90px;}
-        to {left:-30px;top:-140px;}
+        to {left:20px;top:-190px;}
     }
     .goods_mdline_area{
     	height: 100%;

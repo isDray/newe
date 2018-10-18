@@ -10,7 +10,9 @@
         "httpoz/roles": "^2.2",
         "laravel/framework": "5.3.*",
         "recaptcha-lib/recaptcha": "0.1.*",
-        "google/recaptcha": "~1.1"
+        "google/recaptcha": "~1.1",
+        "butochnikov/laravel-grafika": "~0.0.1",
+        "intervention/image": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

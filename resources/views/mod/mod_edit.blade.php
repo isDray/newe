@@ -86,7 +86,7 @@ $(function(){
                     closeOnConfirm: false
                 },
                 function(){
-                    document.location.href="/arole/public/mod";
+                    document.location.href="/mod";
                 });
             }
                 

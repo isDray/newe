@@ -105,7 +105,7 @@ $(function(){
                           closeOnConfirm: false
                         },
                     function(){
-                        document.location.href="/arole/public/account";
+                        document.location.href="/account";
                     });
                 }
                 

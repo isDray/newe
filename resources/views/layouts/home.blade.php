@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>IGT-後臺管理 </title>
+    <title>緯昶管理後台 </title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{url('admin/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -59,7 +59,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">IGT</a>
+                <a class="navbar-brand" href="index.html">緯昶管理後台</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -72,13 +72,13 @@
                     <ul class="dropdown-menu dropdown-user">
                         <li>
                         <!--<a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>-->
-                            <a href="{{ url('/logout') }}"
+                            <a href="{{ url('logout') }}"
                                onclick="event.preventDefault();
                                document.getElementById('logout-form').submit();">
                                 Logout
                             </a>
 
-                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                            <form id="logout-form" action="{{ url('logout') }}" method="POST" style="display: none;">
                                {{ csrf_field() }}
                             </form>
                         </li>
@@ -108,44 +108,98 @@
                             <ul class="nav nav-second-level">
                                 @if( explode(",",$can[0]->power)[3] == 1 )
                                 <li>
-                                <a href="{{url('/account')}}"><i class="fa fa-user"></i> 帳號管理 </a>
+                                <a href="{{url('/account')}}"><i class="glyphicon glyphicon-triangle-right"></i> 帳號管理 </a>
                                 </li>
                                 @endif()
                                 
                                 @if( explode(",",$can[1]->power)[3] == 1 )
                                 <li>
-                                <a href="{{url('/features')}}"><i class="fa fa-dashboard "></i> 功能管理 </a>
+                                <a href="{{url('/features')}}"><i class="glyphicon glyphicon-triangle-right"></i> 功能管理 </a>
                                 </li>
                                 @endif()
                                 
                                 @if( explode(",",$can[2]->power)[3] == 1 )
                                 <li>
-                                <a href="{{url('/grppower')}}"><i class="fa fa-sitemap "></i> 群組管理 </a>
+                                <a href="{{url('/grppower')}}"><i class="glyphicon glyphicon-triangle-right"></i> 群組管理 </a>
                                 </li>
                                 @endif()
 
                                 @if( explode(",",$can[3]->power)[3] == 1 )
                                 <li>
-                                <a href="{{url('/mod')}}"><i class="fa fa-th-large  "></i> 模組管理 </a>
+                                <a href="{{url('/mod')}}"><i class="glyphicon glyphicon-triangle-right"></i> 模組管理 </a>
                                 </li>
                                 @endif()
                             </ul>     
                         </li>
                         
                         <li>
-                            <a href="{{url('/act_log')}}"><i class="fa fa-edit"></i>紀錄模組<span class="fa arrow"></span></a>
+                            <a href="{{url('/act_log')}}"><i class="fa fa-edit"></i>紀錄模組</a>
                         </li>
                         
                         <li>
-                            <a href="#"><i class="fa fa-gear"></i>修改首頁<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-gear"></i>商品管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                @if( explode(",",$can[0]->power)[3] == 1 )
+                                @if( explode(",",$can[5]->power)[3] == 1 )
                                 <li>
-                                <a href="{{url('/edit')}}"><i class="fa fa-user"></i> 關於我們 </a>
+                                <a href="{{url('/edit/type_manager')}}"><i class="glyphicon glyphicon-triangle-right"></i>葡萄酒類別管理</a>
                                 </li>
+                                @endif()
+
+                                @if( explode(",",$can[5]->power)[3] == 1 )
+                                <li>
+                                <a href="{{url('/edit/variety_manager')}}"><i class="glyphicon glyphicon-triangle-right"></i>葡萄品種管理</a>
+                                </li>
+                                @endif()
+
+                                @if( explode(",",$can[5]->power)[3] == 1 )
+                                <li>
+                                <a href="{{url('/edit/origin_manager')}}"><i class="glyphicon glyphicon-triangle-right"></i>產地管理</a>
+                                </li>
+                                @endif()
+
+                                @if( explode(",",$can[5]->power)[3] == 1 )
+                                <li>
+                                <a href="{{url('/edit/taste_manager')}}"><i class="glyphicon glyphicon-triangle-right"></i>口感管理</a>
+                                </li>
+                                @endif()
+
+                                @if( explode(",",$can[5]->power)[3] == 1 )
+                                <li>
+                                <a href="{{url('/edit/winery_manager')}}"><i class="glyphicon glyphicon-triangle-right"></i>酒廠管理</a>
+                                </li>
+                                @endif()                                                                  
+                                
+                                
+                                @if( explode(",",$can[5]->power)[3] == 1 )
+                                <li>
+                                <a href="{{url('/edit/wine_manager')}}"><i class="glyphicon glyphicon-triangle-right"></i>酒品管理</a>
+                                </li>                                
                                 @endif()
                             </ul>     
                         </li>
+                        @if( explode(",",$can[5]->power)[3] == 1 )
+                        <li>
+                            <a href="{{url('/edit/news_manager')}}"><i class="glyphicon glyphicon-info-sign"></i>最新消息</a>
+                        </li>
+                        @endif()
+                        @if( explode(",",$can[6]->power)[3] == 1 )
+                        <li>
+                            <a href="#"><i class="fa fa-gear"></i>客戶管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                
+                                <li>
+                                <a href="{{url('/infom/msg')}}"><i class="glyphicon glyphicon-triangle-right"></i>留言查看</a>
+                                </li>
+                                
+
+                              
+                                <li>
+                                <a href="{{url('/infom/jmbr')}}"><i class="glyphicon glyphicon-triangle-right"></i>會員資料查看</a>
+                                </li>
+                                                              
+                            </ul>     
+                        </li>
+                        @endif()                        
                         <!--
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>

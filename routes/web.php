@@ -51,7 +51,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/act_log/{act?}','ActlogController@act_assign');
 
     ## 首頁操作,將頁面變數傳給控制器,以達到相對應需求
-    Route::get('/edit/{page?}','EditController@page_assign');
+    Route::match(['get', 'post'],'/edit/{page?}/{id?}','EditController@page_assign');
+
+    ## 資訊操作
+    Route::match(['get', 'post'],'/infom/{page?}/{id?}','InfomController@page_assign');
 });
 
 /*-------------------------------------------------------------------------

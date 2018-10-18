@@ -8,11 +8,17 @@
 <script type="text/javascript">
 $(function(){
 
-    $('.panel').click(function(){
-        if( $(this).children("span").attr('class') == 'ptile glyphicon glyphicon-chevron-down'){
+    $('.ptile').click(function(){
+        console.log($(this).attr('class'));
+        /*if( $(this).children("span").attr('class') == 'ptile glyphicon glyphicon-chevron-down'){
             $(this).children("span").attr('class','ptile glyphicon glyphicon-chevron-up');
         }else{
             $(this).children("span").attr('class','ptile glyphicon glyphicon-chevron-down');
+        }*/
+        if( $(this).attr('class') == 'ptile glyphicon glyphicon-chevron-down' ||$(this).attr('class') == 'ptile glyphicon glyphicon-chevron-down collapsed'){ 
+            $(this).attr('class','ptile glyphicon glyphicon-chevron-up');
+        }else{
+            $(this).attr('class','ptile glyphicon glyphicon-chevron-down');
         }
     });
 
@@ -226,8 +232,8 @@ $(function(){
     <div id='detail_body' class="col-md-12 col-sm-12 col-xs-12" style='padding-right: 0px;padding-left: 0px;'>
 
         <ul class="nav nav-stacked wnav" id="accordion1">
-            <!--<li class="panel" data-toggle="collapse" data-parent="#accordion1" href="#firstLink">-->
-            <span class='ptile glyphicon glyphicon-chevron-down panel'  data-toggle="collapse" data-parent="#accordion1" href="#firstLink"><a>紅酒</a>
+            <li class="panel">
+            <span class='ptile glyphicon glyphicon-chevron-down'  data-toggle="collapse" data-parent="#accordion1" href="#firstLink"><a>紅酒</a>
             </span>
                 <ul id="firstLink" class="collapse">
                 
@@ -324,9 +330,9 @@ $(function(){
                 </li>                      
             
                 </ul>
-            <!--</li>
-            <li class="panel"> -->
-                <span class='panel ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#secondLink">白酒</a></span>
+            </li>
+            <li class="panel">
+                <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#secondLink">白酒</a></span>
 
                 <ul id="secondLink" class="collapse">
                     <li>
@@ -360,10 +366,10 @@ $(function(){
                     </a>
                     </li>                                                
                 </ul>
-            <!--</li>
+            </li>
 
-            <li class="panel"> -->
-                <span class='panel ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#thirdLink">氣泡酒</a>
+            <li class="panel">
+                <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#thirdLink">氣泡酒</a>
             </span>
                 <ul id="thirdLink" class="collapse">
                     <li>
@@ -398,7 +404,7 @@ $(function(){
                     </li>                           
                                                             
                 </ul>
-            <!--</li>-->
+            </li>
         
         </ul>
     </div>
@@ -419,7 +425,7 @@ RISERVA SALICE SALENTINO DOC <br>
             class='col-md-3 col-md-offset-0 '>
             <!-- 手機版,觀看更多按鈕-->
             <div id='pmore' class='col-md-3 col-md-offset-0 col-sm-12 col-xs-12'>
-                <div>獲得更多優惠資訊</div>
+                <a href="{{url('/join')}}" rel="external"> <div>獲得更多優惠資訊</div></a>
             </div>
         </div>
 
@@ -449,10 +455,11 @@ RISERVA SALICE SALENTINO DOC <br>
 建議醒酒時間: 30分鐘 <br> 
 推薦搭配料理: 可搭配各式烤肉料理 <br>
             </div>
-            
+            <a href="{{url('/join')}}" rel="external"> 
             <div id='more'>
                 獲取更多優惠訊息
             </div>
+            </a>
         
         </div>
     </div>

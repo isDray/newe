@@ -81,7 +81,7 @@ $(function(){
                           closeOnConfirm: false
                         },
                     function(){
-                        document.location.href="/arole/public/features";
+                        document.location.href="/features";
                     });
                 }
                 

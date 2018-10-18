@@ -51,7 +51,7 @@ body{
 }
 
 }
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1500px) {
 #newsd_area{
     overflow: hidden;
     height: auto;
@@ -94,4 +94,45 @@ body{
 
 
 
+}
+@media (min-width: 1500px){
+#newsd_area{
+    overflow: hidden;
+    height: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+#topimage{
+    height: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+    overflow: hidden;
+}
+#smpic{
+    height: auto;
+    margin-top: 55px;
+}
+#dtopifo{
+    margin-top: 55px;
+}
+#dtitle{
+    font-size: 28px;
+    font-weight: 900;
+    height: 90px;
+}
+#difo{
+    font-size: 16px;
+    font-weight: 900;
+    margin-top:25px;
+    height: 140px;
+}
+#ddes{
+    height: auto;
+    margin-top: 55px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 20px;
+    font-size: 16px;
+    font-weight: 900;
+}    
 }

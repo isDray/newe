@@ -45,7 +45,10 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => storage_path('app'),
+            // 'root' => storage_path('app'),
+            // 改變目路
+            'root' => public_path('image'),
+            
         ],
 
         'public' => [

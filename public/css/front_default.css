@@ -1,10 +1,45 @@
 /*
  * a 標籤不要底線跟顏色變換
  */
-a:hover   {color:#752761; text-decoration:none;} 
-a:link    {color:#752761; text-decoration:none;} 
-a:visited {color:#752761; text-decoration:none;} 
-a:active  {color:#752761; text-decoration:none;}
+#detail_btm{
+    /*display: none;*/
+}
+a:hover   {color:#752761; text-decoration:none; outline: none !important;} 
+a:link    {color:#752761; text-decoration:none; outline: none !important;} 
+a:visited {color:#752761; text-decoration:none; outline: none !important;} 
+a:active  {color:#752761; text-decoration:none; outline: none !important;}
+div:hover {
+  outline: none !important;
+}
+div:link{
+  outline: none !important;
+}
+div:visited{
+  outline: none !important;
+}
+div:active{
+  outline: none !important;
+}
+button:hover{
+  outline: none !important;
+}
+button:link{
+  outline: none !important;
+}
+button:visited{
+  outline: none !important;
+}
+button:hover{
+  outline: none !important;
+}
+#alert{
+
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
 /*
 @media (max-width: 768px){
 }*/
@@ -13,6 +48,19 @@ a:active  {color:#752761; text-decoration:none;}
     a:link    {color:white; text-decoration:none;} 
     a:visited {color:white; text-decoration:none;} 
     a:active  {color:white; text-decoration:none;}
+    #alert{
+      position: fixed;
+      width: 100%;
+      height: 60px;
+      background: url('../image/home/warning_rwd.jpg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      bottom: 0;
+      right: 0;
+      background-color: #250526;
+      z-index: 20;
+    }
     #m_menu{
         height: 60px;
         background-color:#752761;
@@ -116,7 +164,7 @@ a:active  {color:#752761; text-decoration:none;}
     #m_menu_body{
         position: absolute;
         top:60px;
-        z-index: 3;
+        z-index: 200;
         height: auto;
         padding-top: 10px;
         padding-bottom: 10px;
@@ -163,7 +211,7 @@ a:active  {color:#752761; text-decoration:none;}
     }
     /*footer*/
     #footer_area{
-      height: auto;
+      height: 240px;
       background-color: #752761;
       padding-top: 35px;
       padding-right: 0px;
@@ -180,8 +228,10 @@ a:active  {color:#752761; text-decoration:none;}
         background-repeat: no-repeat;
     }
     #fb{
+        height: 50px;
         background-image: url('../image/home/icon2_hp_RWD_phone_grid.png');
         background-repeat: no-repeat;
+        background-position: center;
     }
     #yt{
         background-image: url('../image/home/icon3_hp_RWD_phone.png');
@@ -196,11 +246,12 @@ a:active  {color:#752761; text-decoration:none;}
     /*手機板首頁大圖*/
     #home_banner{
       overflow: hidden;
-      height: 400px;
+      height: 377px;
       background-image: url('../image/home/BN_we_hp_RWD_phone_grid.jpg');
-      background-size: 770px 401px;
+      background-size: 660px 377px;
       background-repeat: no-repeat;
       background-position:center -1px;
+      background-color: #350335;
     }
     #home_ifo_area{
       padding-right: 0px;
@@ -233,13 +284,19 @@ a:active  {color:#752761; text-decoration:none;}
     .slider_pic{
       width: 100%;
       height: 400px;
-      background-image: url('../image/home/wine_we_hp_RWD_phone_grid.png');
+      /*background-image: url('../image/home/wine_we_hp_RWD_phone_grid.png');*/
       background-repeat: no-repeat;
       background-position: center;
+    }
+    .slider_pic>img{
+      margin-left: calc(50% - 90px);
     }
     .slider_txt{
       color: #752761;
       text-align: center;
+    }
+    .slider_txt>p{
+      margin-top: 30px;
     }
     .slider_txt>div{
       display: none;
@@ -266,11 +323,25 @@ a:active  {color:#752761; text-decoration:none;}
       font-family: '微軟正黑體'; 
     }   
 }
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1500px)  {
+
   /*禁止手機板區塊*/
   #minfo,#minfotxt,#mnews,#mnewstxt{
     display: none;
   }
+      #alert{
+      position: fixed;
+      width: 100%;
+      height: 70px;
+      background: url('../image/home/warning_web.jpg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      bottom: 0;
+      right: 0;
+      background-color: #250526;
+      z-index: 20;
+    }
   #m_menu,#m_menu_body{
         display: none;
   }
@@ -338,7 +409,7 @@ a:active  {color:#752761; text-decoration:none;}
     	background-image: url('../image/home/join.jpg');
     }    
     #home_ifo_area{
-    	height: 546px;
+    	height: 446px;
     	background-color: #fdfbf1;
     	padding: 0px;
     }
@@ -350,13 +421,14 @@ a:active  {color:#752761; text-decoration:none;}
     	width: 645px;
     	height: 342px;
     	background-image: url('../image/home/aboutus.png');
+      background-position: center;
     	position: absolute;
     	z-index: 2;
     	top:-35px;
     }
     #ifo_pic>p{ 
       width: 100%; 
-      color: #752761;
+      color: white;
       position: absolute;
       bottom: 20px;
       font-size: 14px;
@@ -377,9 +449,11 @@ a:active  {color:#752761; text-decoration:none;}
       border-radius: 10px;
       position: absolute;
       bottom: 40px;
-      right: 100px;
+      right: 40px;
+      font-family: '微軟正黑體';
     }
     #partner{
+
     	margin-top: 76px;
     	height: 90px;
     	/*border-top: 2px solid #d4d4d4;
@@ -391,7 +465,7 @@ a:active  {color:#752761; text-decoration:none;}
     	background-image: url('../image/home/partner.png');
     }
     #footer_area{
-    	height: 141px;
+    	height: 246px;
     	background-color: #752761;
     	padding: 0px;
     }
@@ -450,7 +524,7 @@ a:active  {color:#752761; text-decoration:none;}
         width: 136px;
         height: 431px;
         margin: 0px;
-        background-image:url('../image/home/wine.png');
+        /*background-image:url('../image/home/wine.png');*/
     }
     .slider_pic2{
         float: left;
@@ -493,6 +567,15 @@ a:active  {color:#752761; text-decoration:none;}
         font-size: 12pt;
         font-weight: 900;
     }
+    .slider_txt div:hover{
+        animation-name: example;
+        animation-duration: 0.4s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes example {
+        from {background-color: rgba(0,0,0,0);color:#752761;}
+        to {background-color: #752761;color:white;}
+    }
     .partner_slide{
         height: 100% ;
     }
@@ -502,4 +585,270 @@ a:active  {color:#752761; text-decoration:none;}
         margin-right: 10px;
         
     }
+}
+@media (min-width: 1500px){
+  /*禁止手機板區塊*/
+  #minfo,#minfotxt,#mnews,#mnewstxt{
+    display: none;
+  }
+  #m_menu,#m_menu_body{
+        display: none;
+  }
+  #alert{
+      position: fixed;
+      width: 100%;
+      /*height: 152px; 原來高度*/
+      height: 100px;
+      background: url('../image/home/warning_1700.jpg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      bottom: 0;
+      right: 0;
+      background-color: #250526;
+      z-index: 20;
+  }
+  #row_content{
+    height: 88px;
+    background-color: rgba(204,204,204,0.5);
+    z-index: 2;
+    position: absolute;
+    padding-left: 60px;
+  }
+  #home_banner{
+    
+    background-image: url('../image/home/hp_1700_web-03.png');
+    background-repeat: no-repeat;
+    background-size:calc(100% + 2px) auto;
+    background-position: -2px -100px;
+  }
+  #home_banner{
+    padding: 0px;
+    height: 800px;
+  }
+  #home_banner>div{
+    height: 100%;
+  }
+  #logo_area{
+    height: 88px;
+  }
+  #logo{
+    height: 88px;
+    width: 230px;
+    background-image: url('../image/home/logo.jpg');
+  }
+  .topmenu{
+    height: 88px;
+    padding-top: 20px;
+    /*display:table;*/
+  }
+  .topmenu2{
+    height: 88px;
+  }
+  .topmenu a{
+    font-size: 11pt;
+    font-family: '微軟正黑體';
+    font-weight: 900;
+    /*display:table-cell; 
+    vertical-align:middle;*/
+    color:#752761;
+    text-align: center;
+  }
+
+    .topmenu a:hover:after{
+    content: '';
+    display: block;
+    width:100%;
+    height: 2px;
+    border-bottom: 4px solid #752761;
+  }
+    #login{
+      width: 73px;
+      height: 41px;
+      background-image: url('../image/home/login.jpg');
+    }
+    #join{
+      width: 73px;
+      height: 41px;
+      background-image: url('../image/home/join.jpg');
+    }    
+    #home_ifo_area{
+      height: 546px;
+      background-color: #fdfbf1;
+      padding: 0px;
+    }
+    #ifo_pic_area{
+      height: 546px;
+      padding-left: 10%;
+      /*background-color: red;*/
+    }
+    #ifo_pic{
+      width: 70%;
+      height: 574px;
+      background-image: url('../image/home/hp_1700_web-10.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      z-index: 2;
+      top:-35px;
+    }
+    #ifo_pic>p{ 
+      width: 100%; 
+      color: white;
+      position: absolute;
+      bottom: 20px;
+      font-size: 14px;
+    }
+    #ifo_pic>p:first-child{
+      font-size: 20px;
+      font-family: '微軟正黑體';
+      font-weight: 900;
+      bottom: 40px;
+    }
+    /* 8/16 新增 */
+    #hnmore{
+      width:100px;
+      background-color: white;
+      padding-left: 10px;
+      padding-left: 10px;
+      border: 1px solid #752761;
+      border-radius: 10px;
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      font-family: '微軟正黑體';
+    }
+    #partner{
+      margin-top: 76px;
+      margin-bottom: 40px;
+      height: 90px;
+      /*border-top: 2px solid #d4d4d4;
+      border-bottom: 2px solid #d4d4d4;*/
+    }
+    .partner_pic{
+      margin-top: 13px;
+      height: 64px;
+      background-image: url('../image/home/partner.png');
+    }
+    #footer_area{
+      /*margin-top: 300px;*/
+      height: 293px;
+
+      background-color: #752761;
+      padding: 0px;
+    }
+    #footer_logo_area{
+      padding: 0px;
+    }
+    #footer_pic{
+      height: 80px;
+      width: 250px;
+
+      margin-top: 50px;
+      background-image: url('../image/home/fooder.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .icon{
+      width:30px;
+      height: 30px;
+      margin-top: 55px;
+      float: left;
+
+    }
+    #ig{
+        background-image: url('../image/home/ig.png');
+    }
+
+    #fb{
+        background-image: url('../image/home/fb.png');
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #yt{
+        background-image: url('../image/home/youtube.png');
+    }
+    #footer_right_area{
+      height: 141px;
+        display:table;
+    }
+    #footer_right_area p {
+      color:white;
+      display:table-cell; 
+    vertical-align:middle;
+    }
+    #home_slider{
+        /*height: 355px;*/
+        height: 555px;
+    }
+    .slider_class{
+        height:431px;
+        position:absolute;
+        z-index: 2;
+        top:-76px;
+    }
+    .slider_pic{
+        float: left;
+        width: 210px;
+        /*height: 620px;*/
+        height: 500px;
+        margin: 0px;
+        /*background-image:url('../image/home/wine.png');*/
+        background-size: 210px 620px;
+    }
+    .slider_pic2{
+        float: left;
+        width: 210px;
+        height: 620px;
+        margin: 0px;
+        background-image:url('../image/home/wine2.png');
+        background-size: 210px 620px;      
+    }
+    .slider_pic3{        
+        float: left;
+        width: 210px;
+        height: 620px;
+        margin: 0px;
+        background-image:url('../image/home/wine3.png');    
+        background-size: 210px 620px;  
+      }
+    .slider_txt{
+        float: left;
+        width: calc(100% - 136px);
+        height: auto;
+        position: absolute;
+        bottom: 50px;
+        right: 0px;
+        padding-left: 30%;
+    }
+    .slider_txt p{
+        color:#752761;
+        font-family: '微軟正黑體';
+        font-size: 12pt;
+        font-weight: 900;
+    }
+
+    .slider_txt div{
+        text-align: center;
+        padding: 10px 0px 10px 0px;
+        width:50%;
+        border:2px solid #752761;
+        border-radius: 10px;
+        color:#752761;
+        font-family: '微軟正黑體';
+        font-size: 12pt;
+        font-weight: 900;
+    }
+    .partner_slide{
+        height: 100% ;
+    }
+    .partner_item{
+        margin-top:3px; 
+        height: 80px !important;
+        margin-right: 10px;
+        
+    }  
+
 }

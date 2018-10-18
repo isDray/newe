@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>WE - @yield('title')</title>
+	<title>緯昶國際貿易有限公司 - @yield('title')</title>
+    <link href="{{ url('image/home/favicon.ico')}}" rel="shortcut icon" type="image/x-icon" />
+
+
 	<!-- 全體meta -->
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta keywords="白酒,氣泡酒,香檳,葡萄酒,白葡萄酒,紅葡萄酒,酒精,洋酒,酒類,美酒,Prosecco酒,Moscato酒,Muscat酒,Chianti紅酒,葡萄酒推薦,義大利葡萄酒,義大利酒,葡萄酒dry,Sparkling酒,甜白酒,氣泡酒"/>
 	<!-- 個體meta -->
 
     <!-- 全體js   -->
-	<script
-  src="https://code.jquery.com/jquery-2.2.4.js"
-  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-  crossorigin="anonymous"></script>
+    
+	<script type="text/javascript" src="{{ url('js/jquery26.js')}}"></script>
     <script type="text/javascript" src="{{ url('slick/slick.min.js')}}"></script>
     <script src="{{ url('bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <script src="{{ url('lightbox2-master/dist/js/lightbox.js')}}"></script>
@@ -25,6 +27,15 @@
     <link rel="stylesheet" type="text/css" href="{{ url('slick/slick-theme.css')}}"/>
 	<!-- 個體css  -->
     @yield('selfcss')    
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-98801211-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments)};
+        gtag('js', new Date());
+
+        gtag('config', 'UA-98801211-2');
+    </script>      
 
     <script type="text/javascript">
     // 首頁輪播
@@ -115,8 +126,11 @@
         </div>
         -->
         <!-- logo -->
+<a href="{{url('/')}}" rel="external">
         <div id='m_logo' class='col-md-1 col-sm-7 col-sm-offset-1 col-xs-7 col-xs-offset-1'>
         </div>
+        </a>
+
 
         <!-- menu -->
         <div id='m_list' class='col-md-1 col-sm-1 col-sm-offset-2 col-xs-1 col-xs-offset-2 text-right'>
@@ -131,56 +145,57 @@
     <div id='m_menu_body' class='col-md-12 col-sm-12 col-xs-12'>
     <ul>
         <li>
-            <a href="{{url('/hindex')}}">首頁</a>
+            <a href="{{url('/hindex')}}" rel="external">首頁</a>
         </li>
         <li>
-            <a href="{{url('/about')}}">關於緯昶</a>
+            <a href="{{url('/about')}}" rel="external">關於緯昶</a>
         </li>
         <li>
-             <a href="{{url('/news')}}"><!--
+             <a href="{{url('/news')}}" rel="external"><!--
              <a href="{{ url('image/home/comingsoon-01.png') }}" data-lightbox="image-1" data-title="hau_jiou_chen_wong_di">-->最新消息</a>
         </li>
         <li>
             <span class='mgood'>商品</span><span class='mgood glyphicon glyphicon-chevron-down'></span>
             <ul id='gooditm'>
-                <li>紅酒</li>
-                <li>白酒</li>
-                <li>氣泡酒</li>
+                <li><a href="{{url('goods/1/1')}}" rel="external">商品總覽</a></li>
+                <li><a href="{{url('goods/1')}}" rel="external">紅酒</a></li>
+                <li><a href="{{url('goods/2')}}" rel="external">白酒</a></li>
+                <li><a href="{{url('goods/5')}}" rel="external">氣泡酒</a></li>
             </ul>
         </li>
         <li>
-         <a href="{{ url('image/home/comingsoon-01.png') }}" data-lightbox="image-1" data-title="hau_jiou_chen_wong_di">
             <span class='mknowledge'>知識專區</span><span class='mknowledge glyphicon glyphicon-chevron-down'></span>
             <ul id='knowledgeitm'>
-                <li>葡萄品種</li>
-                <li>產地</li>
-                <li>口感</li>
-                <li>義大利酒窖</li>
-                <li>義大利葡萄酒產業簡介</li>
-                <li>義大利葡萄酒分級制</li>
+            
+                <li><a href="{{url('Knowledge/1/1')}}" rel="external">釀酒用葡萄品種介紹</a></li>
+                <li><a href="{{url('Knowledge/2/1')}}" rel="external">義大利葡萄酒產區介紹</a></li>
+                <li><a href="{{url('Knowledge/3/1')}}" rel="external">義大利葡萄酒風味</a></li>
+                <li><a href="{{url('Knowledge/4/1')}}" rel="external">義大利葡萄酒產業簡介</a></li>
+                <li><a href="{{url('Knowledge/5/1')}}" rel="external">義大利葡萄酒分級制</a></li>
             </ul>
-            </a>
+        
         </li>
         <li>
-             <a href="{{url('/contacts')}}">聯絡我們</a>
+             <a href="{{url('/contacts')}}" rel="external">聯絡我們</a>
         </li>
-        <li> <a href="{{ url('image/home/comingsoon-01.png') }}" data-lightbox="image-1" data-title="hau_jiou_chen_wong_di">
+        <li> 
             <span class='mmbr'>會員專區</span><span class='mmbr glyphicon glyphicon-chevron-down'></span>
             <ul id='mmbritm'>
-                <li>登入會員</li>
-                <li> 加入會員</li>
+                <!--<li>登入會員</li>-->
+                <li><a href="{{url('/join')}}" rel="external">加入會員</a></li>
             </ul>
-            </a>
+           
         </li>        
     </ul>
     </div>
 
     <div id='row_content' class='col-md-12 col-sm-12 col-xs-12'>
         <div id='logo_area'  class='col-md-3 col-sm-3 col-xs-3'>
-        	<div id='logo'>
+        	<a href="{{url('/')}}" rel="external">
+            <div id='logo'>
         		
         	</div>
-     	        	        	        	
+     	    </a>        	        	
         </div>
             <div class='col-md-1 col-md-offset-1 col-sm-1 col-xs-1 topmenu '>
                 <a href="{{url('/hindex')}}" rel="external">
@@ -212,7 +227,7 @@
                 </a>
             </div>
             <div class='col-md-1 col-sm-1 col-xs-1 topmenu'>
-                <a href="" rel="external">
+                <a href="{{url('/knowledge')}}" rel="external">
                     知識專區
                     <br/>
                     Knowledge
@@ -222,23 +237,26 @@
                 <a href="{{url('/contacts')}}" rel="external">
                     聯絡我們
                     <br/>
-                    Contacts
+                    Contact us
                 </a>
             </div>
             <div class='col-md-1 col-sm-1 col-xs-1 topmenu2'>
                 <!--<a href="{{url('/signup')}}">-->
+                <!--
                 <a href="{{ url('image/home/comingsoon-01.png') }}" data-lightbox="image-1" data-title="hau_jiou_chen_wong_di" rel="external">
                 <div id='login'>
                     
                 </div>
-                </a>
+                </a>-->
             </div>
             <div class='col-md-1 col-sm-1 col-xs-1 topmenu2'>
+                <!--
                 <a href="{{url('/join')}}" rel="external">
                 <div id='join'>
                     
                 </div>
                 </a>
+                -->
             </div>         
     </div>
     @yield('home_banner')
@@ -255,16 +273,20 @@
             </div>
         </div>
 
-        <div id='footer_icon_area' class='col-md-2 col-md-offset-1 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4'>
+        <div id='footer_icon_area' class='col-md-2 col-md-offset-1 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4 text-center'>
+            <!--
             <div id='ig' class='icon col-sm-4 col-xs-4'>
                 
-            </div>
-            <div id='fb' class='icon col-sm-4 col-xs-4'>
+            </div>-->
+            <a href="https://www.facebook.com/wealeternitywine" rel="external">
+            <div id='fb' class='icon col-sm-12 col-xs-12'>
                 
             </div>
+            </a>
+            <!--
             <div id='yt' class='icon col-sm-4 col-xs-4'>
                 
-            </div>
+            </div>-->
         </div>
 
         <div id='footer_right_area' class='col-md-3 col-md-offset-1 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0'>
@@ -274,6 +296,11 @@
         </div>
     </div>
 </div>
+<div id='alert'>
+
+</div>
+
+
 </div>
 
 </body>

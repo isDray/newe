@@ -9,11 +9,12 @@
 <script type="text/javascript">
 $(function(){
 
-    $('.panel').click(function(){
-        if( $(this).children("span").attr('class') == 'ptile glyphicon glyphicon-chevron-down'){
-            $(this).children("span").attr('class','ptile glyphicon glyphicon-chevron-up');
+    $('.ptile').click(function(){
+        console.log($(this).attr('class'));
+        if( $(this).attr('class') == 'ptile glyphicon glyphicon-chevron-down'){
+            $(this).attr('class','ptile glyphicon glyphicon-chevron-up');
         }else{
-            $(this).children("span").attr('class','ptile glyphicon glyphicon-chevron-down');
+            $(this).attr('class','ptile glyphicon glyphicon-chevron-down');
         }
     });
 
@@ -41,7 +42,7 @@ $(function(){
         <div id='pm_label' class='pm_out'></div>
         
         <ul class="nav nav-stacked " id="accordion1">
-            
+            <!--
             <li class="ppanel"> 
                 <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#pfirstLink">葡萄種類(由北至南)</a></span>
 
@@ -86,16 +87,42 @@ $(function(){
                     <li>SubTest2</li>
                     <li>SubTest2</li>
                 </ul>
-            </li> 
+            </li> -->
+            <li class="ppanel"> 
+                <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#pfirstLink">釀酒用葡萄品種介紹</a>
+                </span>
+                <ul id="pfirstLink" class="collapse">
+                    @foreach($alvariety as $key=>$val)
+                    <li><a href="{{url('knowledge/1')}}/{{$val->id}}"  rel="external">{{$val->name}}</a></li>
+                    @endforeach
+                </ul>
+            </li>
 
+            <li class="ppanel"> 
+                <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#psecLink">義大利葡萄酒產地介紹</a>
+                </span>
+                <ul id="psecLink" class="collapse">
+                    @foreach($alorigin as $key=>$val)
+                    <li><a href="{{url('knowledge/2')}}/{{$val->id}}"  rel="external">{{$val->name}}</a></li>
+                    @endforeach
+                    
+                </ul>
+            </li>
+
+            <li class="ppanel"> 
+                
+                <span class='nptile glyphicon glyphicon-minus'><a data-parent="#accordion1" href="{{url('knowledge/3')}}" rel="external">義大利葡萄酒風味</a>
+                </span>
+                <!--
+                <ul id="thirdLink" class="collapse">
+                    <li><a href="{{url('knowledge/4/1')}}"  rel="external">產業簡介</a></li>
+                </ul>-->
+            </li> 
             <li class="ppanel"> 
                 <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#pfiveLink">義大利葡萄酒產業簡介</a>
                 </span>
                 <ul id="pfiveLink" class="collapse">
-                    <li>SubTest2</li>
-                    <li>SubTest2</li>
-                    <li>SubTest2</li>
-                    <li>SubTest2</li>
+                    <li><a href="{{url('knowledge/4/1')}}"  rel="external">產業簡介</a></li>
                 </ul>
             </li>
 
@@ -103,10 +130,10 @@ $(function(){
                 <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#psixLink">義大利葡萄酒分級制</a>
                 </span>
                 <ul id="psixLink" class="collapse">
-                    <li>SubTest2</li>
-                    <li>SubTest2</li>
-                    <li>SubTest2</li>
-                    <li>SubTest2</li>
+                    <li><a href="{{url('knowledge/5/1')}}"  rel="external">DOC(Denominazione di OrigineControllata)法定產區</a></li>
+                     <li><a href="{{url('knowledge/5/2')}}"  rel="external">DOCG (Denominazione di Origine Controllata e Garantita)保證法定產區</a></li>
+                     <li><a href="{{url('knowledge/5/3')}}"  rel="external">IGT(Indicazione geografica tipica)地區標誌酒</a></li>
+                     <li><a href="{{url('knowledge/5/4')}}"  rel="external">VDT(Vino da Tavola)日常餐酒</a></li>
                 </ul>
             </li> 
 
@@ -120,6 +147,7 @@ $(function(){
     <div id='detail_body' class="col-md-12 col-sm-12 col-xs-12" style='padding-right: 0px;padding-left: 0px;'>
 
         <ul class="nav nav-stacked wnav" id="accordion1">
+            <!--
             <li class="panel" data-toggle="collapse" data-parent="#accordion1" href="#firstLink">
             <span class='ptile glyphicon glyphicon-chevron-down'><a>葡萄產地(由北到南)</a>
             </span>
@@ -209,16 +237,44 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
                     <li>SubTest2</li>
                     <li>SubTest2</li>
                 </ul>
-            </li>                       
+            </li> -->
+
+            <li class="panel"> 
+                <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#firstLink">釀酒用葡萄品種介紹</a>
+                </span>
+                <ul id="firstLink" class="collapse">
+                    @foreach($alvariety as $key=>$val)
+                    <li><a href="{{url('knowledge/1')}}/{{$val->id}}"  rel="external">{{$val->name}}</a></li>
+                    @endforeach
+                </ul>
+            </li>
+
+            <li class="panel"> 
+                <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#secLink">義大利葡萄酒產區介紹</a>
+                </span>
+                <ul id="secLink" class="collapse">
+                    @foreach($alorigin as $key=>$val)
+                    <li><a href="{{url('knowledge/2')}}/{{$val->id}}"  rel="external">{{$val->name}}</a></li>
+                    @endforeach
+                    
+                </ul>
+            </li>            
+            <li class="panel"> 
+                
+                <span class='nptile glyphicon glyphicon-minus'><a data-parent="#accordion1" href="{{url('knowledge/3')}}" rel="external">義大利葡萄酒風味</a>
+                </span>
+                <!--
+                <ul id="thirdLink" class="collapse">
+                    <li><a href="{{url('knowledge/4/1')}}"  rel="external">產業簡介</a></li>
+                </ul>-->
+            </li>
+
 
             <li class="panel"> 
                 <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#fiveLink">義大利葡萄酒產業簡介</a>
                 </span>
                 <ul id="fiveLink" class="collapse">
-                    <li>SubTest2</li>
-                    <li>SubTest2</li>
-                    <li>SubTest2</li>
-                    <li>SubTest2</li>
+                    <li><a href="{{url('knowledge/4/1')}}"  rel="external">產業簡介</a></li>
                 </ul>
             </li>
 
@@ -226,10 +282,10 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
                 <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#sixLink">義大利葡萄酒分級制</a>
                 </span>
                 <ul id="sixLink" class="collapse">
-                    <li>SubTest2</li>
-                    <li>SubTest2</li>
-                    <li>SubTest2</li>
-                    <li>SubTest2</li>
+                     <li><a href="{{url('knowledge/5/1')}}"  rel="external">DOC(Denominazione di OrigineControllata)法定產區</a></li>
+                     <li><a href="{{url('knowledge/5/2')}}"  rel="external">DOCG (Denominazione di Origine Controllata e Garantita)保證法定產區</a></li>
+                     <li><a href="{{url('knowledge/5/3')}}"  rel="external">IGT(Indicazione geografica tipica)地區標誌酒</a></li>
+                     <li><a href="{{url('knowledge/5/4')}}"  rel="external">VDT(Vino da Tavola)日常餐酒</a></li>
                 </ul>
             </li>             
 
@@ -238,7 +294,7 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
     <div class="col-md-9"></div>
     </div>
 
-    <div id='detail_pic' class='col-md-3 col-md-offset-0 col-sm-12 col-xs-12'>
+    <div id='detail_pic' class='col-md-3 col-md-offset-0 col-sm-12 col-xs-12' style='padding-left:0px;padding-right: 0px;background-color:white;'>
         
         <!-- 手機版酒品名稱,在知識專區不用
         <div id='pwine_title' class='col-md-0 col-md-offset-0 col-sm-12 col-xs-12 text-center'>
@@ -248,61 +304,62 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
          -->
 
         <!-- 本為酒瓶,現在改為葡萄圖 -->
-        <img  id='wwine_pic' src="{{ url('image/knowledge/place_Knowledg_webside_grid-07.png')}}">
-        <img  id='pwine_pic' src="{{ url('image/knowledge/place_Knowledg_webside_grid-07.png')}}"
+
+        <img  id='wwine_pic' src="{{ url('image/origin')}}/{{$origin[0]->pic_name}}">
+        <img  id='pwine_pic' src="{{ url('image/origin')}}/{{$origin[0]->pic_name}}"
               class='col-md-12 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2'
-              width="100%">
+              width="100%" style='padding-left:0px;padding-right: 0px;background-color:white;'>
         
         <!-- 酒滴 -->
+        
         <div id='rain' class='col-md-12 col-md-offset-0 col-sm-12 col-xs-12 text-center'>
             <img src="{{ url('image/knowledge/drop_knowledg_webside_grid-05.png')}}" width="24px" height="39px;">
         </div>
-
+        
         <!-- 酒瓶 -->
+        @if( count($wine) > 0) 
         <div id='bottle' class='col-md-12 col-md-offset-0 col-sm-12 col-xs-12 text-center'>
-            <img src="{{ url('image/knowledge/place_Knowledg_webside_grid-08.png')}}" width="98px" height="261px;">
+            <img src="{{ url('image/wine/small')}}/{{$wine[0]->pic}}" width="98px" height="261px;">
         </div>
-
+        
         <!-- 手機版,觀看更多按鈕-->
+        <a href="{{url('/detail')}}/{{$wine[0]->id}}" rel="external">
         <div id='pmore' class='col-md-4 col-md-offset-0 col-sm-12 col-xs-12 text-center'>
             <div>了解更多</div>
         </div>
-    
+        </a>
+        @endif
     </div>
 
     <!-- 手機版區塊 -->
     
     <!-- 手機版專用水滴區塊 -->
+    <!--
     <div id='prain' class='col-md-0 col-md-offset-0 col-sm-12 col-xs-12 text-center'>
         <img src="{{ url('image/knowledge/drap_RWD_phone_grid-05.png')}}" width="55px" height="91px;">
     </div>
-
+    -->
     <!-- 手機版酒瓶 -->
+    <!--
     <div id='pbottle' class='col-md-0 col-md-offset-0 col-sm-12 col-xs-12 text-center'>
         <img src="{{ url('image/knowledge/wine_know_RWD_phone_grid-06.png')}}" width="245px" height="619px">
     </div>
-
+    -->
     <!-- 手機板按鈕 -->
+    <!--
     <div id='ppmore' class='col-md-0 col-md-offset-0 col-sm-12 col-xs-12 text-center'>
         <div>了解更多</div>
     </div>    
-    
+    -->
     <!-- 由詳細資料修改樣式 -->
     <div id='detail_txt' class='col-md-3 col-md-offset-1 col-sm-12 col-xs-12'>
             
         <div id='txt_name' class='col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0'>
-            SALICARIA TOSCANA IGT<br/>
-            千禧花超級托斯卡尼紅酒
+        {{$origin[0]->name}}
         </div>
 
         <div id='txt_des' class='col-md-12 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-10  col-xs-offset-1'>
-巴貝拉（Barbera）為義大利種植面積第三多的紅葡萄品種，主要種植區域集中在北義的皮蒙（Piemonte），該地區有超過50%的葡萄酒皆由巴貝拉釀製而成。由巴貝拉所釀製的葡萄酒通常帶有清亮的紅寶石色澤，相當低的單寧澀感，以及它最顯著的特色：「高酸度」，其果實成熟時間較晚，因此種植在較為溫暖的地方有助於它達到足夠的熟成度，又同時兼具平衡的酸度；譬如「Barbera d'Asti」。
-
-Barberad'Asti產區的葡萄酒堪稱巴貝拉的模範典型，其中的次產區Nizza因位處Asti氣候最溫暖處，所產的酒被公認為表現最精彩，且充份展現其熟美與酸度的平衡；在Asti，風土條件最好的地塊都會特別留下來種植巴貝拉。另外兩個產區：Barbera d'Alba、Barbera del Monferrato也生產不錯的巴貝拉葡萄酒，而最大宗的平價款則是Barbera del Piemonte。
-
-因為種植地區非常廣泛，使得釀製的酒款跟著每個小地方風土條件的
-不同，風格也隨之多樣化，有年輕即飲、價錢低廉、微氣泡的類型，亦有
-風味飽滿強勁、價格高昂、需要長時間窖藏的酒款。
+        {{$origin[0]->description}}
         </div>
         <!--    
         <div id='txt_ifo' class='col-sm-12 col-sm-offset-0 col-xs-12  col-xs-offset-0'>
