@@ -62,7 +62,12 @@ class FrontwebController extends Controller
     }
     // 商品
     public function goods( $request , $type ,$num ){
-
+        if( !empty($type) ){
+            
+            $nowType = $type;
+        }else{
+            $nowType = 1;
+        }
         $wine  = Wine::where('type',1)->orderBy('created_at')->get();
         $wine2 = Wine::where('type',2)->orderBy('created_at')->get();
         $wine5 = Wine::where('type',5)->orderBy('created_at')->get();
@@ -102,6 +107,7 @@ class FrontwebController extends Controller
                                      'kwine6'=>$kwine6,
                                      'kwine7'=>$kwine7,
                                      'kwine8'=>$kwine8,
+                                     'nowType'=>$nowType
                             ]);
     }
     // 商品詳細

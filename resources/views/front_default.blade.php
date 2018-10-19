@@ -299,20 +299,20 @@
 
         <div class='newFooterMenu col-md-1 col-sm-0 col-xs-0'>
             <ul>最新消息
-                <li>展場資訊</li>
+                <li><a data-ajax="false" href="{{url('/news')}}">展場資訊</a></li>
             </ul>
         </div>
         <div class='newFooterMenu col-md-1 col-sm-0 col-xs-0'>
             <ul>商品
-                <li>義大利紅酒</li>
-                <li>義大利白酒</li>
-                <li>義大利氣泡酒</li>
+                <li><a data-ajax="false" href="{{url('/goods/1')}}">義大利紅酒</a></li>
+                <li><a data-ajax="false" href="{{url('/goods/2')}}">義大利白酒</a></li>
+                <li><a data-ajax="false" href="{{url('/goods/3')}}">義大利氣泡酒</a></li>
             </ul>
         </div>        
         <div class='newFooterMenu col-md-2 col-sm-0 col-xs-0'>
             <ul>知識專區
-                <li>葡萄品種介紹</li>
-                <li>義大利葡萄酒產區介紹</li>
+                <li><a data-ajax="false" href="">葡萄品種介紹</a></li>
+                <li><a data-ajax="false" href="">義大利葡萄酒產區介紹</a></li>
             </ul>
         </div>     
         <div class='newFooterMenu col-md-4 col-sm-0 col-xs-0'>

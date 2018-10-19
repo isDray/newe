@@ -35,7 +35,7 @@
 </ul>
 <div id="myTabContent" class="tab-content">
 
-<div id='tab0'  class='col-md-12 col-sm-12 col-xs-12 tab-pane fade in active'>
+<div id='tab0'  class='col-md-12 col-sm-12 col-xs-12 tab-pane fade in  @if($nowType ==1)active @endif'>
     <div id='glhead'>
     	
     </div>
@@ -70,7 +70,7 @@
 		    	<a  data-ajax="false" class='wmore' href="{{url('/detail/')}}/{{$wine->id}}">
 		    		看更多
 		    	</a>
-		        <a class='pmore glyphicon glyphicon-chevron-right' href="{{url('/detail/')}}/{{$wine->id}}">
+		        <a  data-ajax="false" class='pmore glyphicon glyphicon-chevron-right' href="{{url('/detail/')}}/{{$wine->id}}">
 		    		
 		    	</a>
 		    </div>
@@ -80,7 +80,7 @@
 </div>
 
 <!--白酒 -->
-<div id='tab1'  class='col-md-12 col-sm-12 col-xs-12 tab-pane'>
+<div id='tab1'  class='col-md-12 col-sm-12 col-xs-12 tab-pane @if($nowType ==2)active @endif'>
     <div id='glhead'>
     	
     </div>
@@ -112,10 +112,10 @@
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
 		    <div class='goods_btn col-md-12 col-sm-1 col-xs-1'>
-		    	<a class='wmore' href="{{url('/detail/')}}/{{$wine->id}}">
+		    	<a data-ajax="false" class='wmore' href="{{url('/detail/')}}/{{$wine->id}}">
 		    		看更多
 		    	</a>
-		        <a class='pmore glyphicon glyphicon-chevron-right' href="{{url('/detail/')}}/{{$wine->id}}">
+		        <a data-ajax="false" class='pmore glyphicon glyphicon-chevron-right' href="{{url('/detail/')}}/{{$wine->id}}">
 		    		
 		    	</a>
 		    </div>
@@ -124,7 +124,7 @@
 	@endforeach
 </div>
 <!-- 氣泡酒 -->
-<div id='tab2'  class='col-md-12 col-sm-12 col-xs-12 tab-pane'>
+<div id='tab2'  class='col-md-12 col-sm-12 col-xs-12 tab-pane @if($nowType ==3)active @endif'>
     <div id='glhead'>
     	
     </div>
@@ -156,10 +156,10 @@
 		</div>
 		<div class='goods_btn_area col-md-1 col-sm-1 col-xs-1'>
 		    <div class='goods_btn col-md-12 col-sm-1 col-xs-1'>
-		    	<a class='wmore' href="{{url('/detail/')}}/{{$wine->id}}">
+		    	<a data-ajax="false" class='wmore' href="{{url('/detail/')}}/{{$wine->id}}">
 		    		看更多
 		    	</a>
-		        <a class='pmore glyphicon glyphicon-chevron-right' href="{{url('/detail/')}}/{{$wine->id}}">
+		        <a data-ajax="false" class='pmore glyphicon glyphicon-chevron-right' href="{{url('/detail/')}}/{{$wine->id}}">
 		    		
 		    	</a>
 		    </div>
@@ -169,7 +169,7 @@
 </div>
 
 <!-- 依口感 -->
-<div id='taste'  class='col-md-12 col-sm-12 col-xs-12 tab-pane'>
+<div id='taste'  class='col-md-12 col-sm-12 col-xs-12 tab-pane @if($nowType ==4)active @endif'>
 <div id='knowledge_area' class='col-md-12 col-sm-12 col-xs-12'>
     <div id='detail_top' class='col-md-12 col-sm-12 col-xs-12'>
         
@@ -228,7 +228,7 @@
                 </span>
                 <ul id="pfirstLink" class="collapse">
                     @foreach($alvariety as $key=>$val)
-                    <li><a href="{{url('knowledge/1')}}/{{$val->id}}"  rel="external">{{$val->name}}</a></li>
+                    <li><a data-ajax="false" href="{{url('knowledge/1')}}/{{$val->id}}"  rel="external">{{$val->name}}</a></li>
                     @endforeach
                 </ul>
             </li>
@@ -238,7 +238,7 @@
                 </span>
                 <ul id="psecLink" class="collapse">
                     @foreach($alorigin as $key=>$val)
-                    <li><a href="{{url('knowledge/2')}}/{{$val->id}}"  rel="external">{{$val->name}}</a></li>
+                    <li><a data-ajax="false" href="{{url('knowledge/2')}}/{{$val->id}}"  rel="external">{{$val->name}}</a></li>
                     @endforeach
                     
                 </ul>
@@ -258,7 +258,7 @@
                 <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#pfiveLink">義大利葡萄酒產業簡介</a>
                 </span>
                 <ul id="pfiveLink" class="collapse">
-                    <li><a href="{{url('knowledge/4/1')}}"  rel="external">產業簡介</a></li>
+                    <li><a data-ajax="false" href="{{url('knowledge/4/1')}}"  rel="external">產業簡介</a></li>
                 </ul>
             </li>
 
@@ -266,10 +266,10 @@
                 <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#psixLink">義大利葡萄酒分級制</a>
                 </span>
                 <ul id="psixLink" class="collapse">
-                    <li><a href="{{url('knowledge/5/1')}}"  rel="external">DOC(Denominazione di OrigineControllata)法定產區</a></li>
-                     <li><a href="{{url('knowledge/5/2')}}"  rel="external">DOCG (Denominazione di Origine Controllata e Garantita)保證法定產區</a></li>
-                     <li><a href="{{url('knowledge/5/3')}}"  rel="external">IGT(Indicazione geografica tipica)地區標誌酒</a></li>
-                     <li><a href="{{url('knowledge/5/4')}}"  rel="external">VDT(Vino da Tavola)日常餐酒</a></li>
+                    <li><a data-ajax="false" href="{{url('knowledge/5/1')}}"  rel="external">DOC(Denominazione di OrigineControllata)法定產區</a></li>
+                     <li><a data-ajax="false" href="{{url('knowledge/5/2')}}"  rel="external">DOCG (Denominazione di Origine Controllata e Garantita)保證法定產區</a></li>
+                     <li><a data-ajax="false" href="{{url('knowledge/5/3')}}"  rel="external">IGT(Indicazione geografica tipica)地區標誌酒</a></li>
+                     <li><a data-ajax="false" href="{{url('knowledge/5/4')}}"  rel="external">VDT(Vino da Tavola)日常餐酒</a></li>
                 </ul>
             </li> 
 
@@ -379,7 +379,7 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
                 </span>
                 <ul id="firstLink" class="collapse">
                     @foreach($alvariety as $key=>$val)
-                    <li><a href="{{url('knowledge/1')}}/{{$val->id}}"  rel="external">{{$val->name}}</a></li>
+                    <li><a data-ajax="false" href="{{url('knowledge/1')}}/{{$val->id}}"  rel="external">{{$val->name}}</a></li>
                     @endforeach
                 </ul>
             </li>
@@ -389,7 +389,7 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
                 </span>
                 <ul id="secLink" class="collapse">
                     @foreach($alorigin as $key=>$val)
-                    <li><a href="{{url('knowledge/2')}}/{{$val->id}}"  rel="external">{{$val->name}}</a></li>
+                    <li><a data-ajax="false" href="{{url('knowledge/2')}}/{{$val->id}}"  rel="external">{{$val->name}}</a></li>
                     @endforeach
                     
                 </ul>
@@ -397,7 +397,7 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
 
             <li class="panel"> 
                 
-                <span class='nptile glyphicon glyphicon-minus'><a data-parent="#accordion1" href="{{url('knowledge/3')}}" rel="external">義大利葡萄酒風味</a>
+                <span class='nptile glyphicon glyphicon-minus'><a data-ajax="false" data-parent="#accordion1" href="{{url('knowledge/3')}}" rel="external">義大利葡萄酒風味</a>
                 </span>
                 <!--
                 <ul id="thirdLink" class="collapse">
@@ -410,7 +410,7 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
                 <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#fiveLink">義大利葡萄酒產業簡介</a>
                 </span>
                 <ul id="fiveLink" class="collapse">
-                    <li><a href="{{url('knowledge/4/1')}}"  rel="external">產業簡介</a></li>
+                    <li><a data-ajax="false" href="{{url('knowledge/4/1')}}"  rel="external">產業簡介</a></li>
                 </ul>
             </li>
 
@@ -418,10 +418,10 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
                 <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#sixLink">義大利葡萄酒分級制</a>
                 </span>
                 <ul id="sixLink" class="collapse">
-                     <li><a href="{{url('knowledge/5/1')}}"  rel="external">DOC(Denominazione di OrigineControllata)法定產區</a></li>
-                     <li><a href="{{url('knowledge/5/2')}}"  rel="external">DOCG (Denominazione di Origine Controllata e Garantita)保證法定產區</a></li>
-                     <li><a href="{{url('knowledge/5/3')}}"  rel="external">IGT(Indicazione geografica tipica)地區標誌酒</a></li>
-                     <li><a href="{{url('knowledge/5/4')}}"  rel="external">VDT(Vino da Tavola)日常餐酒</a></li>
+                     <li><a data-ajax="false" href="{{url('knowledge/5/1')}}"  rel="external">DOC(Denominazione di OrigineControllata)法定產區</a></li>
+                     <li><a data-ajax="false" href="{{url('knowledge/5/2')}}"  rel="external">DOCG (Denominazione di Origine Controllata e Garantita)保證法定產區</a></li>
+                     <li><a data-ajax="false" href="{{url('knowledge/5/3')}}"  rel="external">IGT(Indicazione geografica tipica)地區標誌酒</a></li>
+                     <li><a data-ajax="false" href="{{url('knowledge/5/4')}}"  rel="external">VDT(Vino da Tavola)日常餐酒</a></li>
                 </ul>
             </li>             
 
@@ -442,7 +442,7 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
         </div>
         <div class='taste_bx col-md-12 col-sm-12 col-xs-12'>
             @foreach($kwine1 as $val)
-            <a href="{{url('detail/')}}/{{$val->id}}" rel="external">
+            <a data-ajax="false" href="{{url('detail/')}}/{{$val->id}}" rel="external">
             <div class='taste_w col-md-6 col-sm-6 col-xs-6'>
             {!! $val->name !!}
             </div>
@@ -455,7 +455,7 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
         </div>
         <div class='taste_bx col-md-12 col-sm-12 col-xs-12'>
             @foreach($kwine2 as $val)
-            <a href="{{url('detail/')}}/{{$val->id}}" rel="external">
+            <a data-ajax="false" href="{{url('detail/')}}/{{$val->id}}" rel="external">
             <div class='taste_w col-md-6 col-sm-6 col-xs-6'>
             {!! $val->name !!}
             </div>
@@ -468,7 +468,7 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
         <div class='taste_bx col-md-12 col-sm-12 col-xs-12'>
             
             @foreach($kwine3 as $val)
-            <a href="{{url('detail/')}}/{{$val->id}}" rel="external">
+            <a data-ajax="false" href="{{url('detail/')}}/{{$val->id}}" rel="external">
             <div class='taste_w col-md-6 col-sm-6 col-xs-6'>
             {!! $val->name !!}
             </div>
@@ -480,7 +480,7 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
         </div>
         <div class='taste_bx col-md-12 col-sm-12 col-xs-12'>
             @foreach($kwine4 as $val)
-            <a href="{{url('detail/')}}/{{$val->id}}" rel="external">
+            <a data-ajax="false" href="{{url('detail/')}}/{{$val->id}}" rel="external">
             <div class='taste_w col-md-6 col-sm-6 col-xs-6'>
             {!! $val->name !!}
             </div>
@@ -499,7 +499,7 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
         </div>
         <div class='taste_bx col-md-12 col-sm-12 col-xs-12'>
             @foreach($kwine5 as $val)
-            <a href="{{url('detail/')}}/{{$val->id}}" rel="external">
+            <a data-ajax="false" href="{{url('detail/')}}/{{$val->id}}" rel="external">
             <div class='taste_w col-md-6 col-sm-6 col-xs-6'>
             {!! $val->name !!}
             </div>
@@ -511,7 +511,7 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
         </div>
         <div class='taste_bx col-md-12 col-sm-12 col-xs-12'>
             @foreach($kwine6 as $val)
-            <a href="{{url('detail/')}}/{{$val->id}}" rel="external">
+            <a data-ajax="false" href="{{url('detail/')}}/{{$val->id}}" rel="external">
             <div class='taste_w col-md-6 col-sm-6 col-xs-6'>
             {!! $val->name !!}
             </div>
@@ -528,7 +528,7 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
         </div>
         <div class='taste_bx col-md-12 col-sm-12 col-xs-12'>
             @foreach($kwine7 as $val)
-            <a href="{{url('detail/')}}/{{$val->id}}" rel="external">
+            <a data-ajax="false" href="{{url('detail/')}}/{{$val->id}}" rel="external">
             <div class='taste_w col-md-6 col-sm-6 col-xs-6'>
             {!! $val->name !!}
             </div>
@@ -540,7 +540,7 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
         </div>
         <div class='taste_bx col-md-12 col-sm-12 col-xs-12'>
             @foreach($kwine8 as $val)
-            <a href="{{url('detail/')}}/{{$val->id}}" rel="external">
+            <a data-ajax="false" href="{{url('detail/')}}/{{$val->id}}" rel="external">
             <div class='taste_w col-md-6 col-sm-6 col-xs-6'>
             {!! $val->name !!}
             </div>

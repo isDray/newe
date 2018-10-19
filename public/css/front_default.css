@@ -619,6 +619,9 @@ button:hover{
       list-style: none;
       font-size: 14px;
     }
+   .newFooterMenu ul li:first-child{
+      margin-top: 10px;
+    }
     .newFooterMenu ul, .newFooterMenu ul li{
       color:white;
     }
