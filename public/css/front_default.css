@@ -4,10 +4,10 @@
 #detail_btm{
     /*display: none;*/
 }
-a:hover   {color:#752761; text-decoration:none; outline: none !important;} 
-a:link    {color:#752761; text-decoration:none; outline: none !important;} 
-a:visited {color:#752761; text-decoration:none; outline: none !important;} 
-a:active  {color:#752761; text-decoration:none; outline: none !important;}
+a:hover   {color:white; text-decoration:none; outline: none !important;} 
+a:link    {color:white; text-decoration:none; outline: none !important;} 
+a:visited {color:white; text-decoration:none; outline: none !important;} 
+a:active  {color:white; text-decoration:none; outline: none !important;}
 div:hover {
   outline: none !important;
 }
@@ -347,7 +347,7 @@ button:hover{
   }
 	#row_content{
 		height: 88px;
-		background-color: rgba(204,204,204,0.5);
+		background-color: rgba(204,204,204,0);
 		z-index: 2;
 		position: absolute;
 		padding-left: 60px;
@@ -387,7 +387,7 @@ button:hover{
 		font-weight: 900;
 		/*display:table-cell; 
 		vertical-align:middle;*/
-		color:#752761;
+		color:white;
 		text-align: center;
 	}
 
@@ -396,7 +396,7 @@ button:hover{
 		display: block;
 		width:100%;
 		height: 2px;
-		border-bottom: 4px solid #752761;
+		border-bottom: 4px solid white;
 	}
     #login{
     	width: 73px;
@@ -465,8 +465,9 @@ button:hover{
     	background-image: url('../image/home/partner.png');
     }
     #footer_area{
-    	height: 246px;
-    	background-color: #752761;
+    	/*height: 246px;*/
+      height: 270px;
+    	background-color: #5c147c;
     	padding: 0px;
     }
     #footer_logo_area{
@@ -584,6 +585,42 @@ button:hover{
         height: 80px !important;
         margin-right: 10px;
         
+    }
+    /*改版footer*/
+    #footer_area{
+      padding-top:30px;
+      padding-bottom: 100px;
+    }   
+    #newFooterline{
+      height: 100%;
+    }
+    #footer_area:after{
+      content: '© 2017 Wealeternity Corporation. All Rights Reserved';
+      color: white;
+      position: absolute;
+      z-index: 3;
+      top:150px;
+      right: 10px;
+    }
+    #newFooterline:after{
+      display: block;
+      position: absolute;
+      content: '';
+      height: 100%;
+      width: 2px;
+      background-color: white;
+      left:calc(50% - 1px);
+    }    
+    .newFooterMenu ul{
+      padding: 0px;
+      font-size: 16px;
+    } 
+    .newFooterMenu ul li{
+      list-style: none;
+      font-size: 14px;
+    }
+    .newFooterMenu ul, .newFooterMenu ul li{
+      color:white;
     }
 }
 @media (min-width: 1500px){

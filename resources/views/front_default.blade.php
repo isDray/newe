@@ -267,6 +267,7 @@
 </div>
 <div id='footer' class='row'>
     <div id='footer_area' class='col-md-12 col-sm-12 col-xs-12'>
+        <!--
         <div id='footer_logo_area' class='col-md-3 col-md-offset-1 col-sm-0 col-xs-0'>
             <div id='footer_pic'>
                 
@@ -274,26 +275,53 @@
         </div>
 
         <div id='footer_icon_area' class='col-md-2 col-md-offset-1 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4 text-center'>
-            <!--
-            <div id='ig' class='icon col-sm-4 col-xs-4'>
-                
-            </div>-->
+
             <a href="https://www.facebook.com/wealeternitywine" rel="external">
             <div id='fb' class='icon col-sm-12 col-xs-12'>
                 
             </div>
             </a>
-            <!--
-            <div id='yt' class='icon col-sm-4 col-xs-4'>
-                
-            </div>-->
+
         </div>
 
         <div id='footer_right_area' class='col-md-3 col-md-offset-1 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0'>
             <p>
             © 2017 Wealeternity Corporation. All Rights Reserved
             </p>
+        </div>-->
+
+        <div id='newFooterPic' class='col-md-1 col-md-offset-1 col-sm-0 col-xs-0'>
         </div>
+
+        <div id='newFooterline' class='col-md-1 col-sm-0 col-xs-0'>
+
+        </div>
+
+        <div class='newFooterMenu col-md-1 col-sm-0 col-xs-0'>
+            <ul>最新消息
+                <li>展場資訊</li>
+            </ul>
+        </div>
+        <div class='newFooterMenu col-md-1 col-sm-0 col-xs-0'>
+            <ul>商品
+                <li>義大利紅酒</li>
+                <li>義大利白酒</li>
+                <li>義大利氣泡酒</li>
+            </ul>
+        </div>        
+        <div class='newFooterMenu col-md-2 col-sm-0 col-xs-0'>
+            <ul>知識專區
+                <li>葡萄品種介紹</li>
+                <li>義大利葡萄酒產區介紹</li>
+            </ul>
+        </div>     
+        <div class='newFooterMenu col-md-4 col-sm-0 col-xs-0'>
+            <ul>聯絡我們
+                <li>緯昶國際貿易有限公司</li>
+                <li>1072 台北市信義區光復南路417巷44號一樓</li>
+                <li>Tel +886-2-8789-1534</li>
+            </ul>
+        </div>           
     </div>
 </div>
 <div id='alert'>
