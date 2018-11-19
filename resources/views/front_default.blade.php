@@ -295,32 +295,32 @@
             </p>
         </div>-->
 
-        <div id='newFooterPic' class='col-md-1 col-md-offset-1 col-sm-0 col-xs-0'>
+        <div id='newFooterPic' class='col-md-1 col-md-offset-1 col-sm-12 col-xs-12'>
         </div>
 
-        <div id='newFooterline' class='col-md-1 col-sm-0 col-xs-0'>
+        <div id='newFooterline' class='col-md-1 col-sm-12 col-xs-12'>
 
         </div>
 
-        <div class='newFooterMenu col-md-1 col-sm-0 col-xs-0'>
+        <div class='newFooterMenu col-md-1 col-sm-12 col-xs-12'>
             <ul>最新消息
                 <li><a data-ajax="false" href="{{url('/news')}}">展場資訊</a></li>
             </ul>
         </div>
-        <div class='newFooterMenu col-md-1 col-sm-0 col-xs-0'>
+        <div class='newFooterMenu col-md-1 col-sm-12 col-xs-12'>
             <ul>商品
                 <li><a data-ajax="false" href="{{url('/goods/1')}}">義大利紅酒</a></li>
                 <li><a data-ajax="false" href="{{url('/goods/2')}}">義大利白酒</a></li>
                 <li><a data-ajax="false" href="{{url('/goods/3')}}">義大利氣泡酒</a></li>
             </ul>
         </div>        
-        <div class='newFooterMenu col-md-2 col-sm-0 col-xs-0'>
+        <div class='newFooterMenu col-md-2 col-sm-12 col-xs-12'>
             <ul>知識專區
                 <li><a data-ajax="false" href="">葡萄品種介紹</a></li>
                 <li><a data-ajax="false" href="">義大利葡萄酒產區介紹</a></li>
             </ul>
         </div>     
-        <div class='newFooterMenu col-md-4 col-sm-0 col-xs-0'>
+        <div class='newFooterMenu col-md-4 col-sm-12 col-xs-12'>
             <ul>聯絡我們
                 <li>緯昶國際貿易有限公司</li>
                 <li>1072 台北市信義區光復南路417巷44號一樓</li>

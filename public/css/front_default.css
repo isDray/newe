@@ -209,14 +209,6 @@ button:hover{
     #mmbritm{
       display: none;
     }
-    /*footer*/
-    #footer_area{
-      height: 240px;
-      background-color: #752761;
-      padding-top: 35px;
-      padding-right: 0px;
-      padding-left: 0px;
-    }
     #footer_icon_area{
       height: auto;
     }
@@ -322,6 +314,40 @@ button:hover{
       color: white;
       font-family: '微軟正黑體'; 
     }   
+
+    /*新footer*/
+    #footer_area{
+      border:1px solid black;
+      height: auto;
+      background-color: #5c147c;
+      padding-top: 20px;
+      padding-bottom: 60px;
+    }
+    /* footer logo */
+    #newFooterPic{
+      height: 200px;
+      border: 1px solid black;
+    }
+    /* footer 分隔線 */
+    #newFooterline{
+      border-bottom: 2px solid white;
+    }
+    /* footer list */
+    .newFooterMenu ul{
+      font-weight: 900;
+      font-size: 20px;
+      color: white;
+      height: auto;
+    }
+    .newFooterMenu ul li,.newFooterMenu ul li a{
+       list-style: none;
+       color: #cccccc;
+       font-size: 14px;
+    }
+    .newFooterMenu ul>li:first-child{
+        margin-top: 10px;
+    }
+
 }
 @media (min-width: 992px) and (max-width: 1500px)  {
 
@@ -371,7 +397,9 @@ button:hover{
 	#logo{
 		height: 88px;
 		width: 230px;
-		background-image: url('../image/home/logo.jpg');
+		background-image: url('../image/home/header_logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
 	}
 	.topmenu{
 		height: 88px;
@@ -687,7 +715,9 @@ button:hover{
   #logo{
     height: 88px;
     width: 230px;
-    background-image: url('../image/home/logo.jpg');
+    background-image: url('../image/home/header_logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
   }
   .topmenu{
     height: 88px;
