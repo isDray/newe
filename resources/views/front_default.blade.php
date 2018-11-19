@@ -253,7 +253,7 @@
             </div>
             
             <div class='col-md-1 col-sm-1 col-xs-1 topmenu2' >
-                <span id='menuFb'></span>
+                <span id='menufb'></span>
                 <!--
                 <a href="{{url('/join')}}" rel="external">
                 <div id='join'>
