@@ -705,7 +705,15 @@ button:hover{
     color:#752761;
     text-align: center;
   }
-
+  #menufb{
+    background-image: url('../image/home/fb_icon.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    width: 35px;
+    height: 35px;
+    display: block;
+    margin-top: calc(50% - 17.5px);
+  }
     .topmenu a:hover:after{
     content: '';
     display: block;
