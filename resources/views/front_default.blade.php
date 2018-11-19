@@ -241,6 +241,8 @@
                 </a>
             </div>
             <div class='col-md-1 col-sm-1 col-xs-1 topmenu2'>
+
+
                 <!--<a href="{{url('/signup')}}">-->
                 <!--
                 <a href="{{ url('image/home/comingsoon-01.png') }}" data-lightbox="image-1" data-title="hau_jiou_chen_wong_di" rel="external">
@@ -249,7 +251,9 @@
                 </div>
                 </a>-->
             </div>
-            <div class='col-md-1 col-sm-1 col-xs-1 topmenu2'>
+            
+            <div class='col-md-1 col-sm-1 col-xs-1 topmenu2' >
+                <span id='menuFb'></span>
                 <!--
                 <a href="{{url('/join')}}" rel="external">
                 <div id='join'>
@@ -257,7 +261,8 @@
                 </div>
                 </a>
                 -->
-            </div>         
+            </div>
+
     </div>
     @yield('home_banner')
     @yield('home_ifo')

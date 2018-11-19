@@ -381,13 +381,24 @@ button:hover{
 	.topmenu2{
 		height: 88px;
 	}
+  .topmenu2{
+  }  
+  #menuFb{
+    background-image: url('../image/home/fb_icon.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    width: 35px;
+    height: 35px;
+    display: block;
+    margin-top: calc(50% - 17.5px);
+  }
 	.topmenu a{
 		font-size: 11pt;
 		font-family: '微軟正黑體';
 		font-weight: 900;
 		/*display:table-cell; 
 		vertical-align:middle;*/
-		color:white;
+		color:#752761;
 		text-align: center;
 	}
 
