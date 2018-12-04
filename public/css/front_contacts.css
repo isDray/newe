@@ -16,13 +16,13 @@
         overflow: hidden;
     }
     #contact_map_area{
-        position: absolute;
-        top:0px;
-        height: 470px;
+        /*position: absolute;
+        top:0px;*/
+        height: auto;
         padding: 0px;
     }
     #map{
-        height: 471px;
+        height: 470px;
         width: 100%;
     }
     #pmap_info{
@@ -55,6 +55,9 @@
         padding-left: 0px;
         padding-bottom: 50px;
     }
+    #contact_form{
+        margin-top: 20px;
+    }
     #fildall{
         background-color: #752761;
         padding: 20px;
@@ -68,7 +71,16 @@
         color:white!important;
         border-radius: 0px!important;
     }
-
+    /* 新版css */
+    #contactUsTopPic{
+        height: 120px;
+        background-image: url('../image/contacts/words_contactus_webside_grid-04.png');
+        background-repeat: no-repeat;
+        background-position: top center;
+    }    
+    #contactMapText>p{
+        color:#5c147c;
+    }
 }
 @media (min-width: 992px) {
     #pmap_info,
@@ -78,17 +90,16 @@
         display: none;
     }
     #map{
-        height: 630px;
+        height: 400px;
         width: 100%;
     }
 	#contact_area{
-		height: 700px;
+		height: 800px;
 		padding: 0px!important;
         padding-bottom: 0px;
 	}
     #contact_form_area{
     	height: auto;
-        background-image: url('../image/contacts/words_contactus_webside_grid-04.png');
         background-repeat: no-repeat;
         background-position: 75px 20px;
         background-color:#fdfbf1; 
@@ -96,7 +107,7 @@
     #contact_form{
     	height: auto;
         padding-bottom: 20px;
-    	margin-top: 125px;
+    	margin-top: 150px;
     	background-color: #752761;
     }
     #contact_form>form{
@@ -116,5 +127,15 @@
     	background-color: #752761!important;
     	color:white!important;
     	border-radius: 0px!important;
+    }
+    /* 新版css */
+    #contactUsTopPic{
+        height: 120px;
+        background-image: url('../image/contacts/words_contactus_webside_grid-04.png');
+        background-repeat: no-repeat;
+        background-position: top center;
+    }
+    #contactMapText>p{
+        color:#5c147c;
     }
 }

@@ -121,6 +121,7 @@
     }
     #detail_pic{
         text-align: center;
+        background-color: #fdfbf1;
     }
     #pwine_title{
         font-size: 20px;
@@ -158,7 +159,7 @@
         margin-top: 25px;
         padding-top: 40px;
         padding-bottom: 40px;
-        background-color: white;
+        background-color: #fdfbf1;
         color: #752761;
     }
     #detail_btm{
@@ -173,8 +174,25 @@
 
     }
     .ui-link{
-    color: whitle!important;
+       color: white!important;
     }
+    /* 詳細按鈕 */
+    #detailBoxArea{
+        margin-top: 20px;
+    }
+    #type_intro{
+        margin-top: 10px;
+        color:#752761;
+        border:1px solid #752761;
+        border-radius: 4px;
+    }
+    #oriINtro{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color:#752761;
+        border:1px solid #752761;
+        border-radius: 4px;        
+    }    
 }
 @media (min-width: 992px) and (max-width: 1500px) {
     /*手機板取消區塊*/
@@ -191,7 +209,7 @@
         font-family:'微軟正黑體';
     }
     .ui-link{
-        color: #752761!important;
+        color: #752761;
     }
     #pm_main{
         display: none;
@@ -233,7 +251,7 @@
     #detail_pic{
     	text-align:center; 
     	height: 100%;
-
+        background-color: #fdfbf1;
     }
     #detail_txt{
     	height: 100%;
@@ -264,6 +282,9 @@
     	font-family: '微軟正黑體';
     	color:#752761;
 
+    }
+    .detailli{
+        background-color: #fdfbf1;
     }
     ul,li{
     	list-style: none;
@@ -348,6 +369,20 @@
     	font-weight: 900;
     	color: white;
     }
+    /* 詳細按鈕 */
+    #detailBoxArea{
+        margin-top: 20px;
+    }
+    #type_intro{
+        color:#752761;
+        border:1px solid #752761;
+        border-radius: 4px;
+    }
+    #oriINtro{
+        color:#752761;
+        border:1px solid #752761;
+        border-radius: 4px;        
+    }
 
 }
 @media (min-width: 1500px){
@@ -404,7 +439,7 @@
     #detail_pic{
         text-align:center; 
         height: 100%;
-
+        background-color: #fdfbf1;
     }
     #detail_txt{
         height: 100%;
@@ -439,6 +474,9 @@
     ul,li{
         list-style: none;
     }
+    .detailli{
+        background-color: #fdfbf1;
+    }    
     /*文字部分*/
     #txt_name{
         height: 90px;
@@ -519,5 +557,19 @@
         font-family: '微軟正黑體';
         font-weight: 900;
         color: white;
+    }    
+    /* 詳細按鈕 */
+    #detailBoxArea{
+        margin-top: 20px;
+    }
+    #type_intro{
+        color:#752761;
+        border:1px solid #752761;
+        border-radius: 4px;
+    }
+    #oriINtro{
+        color:#752761;
+        border:1px solid #752761;
+        border-radius: 4px;        
     }    
 } 

@@ -117,7 +117,7 @@
 </head>
 <body>
 
-<div class='container-fluid'>
+<div class='container-fluid' id='allBox'>
 <!-- 共用header區塊 --> 
 <div id='header' class='row'>
     <div id='m_menu' class='col-md-12 col-sm-12 col-xs-12'>
@@ -304,7 +304,7 @@
 
         <div class='newFooterMenu col-md-1 col-sm-12 col-xs-12'>
             <ul>最新消息
-                <li><a data-ajax="false" href="{{url('/news')}}">展場資訊</a></li>
+                <li><a data-ajax="false" href="{{url('/news')}}" class='footerLi'>展場資訊</a></li>
             </ul>
         </div>
         <div class='newFooterMenu col-md-1 col-sm-12 col-xs-12'>

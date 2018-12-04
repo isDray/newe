@@ -89,7 +89,7 @@ $(function(){
                 </ul>
             </li> -->
             @foreach ($types as $key=>$type)
-            <li class="ppanel">
+            <li class="ppanel ">
                 <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#p{{$type->id}}">{{$type->name}}</a>
                 </span>
                 <ul id="p{{$type->id}}" class="collapse">
@@ -226,7 +226,7 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
                 </ul>
             </li> -->                      
             @foreach ($types as $key=>$type)
-            <li class="panel"> 
+            <li class="panel detailli" > 
                 <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#t{{$type->id}}">{{$type->name}}</a>
                 </span>
                 <ul id="t{{$type->id}}" class="collapse">
@@ -268,7 +268,7 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
     <div class="col-md-9"></div>
     </div>
 
-    <div id='detail_pic' class='col-md-3 col-md-offset-0 col-sm-12 col-xs-12' style='padding-left:0px;padding-right: 0px;background-color:white;'>
+    <div id='detail_pic' class='col-md-3 col-md-offset-0 col-sm-12 col-xs-12' style='padding-left:0px;padding-right: 0px;background-color:#fdfbf1;'>
         
         
         <div id='pwine_title' class='col-md-0 col-md-offset-0 col-sm-12 col-xs-12 text-center'>
@@ -280,7 +280,7 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
         <img  id='wwine_pic' src="{{ url('image/wine/large/')}}/{{$wine[0]->pic}}">
         <img  id='pwine_pic' src="{{ url('image/wine/large/')}}/{{$wine[0]->pic}}"
               class='col-md-12 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2'
-              width="100%" style='padding-left:0px;padding-right: 0px;background-color:white;'>
+              width="100%" style='padding-left:0px;padding-right: 0px;background-color:#fdfbf1;'>
         
         <!-- 酒滴 -->
         <!--
@@ -354,6 +354,21 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
         <div id='mid_txt' class='col-md-6 col-md-offset-1 col-sm-12 col-xs-12'>
         {{$winery[0]->description}}
         </div>        
+    </div>
+    <!-- 新增兩個按鈕 -->
+    <div id='detailBoxArea' class='col-md-12 col-md-offset-0 col-sm-12 col-xs-12 text-center'>
+        <!-- 品種介紹 -->
+        <a href="">
+        <div id='type_intro' class='col-md-3 col-md-offset-4 col-sm-12 col-xs-12 text-center'>
+            葡萄品種介紹
+        </div>
+        </a>
+        <!-- 產地介紹 -->
+        <a href="">
+        <div id='oriINtro' class='col-md-3 col-md-offset-1 col-sm-12 col-xs-12 text-center'>
+            產地介紹
+        </div> 
+        </a> 
     </div>
 
     <div id='detail_btm' class='col-md-12 col-md-offset-0 col-sm-12 col-xs-12 text-center'>
