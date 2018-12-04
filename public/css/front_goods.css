@@ -119,6 +119,19 @@
     .tab-pane{
         padding: 0px!important;
     }    
+
+    /* 新商品 */
+    .myselected{
+        color:#752761!important;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-left:  2px solid #752761;
+        border-right: 2px solid #752761;
+    }
+    .wmore:hover{
+        animation: goodsbtn 0.6s;
+        animation-fill-mode: forwards;
+    }
 }
 @media (min-width: 992px) {
     .pwl{
@@ -129,10 +142,32 @@
         display: none;
     }
 	#goods_menu{
-		background-color:rgba(204,204,204,0.5);
+		/*background-color:rgba(204,204,204,0.5);*/
 		margin-top: 14px;
-		height:40px;
+		height:60px;
+        border-bottom: 2px solid #752761;
+
 	}
+    /* 新商品 */
+    #goods_menu >div >a{
+        color:gray;
+    }
+    .myselected{
+        color:#752761!important;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-left:  2px solid #752761;
+        border-right: 2px solid #752761;
+    }
+    .wmore:hover{
+        animation: goodsbtn 0.6s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes goodsbtn{
+        from {background: rgba(0,0,0,0);color:#752761;}
+        to {background: #752761;color:white;}
+    }
+
 	#goods_item1,
 	#goods_item2,
 	#goods_item3{
@@ -140,13 +175,14 @@
         font-size: 14pt;
         font-weight: 900;
         font-family: '微軟正黑體';
-        color: #350335;
+        color: gray!important;
 	}
+
     .allitem p{
     	width: auto;
     }
 	.allitem a:hover{
-		border-bottom:2px solid #350335;
+		/*border-bottom:2px solid #350335;*/
 	}
 	#glhead{
 		height: 165px;

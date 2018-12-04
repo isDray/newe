@@ -12,24 +12,24 @@
 
 @section('main')
 
-<ul id="goods_menu" class="nav nav-tabs">
+<ul id="goods_menu" class="nav nav-tabs col-md-10 col-md-offset-1">
     @foreach ($types as $key=>$type)
     @if ($key === 0)
-	<div id='goods_item1' class='active allitem col-md-1 col-md-offset-1 col-sm-3 col-sm-offset-0  col-xs-3 col-xs-offset-0 text-center'>
+	<div id='goods_item1' class='active allitem col-md-2 col-md-offset-2 col-sm-3 col-sm-offset-0  col-xs-3 col-xs-offset-0 text-center'>
 		<a href="#tab{{$key}}" data-toggle="tab" >{{$type->name}}</a>
 	</div>
 	@else
-	<div id='goods_item1' class='active allitem col-md-1 col-md-offset-1 col-sm-3 col-sm-offset-0  col-xs-3 col-xs-offset-0 text-center'>
+	<div id='goods_item1' class='active allitem col-md-2 col-md-offset-0 col-sm-3 col-sm-offset-0  col-xs-3 col-xs-offset-0 text-center'>
 		<a href="#tab{{$key}}" data-toggle="tab" >{{$type->name}}</a>
 	</div>
     @endif
 	@endforeach
-	<div id='goods_item1' class='allitem col-md-1 col-md-offset-1 col-sm-3 col-sm-offset-0  col-xs-3 col-xs-offset-0 text-center pwl'>
+	<div id='goods_item1' class='allitem col-md-2 col-md-offset-0 col-sm-3 col-sm-offset-0  col-xs-3 col-xs-offset-0 text-center pwl'>
 		<a href="#noone" data-toggle="tab">口感</a>
 	</div>
 
-	<div id='goods_item1' class='allitem col-md-2 col-md-offset-1 col-sm-3 col-sm-offset-0  col-xs-3 col-xs-offset-0 text-center wwl'>
-		<a href="#taste" data-toggle="tab">義大利葡萄酒風味</a>
+	<div id='goods_item1' class='allitem col-md-2 col-md-offset-0 col-sm-3 col-sm-offset-0  col-xs-3 col-xs-offset-0 text-center wwl'>
+		<a href="#taste" data-toggle="tab">酒品總覽</a>
 	</div>
 
 </ul>
@@ -578,6 +578,12 @@ $(function(){
         var nowpoint = $("#pm_main").offset();
         $("#pm_main").animate({left:"-250px"});
         $("#pm_label").attr('class','pm_out');
+    });
+
+    $("#goods_item1>a").click(function(){
+        
+        $("#goods_item1>a").removeClass("myselected");
+        $(this).addClass('myselected');
     });
     
 });
