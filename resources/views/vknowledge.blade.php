@@ -295,7 +295,7 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
     <div class="col-md-9"></div>
     </div>
 
-    <div id='detail_pic' class='col-md-3 col-md-offset-0 col-sm-12 col-xs-12' style='padding-left:0px;padding-right: 0px;background-color:white;'>
+    <div id='detail_pic' class='col-md-3 col-md-offset-0 col-sm-12 col-xs-12' style='padding-left:0px;padding-right: 0px;'>
         
         <!-- 手機版酒品名稱,在知識專區不用
         <div id='pwine_title' class='col-md-0 col-md-offset-0 col-sm-12 col-xs-12 text-center'>
@@ -309,27 +309,29 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
         <img  id='wwine_pic' src="{{ url('image/variety')}}/{{$variety[0]->pic_name}}">
         <img  id='pwine_pic' src="{{ url('image/variety')}}/{{$variety[0]->pic_name}}"
               class='col-md-12 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2'
-              width="100%" style='padding-left:0px;padding-right: 0px;background-color:white;'>
+              width="100%" style='padding-left:0px;padding-right: 0px;'>
         
         <!-- 酒滴 -->
         
+        <!--
         <div id='rain' class='col-md-12 col-md-offset-0 col-sm-12 col-xs-12 text-center'>
             <img src="{{ url('image/knowledge/drop_knowledg_webside_grid-05.png')}}" width="24px" height="39px;">
         </div>
-        
+        -->
         <!-- 酒瓶 -->
         
         @if( count($wine) > 0) 
+        <!--
         <div id='bottle' class='col-md-12 col-md-offset-0 col-sm-12 col-xs-12 text-center'>
             <img src="{{ url('image/wine/small')}}/{{$wine[0]->pic}}" width="98px" height="261px;">
         </div>
         
-        <!-- 手機版,觀看更多按鈕-->
+        <!-- 手機版,觀看更多按鈕
         <a href="{{url('/detail')}}/{{$wine[0]->id}}" rel="external">
         <div id='pmore' class='col-md-4 col-md-offset-0 col-sm-12 col-xs-12 text-center'>
             <div>了解更多</div>
         </div>
-        </a>
+        </a>-->
         @endif
         
     </div>
@@ -383,51 +385,23 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
 
         </div>
     </div>
-    <!--
-    <div id='detail_mid' class='col-md-12 col-md-offset-0 col-sm-12 col-xs-12'>
-        <div id='mid_pic' class='col-md-3 col-md-offset-1 col-sm-12 col-xs-12'>
-            <img src="{{ url('image/detail/bnallgoods.png') }}" width="100%" height="100%">
+    
+    {{-- 改版新增酒款推薦 --}}
+    <div id='recommend' class='col-md-7 col-md-offset-4 col-sm-12 col-sm-offset-0 col-xs-12  col-xs-offset-0'>
+        <div id='recommendTitle' class='col-md-10 col-md-offset-1 text-center'>
+            推薦酒款
         </div>
-        <div id='mid_txt' class='col-md-6 col-md-offset-1 col-sm-12 col-xs-12'>
-            葡萄除梗後,加入精選的酵母,把溫度控制在22~24°C範圍內進行發酵8~10日,並每日施以瓶身轉動；酒精開始發酵後,得馬上進行蘋果酸乳酸發酵程序,把酸度降低。酒液裝入不銹鋼容器5個月,再注入瓶中封存1個月完成熟成程序。
-            <br>
-            <br>
-            酒莊簡介
-Paolo Leo家族承襲了五個世代以來對於葡萄酒事業的熱情，至今仍在義大利南部普利亞(Puglia)產區薩蘭多(Salento)半島中心、布林迪西省(Brindisi)東邊的聖．多納奇(San Donaci)小鎮從事葡萄種植與釀酒工作。目前Paolo Leo已是佔地17,000平方公尺的現代化酒莊，擁有25英畝葡萄園；酒莊內備有501桶供陳釀用的美國與法國橡木桶，以及全自動化的裝瓶生產線，葡萄酒年產量五百萬公升。
-  
-貼心小建議
-能夠搭配各式料理 , 建議醒酒時間為10至20分鐘。
-        </div>        
+        {{-- 同品種酒款 --}}
+        @foreach ($sameVarietys as $sameVariety)
+        <div class='recommendDiv col-md-4' >
+        <figure>
+            <img src="{{ url('image/wine') }}/small/{{ $sameVariety->pic }}" alt="Trulli" style="width:60px">
+            <figcaption>{!! nl2br($sameVariety->name) !!}</figcaption>
+        </figure>
+        </div>
+        @endforeach
     </div>
 
-    <div id='detail_btm' class='col-md-12 col-md-offset-0 col-sm-12 col-xs-12 text-center'>
-        <div class='col-md-4 col-md-offset-0 col-sm-4 col-xs-4'>
-            <div class='col-md-6 col-md-offset-3 col-sm-12 col-xs-12 text-right'>
-                <img class='wicon' src="{{ url('image/detail/grape_allgoods.png')}}"'>
-                <img class='picon' src="{{ url('image/detail/grape_goods_RWD_phone_grid.png')}}"'>
 
-            </div>
-            <div class='btmtxt col-md-3 col-md-offset-0 col-sm-4 col-xs-4 text-left'>
-                <p>葡萄品種</p>
-                <p>Negroamar</p>
-
-            </div>
-        </div>
-        <div class='col-md-4 col-md-offset-0 col-sm-4 col-xs-4 text-center'>
-            <img class='wicon' src="{{ url('image/detail/logo_allgoods.png')}}"'>
-            <img class='picon' src="{{ url('image/detail/logos_goods_RWD_phone_grid.png')}}"'>
-        </div>
-        <div class='col-md-4 col-md-offset-0 col-sm-4 col-xs-4'>
-            <div class='col-md-6 col-md-offset-0 col-sm-12 col-xs-12 text-left'>
-                <img class='wicon' src="{{ url('image/detail/location_allgoods.png')}}"'>
-                <img class='picon' src="{{ url('image/detail/place)goods_RWD_phone_grid.png')}}"'>
-            </div>
-            <div class='btmtxt col-md-3 col-md-offset-0 col-sm-4 col-xs-4 text-left'>
-                <p>產品介紹</p>
-                <p>Puglia</p>
-
-            </div>
-        </div>                
-    </div>-->
 </div>
 @endsection

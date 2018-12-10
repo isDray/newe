@@ -16,7 +16,8 @@ use App\Winery;
   
 class FrontwebController extends Controller
 {
-    
+
+
     /*--------------------------------------------------------------------------------
     | 2017-07-17 新增前台控制器
     |---------------------------------------------------------------------------------
@@ -130,35 +131,46 @@ class FrontwebController extends Controller
     }
     // 知識專區
     public function knowledge($request , $type ,$num){
-
+        
         $alvariety = Variety::all();
         $alorigin  = Origin::all();
         $altaste   = Taste::all();
         $altype    = Type_manager::all();  
-
         if($type == 1){
+
             if($num==1){
+
                 $num = 3;
             }
             $variety = Variety::where('id',$num)->get();
+
             $wine    = Wine::inRandomOrder()->where('variety',$num)->get();
             
+            // 撈出相同品種葡萄酒
+            $sameVariety = Wine::where('variety',$num)->get();
+
             return view("vknowledge",['variety'=>$variety,
-                                     'alvariety'=>$alvariety,
-                                     'alorigin'=>$alorigin,
-                                     'altaste'=>$altaste,
-                                     'wine' => $wine
+                                      'alvariety'=>$alvariety,
+                                      'alorigin'=>$alorigin,
+                                      'altaste'=>$altaste,
+                                      'wine' => $wine,
+                                      'sameVarietys'=>$sameVariety
                                     ]);
         }        
         if($type == 2){
+
             $origin  = Origin::where('id',$num)->get(); 
             $wine    = Wine::inRandomOrder()->where('origin',$num)->get();
             
+            // 撈出相同產地葡萄酒
+            $sameOrigin = Wine::where('origin',$num)->get();
+
             return view("knowledge",['origin'=>$origin,
                                      'alvariety'=>$alvariety,
                                      'alorigin'=>$alorigin,
                                      'altaste'=>$altaste,
-                                     'wine' => $wine
+                                     'wine' => $wine,
+                                     'sameOrigins'=>$sameOrigin
                                     ]);
         }
         if($type == 3){

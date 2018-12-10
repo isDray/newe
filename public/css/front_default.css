@@ -40,6 +40,9 @@ button:hover{
   background-position: center;
 
 }
+.panel{
+    background-color: #fdfbf1!important;
+}
 /*
 @media (max-width: 768px){
 }*/
