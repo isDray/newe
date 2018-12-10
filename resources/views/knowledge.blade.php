@@ -89,7 +89,7 @@ $(function(){
                 </ul>
             </li> -->
             <li class="ppanel"> 
-                <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#pfirstLink">釀酒用葡萄品種介紹</a>
+                <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#pfirstLink">葡萄種類(由北至南)</a>
                 </span>
                 <ul id="pfirstLink" class="collapse">
                     @foreach($alvariety as $key=>$val)
@@ -99,7 +99,7 @@ $(function(){
             </li>
 
             <li class="ppanel"> 
-                <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#psecLink">義大利葡萄酒產地介紹</a>
+                <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#psecLink">產區(由北至南)</a>
                 </span>
                 <ul id="psecLink" class="collapse">
                     @foreach($alorigin as $key=>$val)
@@ -240,7 +240,7 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
             </li> -->
 
             <li class="panel"> 
-                <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#firstLink">釀酒用葡萄品種介紹</a>
+                <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#firstLink">葡萄種類(由北至南)</a>
                 </span>
                 <ul id="firstLink" class="collapse">
                     @foreach($alvariety as $key=>$val)
@@ -250,7 +250,7 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
             </li>
 
             <li class="panel"> 
-                <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#secLink">義大利葡萄酒產區介紹</a>
+                <span class='ptile glyphicon glyphicon-chevron-down'><a data-toggle="collapse" data-parent="#accordion1" href="#secLink">產區(由北至南)</a>
                 </span>
                 <ul id="secLink" class="collapse">
                     @foreach($alorigin as $key=>$val)
