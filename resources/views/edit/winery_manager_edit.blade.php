@@ -27,8 +27,7 @@
 
                         <div class="form-group" >
                             <label>酒莊描述</label>
-                            <textarea class="form-control" rows="3" name='des' id='des'>{{$winery_manager[0]->description}}
-                            </textarea>
+                            <textarea class="form-control" rows="3" name='des' id='des'>{{$winery_manager[0]->description}}</textarea>
                         </div>
 
                         <div class="form-group" >
@@ -39,13 +38,27 @@
                         <div class="form-group" >
                             <label>上傳圖片(icon)</label>
                             <input type="file" name="import_file" id="import_file">
+                            @if( file_exists($img1))
+                            <img src="/image/winery/{{$winery_manager[0]->pic_name}}">
+                            @endif
                         </div>
 
                         <div class="form-group" >
                             <label>上傳圖片</label>
                             <input type="file" name="import_file2" id="import_file2">
+                            @if( file_exists($img2))
+                            <img src="/image/winery2/{{$winery_manager[0]->pic_name2}}">
+                            @endif                            
                         </div>
                         
+                        <div class="form-group" >
+                            <label>上傳圖片</label>
+                            <input type="file" name="import_file3" id="import_file3">
+                            @if( file_exists($img3))
+                            <img src="/image/winery3/{{$winery_manager[0]->pic_name3}}">
+                            @endif                              
+                        </div>
+
                         <div class="form-group">
                             <label>是否啟用</label>
                             <select class="form-control" id='status' name='status'>
@@ -106,10 +119,12 @@ $(function(){
     $('button[type=submit]').click(function(){
 
         var files = $("#import_file").get(0).files;
-        var files2 = $("#import_file2").get(0).files;      
+        var files2 = $("#import_file2").get(0).files;    
+        var files3 = $("#import_file3").get(0).files;   
         var formData = new FormData();     
         formData.append("import_file",  files[0]);
-        formData.append("import_file2", files2[0]);  
+        formData.append("import_file2", files2[0]);
+        formData.append("import_file3", files3[0]);  
         formData.append("id", {{$winery_manager[0]->id}});
         formData.append("typename",$('input[name=typename]').val() );
         formData.append("status",  $('select[name=status]').val());

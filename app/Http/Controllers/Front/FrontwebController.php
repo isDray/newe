@@ -92,7 +92,18 @@ class FrontwebController extends Controller
         $kwine6   = Wine::where('type',2)->where('taste',1)->get();
 
         $kwine7   = Wine::where('type',5)->where('taste',6)->get();
-        $kwine8   = Wine::where('type',5)->where('taste',7)->get();        
+        $kwine8   = Wine::where('type',5)->where('taste',7)->get();       
+
+
+        // 酒品總覽整理
+        $winerys = Winery::get();
+        $overview = [];
+        foreach ($winerys as $wineryk => $winery) {
+  
+             $overview[$winery->name]['img']  = $winery->pic_name3;
+
+             $overview[$winery->name]['wine'] = Wine::where('winery',$winery->id)->get();
+        } 
         return view("goods",['wines'=>$wine,'wines2'=>$wine2,'wines5'=>$wine5,'types'=>$type,
                                      'altype' => $altype,
                                      'kvariety'=>$kvariety,
@@ -108,7 +119,8 @@ class FrontwebController extends Controller
                                      'kwine6'=>$kwine6,
                                      'kwine7'=>$kwine7,
                                      'kwine8'=>$kwine8,
-                                     'nowType'=>$nowType
+                                     'nowType'=>$nowType,
+                                     'overviews'=>$overview
                             ]);
     }
     // 商品詳細

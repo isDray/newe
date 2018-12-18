@@ -937,9 +937,48 @@ class EditController extends Controller
                 
                 }                
                 
+                if ($request->hasFile('import_file3')) {
+
+                // 如果有接收到檔案,驗證他是圖片
+                $this->validate($request, [
+                   'import_file3'  =>'image'
+                ]);
+                
+                $extension = $request->import_file3->extension();
+                $path      = $request->import_file3->storeAs('image', "filename3.$extension");
+                
+                /* 判斷要上傳的圖檔是否存在:
+                       
+                    存在   -> 刪除後上傳
+                    不存在 -> 直接上傳
+                 
+                */
+                $directoryPath = public_path("image/winery3/".$Winery->id.'.'.$extension);
+                
+                if(File::exists($directoryPath)){
+
+                    File::delete($directoryPath);
+                    Storage::move($path,'winery3/'.$Winery->id.'.'.$extension);
+                    $o_n_path   = public_path('image/winery3/'.$Winery->id.'.'.$extension);
+                    $img        = Image::make($o_n_path)->resize(300, 200);
+                    $f_n_path   = public_path('image/winery3/w_'.$Winery->id.'.'.$extension);
+                    $img->save($f_n_path);
+                    File::delete($o_n_path);
+
+                }else{
+                    Storage::move($path,'winery3/'.$Winery->id.'.'.$extension);
+                    $o_n_path   = public_path('image/winery3/'.$Winery->id.'.'.$extension);
+                    $img        = Image::make($o_n_path)->resize(300, 200);
+                    $f_n_path   = public_path('image/winery3/w_'.$Winery->id.'.'.$extension);
+                    $img->save($f_n_path);
+                    File::delete($o_n_path);
+                }
+                
+                }                 
                 $Winery_addpic = Winery::find($Winery->id);
                 $Winery_addpic->pic_name    = "w_$Winery->id.$extension";
                 $Winery_addpic->pic_name2   = "w_$Winery->id.$extension";                
+                $Winery_addpic->pic_name3   = "w_$Winery->id.$extension";
                 
                 if( $Winery_addpic->save() ){
                     echo json_encode('success');
@@ -964,7 +1003,14 @@ class EditController extends Controller
         if( $mrole == 1){
 
             $winery = Winery::where('id',$request->id)->get();
-            return view('edit.winery_manager_edit',['winery_manager'=>$winery,'can'=>$can]);
+            $img1 = public_path('image/winery/'.$winery[0]->pic_name);
+            $img2 = public_path('image/winery2/'.$winery[0]->pic_name2);
+            $img3 = public_path('image/winery3/'.$winery[0]->pic_name3);
+            return view('edit.winery_manager_edit',['winery_manager'=>$winery,
+                                                    'can'=>$can ,
+                                                    'img1'=>$img1,
+                                                    'img2'=>$img2,
+                                                    'img3'=>$img3]);
 
         }else{
             echo '你沒有該頁面權限,請洽管理人員';
@@ -974,6 +1020,7 @@ class EditController extends Controller
         $this->user = Auth::user();
         $mrole = $this->chk_power(2);
         $can   = $this->chk_can();
+        
 
         // 如果$mrole == 1,表示有對應權限時才導向該頁面
         if( $mrole == 1){
@@ -1062,7 +1109,47 @@ class EditController extends Controller
                 }
                 
             }            
-            
+
+            // 判斷圖片是否有接收到
+            if ($request->hasFile('import_file3')) {
+
+                
+                // 如果有接收到檔案,驗證他是圖片
+                $this->validate($request, [
+                   'import_file3' =>'image'
+                ]);
+                
+                
+                $extension3 = $request->import_file3->extension();
+                $path       = $request->import_file3->storeAs('image', "filename3.$extension3");
+                /* 判斷要上傳的圖檔是否存在:
+                       
+                    存在   -> 刪除後上傳
+                    不存在 -> 直接上傳
+                 
+                */                                                       
+                $directoryPath = public_path("image/winery3/$request->id.$extension3");
+                
+                if(File::exists($directoryPath)){
+
+                    File::delete($directoryPath);
+                    Storage::move($path,'winery3/'.$request->id.'.'.$extension3);
+                    $o_n_path   = public_path('image/winery3/'.$request->id.'.'.$extension3);
+                    $img        = Image::make($o_n_path)->resize(300, 200);
+                    $f_n_path   = public_path('image/winery3/w_'.$request->id.'.'.$extension3);
+                    $img->save($f_n_path);
+                    File::delete($o_n_path);
+
+                }else{
+                    Storage::move($path,'winery3/'.$request->id.'.'.$extension3);
+                    $o_n_path   = public_path('image/winery3/'.$request->id.'.'.$extension3);
+                    $img        = Image::make($o_n_path)->resize(300, 200);
+                    $f_n_path   = public_path('image/winery3/w_'.$request->id.'.'.$extension3);
+                    $img->save($f_n_path);
+                    File::delete($o_n_path);
+                }
+                
+            }            
             $this->validate($request, [
                 'typename' => 'required',
                 'des'      => 'required',
@@ -1083,6 +1170,10 @@ class EditController extends Controller
             if ($request->hasFile('import_file2')) {
                 $Winery->pic_name2    = "w_$request->id.$extension2";
             }
+            if ($request->hasFile('import_file3')) {
+                $Winery->pic_name3    = "w_$request->id.$extension3";
+            }            
+
             if( $Winery->save() ){
                 echo json_encode('success');
             }else{

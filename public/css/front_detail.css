@@ -193,6 +193,7 @@
         border:1px solid #752761;
         border-radius: 4px;        
     }    
+
 }
 @media (min-width: 992px) and (max-width: 1500px) {
     /*手機板取消區塊*/
@@ -383,7 +384,18 @@
         border:1px solid #752761;
         border-radius: 4px;        
     }
-
+    .detailli{
+        color:gray!important;
+        border:0px;
+        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0);
+        box-shadow: 0 1px 1px rgba(0,0,0,0); 
+    }
+    .detailli>a{
+        color: gray;
+    }
+    .detailli>ul>li>a{
+        color: gray!important;
+    }    
 }
 @media (min-width: 1500px){
     /*手機板取消區塊*/
@@ -571,5 +583,22 @@
         color:#752761;
         border:1px solid #752761;
         border-radius: 4px;        
-    }    
+    } 
+    #detail_body>ul>li{
+        border:0px;
+        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0);
+        box-shadow: 0 1px 1px rgba(0,0,0,0); 
+    } 
+    .detailli{
+        color:gray!important;
+        border:0px;
+        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0);
+        box-shadow: 0 1px 1px rgba(0,0,0,0); 
+    } 
+    .detailli>a{
+        color: gray!important;
+    }
+    .detailli>ul>li>a{
+        color: gray!important;
+    }      
 } 

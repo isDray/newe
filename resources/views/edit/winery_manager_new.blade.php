@@ -40,6 +40,10 @@
                             <label>上傳圖片</label>
                             <input type="file" name="import_file2" id="import_file2">
                         </div>
+                        <div class="form-group" >
+                            <label>上傳圖片(酒品總覽用)</label>
+                            <input type="file" name="import_file3" id="import_file3">
+                        </div>
 
                         <div class="form-group">
                             <label>是否啟用</label>
@@ -118,10 +122,12 @@ $(function(){
         if( $("#accform").valid() ){
        
             var files = $("#import_file").get(0).files;
-            var files2 = $("#import_file2").get(0).files;      
+            var files2 = $("#import_file2").get(0).files;    
+            var files3 = $("#import_file3").get(0).files;   
             var formData = new FormData();     
             formData.append("import_file",  files[0]);
             formData.append("import_file2", files2[0]);  
+            formData.append("import_file3", files3[0]);  
             formData.append("typename",$('input[name=typename]').val() );
             formData.append("status",  $('select[name=status]').val());
             formData.append("des", $('textarea[name=des]').val());

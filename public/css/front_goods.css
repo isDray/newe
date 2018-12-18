@@ -132,6 +132,11 @@
         animation: goodsbtn 0.6s;
         animation-fill-mode: forwards;
     }
+    .newGoodTxt{
+        color: #752761!important;
+        height: 100px;
+        overflow:scroll;
+    }
 }
 @media (min-width: 992px) {
     .pwl{
@@ -270,5 +275,15 @@
     	position: absolute;
     	bottom: 0px;
 
+    }
+    .newGoodTxt{
+        color: #752761!important;
+        height: 100px;
+        overflow:scroll;
+    }
+    #detail_body>ul>.panel{
+        border:0px;
+        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0);
+        box-shadow: 0 1px 1px rgba(0,0,0,0); 
     }
 }
