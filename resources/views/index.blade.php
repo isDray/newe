@@ -13,6 +13,12 @@
 .topmenu a{
   color: white!important;
 }
+#logo{
+  background-image: url('../image/home/header_logo.png')!important;
+}
+#menufb{
+    background-image: url('../image/home/fb_icon.png')!important;
+}
 .topmenu a:hover:after{
     content: '';
     display: block;

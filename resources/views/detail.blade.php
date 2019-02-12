@@ -360,13 +360,14 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
         <!-- 品種介紹 -->
         <a href="">
         <div id='type_intro' class='col-md-3 col-md-offset-4 col-sm-12 col-xs-12 text-center'>
-            葡萄品種介紹
+            
+            <img src="{{url('image/home/weal_allgoods_grape_buttom.png')}}">
         </div>
         </a>
         <!-- 產地介紹 -->
         <a href="">
         <div id='oriINtro' class='col-md-3 col-md-offset-1 col-sm-12 col-xs-12 text-center'>
-            產地介紹
+            <img src="{{url('image/home/weal_allgoods_location_buttom.png')}}">
         </div> 
         </a> 
     </div>

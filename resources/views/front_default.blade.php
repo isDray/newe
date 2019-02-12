@@ -295,7 +295,8 @@
             </p>
         </div>-->
 
-        <div id='newFooterPic' class='col-md-1 col-md-offset-1 col-sm-12 col-xs-12'>
+        <div id='newFooterPic' class='col-md-2 col-md-offset-0 col-sm-12 col-xs-12'>
+            <img src="{{ url('image/home/footer_logo.png')}}">
         </div>
 
         <div id='newFooterline' class='col-md-1 col-sm-12 col-xs-12'>

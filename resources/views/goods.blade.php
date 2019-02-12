@@ -19,7 +19,7 @@
 		<a href="#tab{{$key}}" data-toggle="tab" >{{$type->name}}</a>
 	</div>
 	@else
-	<div id='goods_item1' class='active allitem col-md-2 col-md-offset-0 col-sm-3 col-sm-offset-0  col-xs-3 col-xs-offset-0 text-center'>
+	<div id='goods_item1' class='allitem col-md-2 col-md-offset-0 col-sm-3 col-sm-offset-0  col-xs-3 col-xs-offset-0 text-center'>
 		<a href="#tab{{$key}}" data-toggle="tab" >{{$type->name}}</a>
 	</div>
     @endif

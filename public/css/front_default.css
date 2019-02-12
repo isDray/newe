@@ -332,7 +332,12 @@ button:hover{
     /* footer logo */
     #newFooterPic{
       height: 200px;
-      border: 1px solid black;
+    }
+    #newFooterPic>img {
+         width: 80%;
+         margin-left: calc(10%);
+         max-height: 100%;
+         object-fit: contain;
     }
     /* footer 分隔線 */
     #newFooterline{
@@ -405,7 +410,7 @@ button:hover{
 	#logo{
 		height: 88px;
 		width: 230px;
-		background-image: url('../image/home/header_logo.png');
+		background-image: url('../image/home/otherpage_logo.png');
     background-repeat: no-repeat;
     background-position: center;
 	}
@@ -421,7 +426,7 @@ button:hover{
   }  
   #menufb{
     
-    background-image: url('../image/home/fb_icon.png');
+    background-image: url('../image/home/fb_icon2.png');
     background-repeat: no-repeat;
     background-position: left center;
     width: 35px;
@@ -673,6 +678,12 @@ button:hover{
     .newFooterMenu ul, .newFooterMenu ul li{
       color:white;
     }
+    #newFooterPic>img {
+         max-height: 270px;
+         width: 60%;
+         margin-left: 20%;
+         object-fit: contain;
+    }
 }
 @media (min-width: 1500px){
   #allBox{
@@ -748,7 +759,7 @@ button:hover{
     text-align: center;
   }
   #menufb{
-    background-image: url('../image/home/fb_icon.png');
+    background-image: url('../image/home/fb_icon2.png');
     background-repeat: no-repeat;
     background-position: left center;
     width: 35px;
@@ -953,5 +964,11 @@ button:hover{
     }  
     .footerLi{
       color: red!important;
+    }
+    #newFooterPic>img {
+         max-height: 270px;
+         width: 60%;
+         margin-left: 20%;
+         object-fit: contain;
     }
 }
