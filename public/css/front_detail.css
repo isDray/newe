@@ -179,6 +179,7 @@
     /* 詳細按鈕 */
     #detailBoxArea{
         margin-top: 20px;
+        margin-bottom: 20px;
     }
     #type_intro{
         margin-top: 10px;
@@ -371,6 +372,7 @@
     /* 詳細按鈕 */
     #detailBoxArea{
         margin-top: 20px;
+        margin-bottom: 20px;
     }
     #type_intro{
         color:#752761;
@@ -569,6 +571,7 @@
     /* 詳細按鈕 */
     #detailBoxArea{
         margin-top: 20px;
+        margin-bottom: 20px;
     }
     #type_intro{
         color:#752761;

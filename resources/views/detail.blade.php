@@ -358,20 +358,20 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
     <!-- 新增兩個按鈕 -->
     <div id='detailBoxArea' class='col-md-12 col-md-offset-0 col-sm-12 col-xs-12 text-center'>
         <!-- 品種介紹 -->
-        <a href="">
+        <a href="{{url('knowledge/1')}}/{{$thisVariety}}" rel="external">
         <div id='type_intro' class='col-md-3 col-md-offset-4 col-sm-12 col-xs-12 text-center'>
             
             <img src="{{url('image/home/weal_allgoods_grape_buttom.png')}}">
         </div>
         </a>
         <!-- 產地介紹 -->
-        <a href="">
+        <a href="{{url('knowledge/2')}}/{{$thisOrigin}}" rel="external">
         <div id='oriINtro' class='col-md-3 col-md-offset-1 col-sm-12 col-xs-12 text-center'>
             <img src="{{url('image/home/weal_allgoods_location_buttom.png')}}">
         </div> 
         </a> 
     </div>
-
+  <!--
     <div id='detail_btm' class='col-md-12 col-md-offset-0 col-sm-12 col-xs-12 text-center'>
         <div class='col-md-4 col-md-offset-0 col-sm-4 col-xs-4'>
             <a href="{{url('/knowledge')}}/1/{{$wine[0]->variety}}" rel="external">
@@ -381,12 +381,12 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
 
             </div>
             </a>
-            <!--
+          
             <div class='btmtxt col-md-3 col-md-offset-0 col-sm-4 col-xs-4 text-left'>
                 <p>葡萄品種</p>
                 <p>Negroamar</p>
 
-            </div>-->
+            </div
         </div>
 
         <div class='col-md-4 col-md-offset-0 col-sm-4 col-xs-4 text-center'>
@@ -405,8 +405,9 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
                 <p>產品介紹</p>
                 <p>Puglia</p>
 
-            </div>-->
+            </div>
         </div>              
     </div>
+-->
 </div>
 @endsection

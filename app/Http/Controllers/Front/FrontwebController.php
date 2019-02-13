@@ -129,7 +129,10 @@ class FrontwebController extends Controller
         $wine   = Wine::where('id',$type)->get();
         //echo $wine;
         //echo $wine[0]->origin;
-        //echo $wine[0]->variety;
+        // 品種
+        $wine[0]->variety;
+        // 酒廠
+        $wine[0]->origin;
         //echo Origin::select('name')->where('id',$wine[0]->origin)->get();
         $altype = Type_manager::all();
         $winery = Winery::where('id',$wine[0]->winery)->get();
@@ -139,7 +142,13 @@ class FrontwebController extends Controller
             $ald[$val->id] =  Wine::where('type',$val->id)->get();
         }
 
-        return view("detail",['wine'=>$wine,'types'=>$altype,'ald'=>$ald,'winery'=>$winery]);
+        return view("detail",['wine'=>$wine,
+                              'types'=>$altype,
+                              'ald'=>$ald,
+                              'winery'=>$winery,
+                              'thisVariety'=>$wine[0]->variety,
+                              'thisOrigin'=>$wine[0]->origin]
+                              );
     }
     // 知識專區
     public function knowledge($request , $type ,$num){
