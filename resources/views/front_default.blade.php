@@ -253,7 +253,9 @@
             </div>
             
             <div class='col-md-1 col-sm-1 col-xs-1 topmenu2' >
+                <a href="https://www.facebook.com/wealeternitywine/" rel="external">
                 <span id='menufb'></span>
+                </a>
                 <!--
                 <a href="{{url('/join')}}" rel="external">
                 <div id='join'>
