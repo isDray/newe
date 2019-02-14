@@ -1139,7 +1139,7 @@ class EditController extends Controller
                     $img        = Image::make($o_n_path);
                     $f_n_path   = public_path('image/winery3/w_'.$request->id.'.'.$extension3);
                     $img->save($f_n_path);
-                    File::delete($o_n_path)
+                    File::delete($o_n_path);
 
                 }else{
                     
