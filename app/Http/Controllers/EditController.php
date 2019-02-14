@@ -1131,25 +1131,25 @@ class EditController extends Controller
                 $directoryPath = public_path("image/winery3/$request->id.$extension3");
                 
                 if(File::exists($directoryPath)){
-                    
-                    
+                    echo '1';
+                    /*
                     File::delete($directoryPath);
                     Storage::move($path,'winery3/'.$request->id.'.'.$extension3);
                     $o_n_path   = public_path('image/winery3/'.$request->id.'.'.$extension3);
                     $img        = Image::make($o_n_path);
                     $f_n_path   = public_path('image/winery3/w_'.$request->id.'.'.$extension3);
                     $img->save($f_n_path);
-                    File::delete($o_n_path);
+                    File::delete($o_n_path);*/
 
                 }else{
-                    
-                    
+                    echo '2';
+                    /*
                     Storage::move($path,'winery3/'.$request->id.'.'.$extension3);
                     $o_n_path   = public_path('image/winery3/'.$request->id.'.'.$extension3);
                     $img        = Image::make($o_n_path);
                     $f_n_path   = public_path('image/winery3/w_'.$request->id.'.'.$extension3);
                     $img->save($f_n_path);
-                    File::delete($o_n_path);
+                    File::delete($o_n_path);*/
                 }
                 
             }            
