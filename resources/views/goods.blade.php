@@ -265,8 +265,9 @@
 
     <div id='detail_pic' class='col-md-7 col-md-offset-0 col-sm-12 col-xs-12' style='padding-left:0px;padding-right: 0px;'>
         @foreach ($overviews as $key => $overview)
-        <div class='col-md-12 col-sm-12 col-xs-12'>
-          {{$key}}
+        <div class='col-md-12 col-sm-12 col-xs-12 winerybanner'>
+          <!--{{$key}}-->
+          <img src="/image/winery3/{{$overview['img']}}" height='60px' >
         </div>
         <div class='col-md-12'>
             @foreach ($overview['wine'] as $key => $wine)

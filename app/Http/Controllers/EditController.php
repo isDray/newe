@@ -1135,7 +1135,7 @@ class EditController extends Controller
                     File::delete($directoryPath);
                     Storage::move($path,'winery3/'.$request->id.'.'.$extension3);
                     $o_n_path   = public_path('image/winery3/'.$request->id.'.'.$extension3);
-                    $img        = Image::make($o_n_path)->resize(300, 200);
+                    $img        = Image::make($o_n_path);
                     $f_n_path   = public_path('image/winery3/w_'.$request->id.'.'.$extension3);
                     $img->save($f_n_path);
                     File::delete($o_n_path);
@@ -1143,7 +1143,7 @@ class EditController extends Controller
                 }else{
                     Storage::move($path,'winery3/'.$request->id.'.'.$extension3);
                     $o_n_path   = public_path('image/winery3/'.$request->id.'.'.$extension3);
-                    $img        = Image::make($o_n_path)->resize(300, 200);
+                    $img        = Image::make($o_n_path);
                     $f_n_path   = public_path('image/winery3/w_'.$request->id.'.'.$extension3);
                     $img->save($f_n_path);
                     File::delete($o_n_path);
