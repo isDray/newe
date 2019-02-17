@@ -84,7 +84,7 @@
             </p>
 
         <a href="{{url('/newsd/')}}/{{$news[0]->id}}">
-          <div id='hnmore'>
+          <div id='hnmore' style='color:rgb(117, 39, 97);'>
             看更多 >
           </div>
         </a> 
