@@ -362,7 +362,7 @@ button:hover{
     }
 
 }
-@media (min-width: 992px) and (max-width: 1500px)  {
+@media (min-width: 992px) and (max-width: 9000px)  {
   #allBox{
     background-color: #fdfbf1;
   }
@@ -687,7 +687,7 @@ button:hover{
          object-fit: contain;
     }
 }
-@media (min-width: 1500px){
+@media (min-width: 9000px){
   #allBox{
     background-color: #fdfbf1;
   }  
