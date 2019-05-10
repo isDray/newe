@@ -77,6 +77,7 @@
         background-image: url('../image/contacts/words_contactus_webside_grid-04.png');
         background-repeat: no-repeat;
         background-position: top center;
+        background-size: contain;
     }    
     #contactMapText>p{
         color:#5c147c;
@@ -134,6 +135,7 @@
         background-image: url('../image/contacts/words_contactus_webside_grid-04.png');
         background-repeat: no-repeat;
         background-position: top center;
+        background-size: contain;
     }
     #contactMapText>p{
         color:#5c147c;
