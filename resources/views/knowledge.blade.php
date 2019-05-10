@@ -354,12 +354,15 @@ VILLA GALASSO VETICA MONTEPULCIANO D’ABRUZZO DOC<br/>
         </div>
         {{-- 同品種酒款 --}}
         @foreach ($sameOrigins as $sameOrigin)
+        <a href="{{url('')}}/detail/{{$sameOrigin->id}}" rel="external">
         <div class='recommendDiv col-md-4' >
+
         <figure>
             <img src="{{ url('image/wine') }}/small/{{ $sameOrigin->pic }}" alt="Trulli" style="width:60px">
             <figcaption>{!! nl2br($sameOrigin->name) !!}</figcaption>
         </figure>
         </div>
+        </a>
         @endforeach
     </div>
 

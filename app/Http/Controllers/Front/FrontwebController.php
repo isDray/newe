@@ -170,6 +170,8 @@ class FrontwebController extends Controller
             // 撈出相同品種葡萄酒
             $sameVariety = Wine::where('variety',$num)->get();
 
+            
+
             return view("vknowledge",['variety'=>$variety,
                                       'alvariety'=>$alvariety,
                                       'alorigin'=>$alorigin,
