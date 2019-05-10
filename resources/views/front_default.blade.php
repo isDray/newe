@@ -58,7 +58,7 @@
            slidesToScroll: 2,
            autoplay: true,
            autoplaySpeed: 15000,
-           dots:true,
+           dots:false,
            arrows:false,
         });
 
